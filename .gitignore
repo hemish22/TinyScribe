@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Large artifacts: data, models, run outputs
+data/
+models/
+runs/
+checkpoints/
+wandb/
+*.gguf
+*.safetensors
+*.bin
+*.imatrix
