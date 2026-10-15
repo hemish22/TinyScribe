@@ -1,0 +1,184 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_res_other": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(আ) বাসস্থানের প্রমাণ সংক্রান্ত অন্য কোনও নথি :- (যদি উপরিউক্ত কোনও নথি না থাকে) (অনুগ্রহ করে উল্লেখ করুন) #"
+        },
+        "f_disability_other": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "যদি অন্য কিছু হয় (বর্ণনা করুন)"
+        },
+        "f_family_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "পরিবারের সদস্যের নাম"
+        },
+        "f_family_relation": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "আবেদনকারীর সঙ্গে সম্পর্ক"
+        },
+        "f_family_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "তার ভোটার কার্ডের (এপিক) নম্বর"
+        },
+        "f_decl_place_birth_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(i) আমি একজন ভারতীয় নাগরিক এবং"
+        },
+        "f_decl_place_birth_district": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "রাজ্য/কেন্দ্রশাসিত অঞ্চল-এর"
+        },
+        "f_decl_place_birth_village": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "জেলার"
+        },
+        "f_decl_resided_since": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ii) আমি ফর্ম-৬ এর ৮(ক) দফায় উল্লিখিত ঠিকানায়"
+        },
+        "f_decl_missing_doc": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "আমি বয়সের প্রামাণ্য নথি হিসেবে"
+        },
+        "f_decl_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "তারিখ"
+        },
+        "f_decl_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "স্থান"
+        },
+        "f_disability_pct": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "অক্ষমতার শতকরা হার"
+        },
+        "f_ack_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "প্রাপ্তিস্বীকার পত্র নং"
+        },
+        "f_ack_received_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "৬নং ফর্মে শ্রী/শ্রীমতী/কুমারী"
+        },
+        "f_ack_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "তারিখ"
+        }
+      },
+      "required": [
+        "f_res_other",
+        "f_disability_other",
+        "f_family_name",
+        "f_family_relation",
+        "f_family_epic",
+        "f_decl_place_birth_state",
+        "f_decl_place_birth_district",
+        "f_decl_place_birth_village",
+        "f_decl_resided_since",
+        "f_decl_missing_doc",
+        "f_decl_date",
+        "f_decl_place",
+        "f_disability_pct",
+        "f_ack_number",
+        "f_ack_received_name",
+        "f_ack_date"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_res_proof_2": {
+          "type": "boolean",
+          "description": "আধার কার্ড"
+        },
+        "cb_res_proof_1": {
+          "type": "boolean",
+          "description": "ওই ঠিকানায় থাকা জল/বিদ্যুৎ/গ্যাস-এর লাইন সংযোগের বিল (কমপক্ষে ১ বছর)"
+        },
+        "cb_res_proof_4": {
+          "type": "boolean",
+          "description": "ভারতীয় পাসপোর্ট"
+        },
+        "cb_res_proof_3": {
+          "type": "boolean",
+          "description": "রাষ্ট্রায়ত্ত/তালিকাভুক্ত ব্যাংক/ডাকঘরের সাম্প্রতিক পাসবই"
+        },
+        "cb_res_proof_5": {
+          "type": "boolean",
+          "description": "কিষাণ বই সহ রাজস্ব দপ্তরের জমির স্বত্ত্বাধিকার সংক্রান্ত নথি"
+        },
+        "cb_res_proof_6": {
+          "type": "boolean",
+          "description": "নিবন্ধীকৃত ভাড়া লিজ-এর দলিল (ভাড়াটিয়ার ক্ষেত্রে)"
+        },
+        "cb_res_proof_7": {
+          "type": "boolean",
+          "description": "নিবন্ধীকৃত বিক্রয় দলিল (নিজস্ব গৃহের ক্ষেত্রে)"
+        },
+        "cb_disability_locomotive": {
+          "type": "boolean",
+          "description": "চলৎশক্তিহীনতা"
+        },
+        "cb_disability_visual": {
+          "type": "boolean",
+          "description": "দৃষ্টিহীনতা"
+        },
+        "cb_disability_deafdumb": {
+          "type": "boolean",
+          "description": "মূক ও বধিরতা"
+        },
+        "cb_disability_cert_yes": {
+          "type": "boolean",
+          "description": "হ্যাঁ"
+        },
+        "cb_disability_cert_no": {
+          "type": "boolean",
+          "description": "না"
+        }
+      },
+      "required": [
+        "cb_res_proof_2",
+        "cb_res_proof_1",
+        "cb_res_proof_4",
+        "cb_res_proof_3",
+        "cb_res_proof_5",
+        "cb_res_proof_6",
+        "cb_res_proof_7",
+        "cb_disability_locomotive",
+        "cb_disability_visual",
+        "cb_disability_deafdumb",
+        "cb_disability_cert_yes",
+        "cb_disability_cert_no"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6_bn_p1"
+}

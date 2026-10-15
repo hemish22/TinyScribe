@@ -1,0 +1,147 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_elector_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(নির্বাচকের নাম)"
+        },
+        "f_constituency_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "বিধানসভা নির্বাচন ক্ষেত্রের ভোটার তালিকায় নথিভুক্ত ভোটার"
+        },
+        "f_signature_elector": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নির্বাচকের স্বাক্ষর"
+        },
+        "f_name_elector_bottom": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নির্বাচকের নাম"
+        },
+        "f_email_mobile": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "ই-মেল আইডি/মোবাইল নম্বর"
+        },
+        "f_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "স্থান"
+        },
+        "f_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "তারিখ"
+        },
+        "f_epic_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "যার ভোটার কার্ড/এপিক নম্বর"
+        },
+        "f_aadhaar_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(১) আধার নম্বর"
+        }
+      },
+      "required": [
+        "f_elector_name",
+        "f_constituency_name",
+        "f_signature_elector",
+        "f_name_elector_bottom",
+        "f_email_mobile",
+        "f_place",
+        "f_date",
+        "f_epic_number",
+        "f_aadhaar_number"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_aadhaar_yes": {
+          "type": "boolean",
+          "description": "আধার নম্বর"
+        },
+        "cb_aadhaar_no": {
+          "type": "boolean",
+          "description": "আমার আধার নম্বর না থাকার কারণে আমি আধার নম্বর পেশ করতে অপারগ।"
+        },
+        "cb_doc_mgnrega": {
+          "type": "boolean",
+          "description": "এম জি এন আর ই জি এ জব কার্ড"
+        },
+        "cb_doc_passbook": {
+          "type": "boolean",
+          "description": "ব্যাঙ্ক বা ডাকঘর কর্তৃক প্রদত্ত সচিত্র পাশবুক"
+        },
+        "cb_doc_health_insurance": {
+          "type": "boolean",
+          "description": "শ্রম মন্ত্রকের অধীনস্থ প্রকল্পে প্রদত্ত স্বাস্থ্য বীমার স্মার্ট কার্ড"
+        },
+        "cb_doc_driving_license": {
+          "type": "boolean",
+          "description": "ড্রাইভিং লাইসেন্স"
+        },
+        "cb_doc_pan": {
+          "type": "boolean",
+          "description": "প্যান কার্ড"
+        },
+        "cb_doc_npr_smartcard": {
+          "type": "boolean",
+          "description": "এন পি আর এর অধীনস্থ আর জি আই কর্তৃক প্রদত্ত স্মার্ট কার্ড"
+        },
+        "cb_doc_passport": {
+          "type": "boolean",
+          "description": "ভারতীয় পাসপোর্ট"
+        },
+        "cb_doc_pension": {
+          "type": "boolean",
+          "description": "সচিত্র পেনসন নথি"
+        },
+        "cb_doc_service_id": {
+          "type": "boolean",
+          "description": "কেন্দ্রীয়/রাজ্য সরকার/রাষ্ট্রায়ত্ত সংস্থা/পাবলিক লিমিটেড কোম্পানি কর্তৃক কর্মীদের প্রদত্ত চাকরি সংক্রান্ত সচিত্র পরিচয়পত্র"
+        },
+        "cb_doc_official_id": {
+          "type": "boolean",
+          "description": "সাংসদ/বিধায়ক/ বিধানপরিষদের সদস্যগণকে প্রদত্ত সরকারি পরিচয় পত্র"
+        },
+        "cb_doc_udid": {
+          "type": "boolean",
+          "description": "সামাজিক ন্যায় ও সশক্তিকরণ মন্ত্রক কর্তৃক প্রদত্ত ইউনিক আইডেনটিটি আইডি (ইউডিআইডি) কার্ড"
+        }
+      },
+      "required": [
+        "cb_aadhaar_yes",
+        "cb_aadhaar_no",
+        "cb_doc_mgnrega",
+        "cb_doc_passbook",
+        "cb_doc_health_insurance",
+        "cb_doc_driving_license",
+        "cb_doc_pan",
+        "cb_doc_npr_smartcard",
+        "cb_doc_passport",
+        "cb_doc_pension",
+        "cb_doc_service_id",
+        "cb_doc_official_id",
+        "cb_doc_udid"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6b_bn_p0"
+}

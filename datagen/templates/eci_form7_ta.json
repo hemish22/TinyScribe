@@ -1,0 +1,533 @@
+{
+  "schema_version": "0",
+  "template_id": "eci_form7_ta",
+  "source_url": "https://elections.tn.gov.in/ta/Forms/Form%207-Tamil.pdf",
+  "licence": "GODL-India",
+  "language": "tamil",
+  "fillable": false,
+  "checkboxes": [
+    {
+      "id": "cb_del_root",
+      "bbox": [
+        215,
+        1196,
+        31,
+        31
+      ],
+      "label_text": "(i) I request to delete name of the person mentioned below already included in the current roll due to any one of the following reasons: (tick any one) / தற்போதைய வாக்காளர் பட்டியலில் ஏற்கெனவே சேர்க்கப்பட்டு கீழே குறிப்பிடப்பட்டுள்ள நபரின் பெயரை பின்வரும் காரணங்களில் ஏதேனும் ஒன்றின் கீழ் நீக்குமாறு கேட்டுக்கொள்கிறேன்: (ஏதேனும் ஒன்றைத் தேர்வு செய்க)",
+      "label_script": "tamil",
+      "group": "deletion_application",
+      "page": 0
+    },
+    {
+      "id": "cb_del_death",
+      "bbox": [
+        312,
+        1365,
+        31,
+        30
+      ],
+      "label_text": "Death/இறப்பு",
+      "label_script": "tamil",
+      "group": "deletion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_del_under_age",
+      "bbox": [
+        312,
+        1416,
+        31,
+        31
+      ],
+      "label_text": "Under Age/ குறைவு வயது",
+      "label_script": "tamil",
+      "group": "deletion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_del_absent",
+      "bbox": [
+        312,
+        1471,
+        31,
+        31
+      ],
+      "label_text": "Absent / Permanently shifted / வசிக்கவில்லை / நிரந்தரமாக குடிபெயர்ந்தவர்",
+      "label_script": "tamil",
+      "group": "deletion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_del_enrolled",
+      "bbox": [
+        312,
+        1526,
+        31,
+        31
+      ],
+      "label_text": "Already enrolled / ஏற்கெனவே பதிவுசெய்யப்பட்டுள்ளது",
+      "label_script": "tamil",
+      "group": "deletion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_del_not_citizen",
+      "bbox": [
+        312,
+        1587,
+        31,
+        31
+      ],
+      "label_text": "Not Indian Citizen / இந்திய குடிமகன் அல்ல",
+      "label_script": "tamil",
+      "group": "deletion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_inc_root",
+      "bbox": [
+        215,
+        1670,
+        31,
+        31
+      ],
+      "label_text": "(ii) I object to proposed inclusion of name of the person mentioned below due to any one of the following reasons: (tick any one)/ வாக்காளர் பட்டியலில் சேர்ப்பதற்கு விண்ணப்பிக்கப்பட்ட கீழே குறிப்பிடப்பட்டுள்ள நபரின் பெயரை பின் வரும் காரணங்களில் ஏதேனும் ஒன்றின் கீழ் நான் ஆட்சேபிக்கிறேன். (ஏதேனும் ஒன்றைத் தேர்வுசெய்க)",
+      "label_script": "tamil",
+      "group": "inclusion_application",
+      "page": 0
+    },
+    {
+      "id": "cb_inc_death",
+      "bbox": [
+        263,
+        1823,
+        31,
+        31
+      ],
+      "label_text": "Death/இறப்பு",
+      "label_script": "tamil",
+      "group": "inclusion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_inc_under_age",
+      "bbox": [
+        592,
+        1831,
+        31,
+        31
+      ],
+      "label_text": "Under Age/ குறைவு வயது",
+      "label_script": "tamil",
+      "group": "inclusion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_inc_absent",
+      "bbox": [
+        263,
+        1877,
+        31,
+        31
+      ],
+      "label_text": "Absent / Permanently shifted / வசிக்கவில்லை / நிரந்தரமாக குடிபெயர்ந்தவர்",
+      "label_script": "tamil",
+      "group": "inclusion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_inc_enrolled",
+      "bbox": [
+        263,
+        1936,
+        31,
+        31
+      ],
+      "label_text": "Already enrolled / ஏற்கெனவே பதிவுசெய்யப்பட்டுள்ளது",
+      "label_script": "tamil",
+      "group": "inclusion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_inc_not_citizen",
+      "bbox": [
+        1003,
+        1932,
+        31,
+        31
+      ],
+      "label_text": "Not Indian Citizen / இந்திய குடிமகன் அல்ல",
+      "label_script": "tamil",
+      "group": "inclusion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_own_shifted",
+      "bbox": [
+        373,
+        274,
+        31,
+        31
+      ],
+      "label_text": "Permanently shifted / வசிக்கவில்லை / நிரந்தரமாக குடிபெயர்ந்தவர்",
+      "label_script": "tamil",
+      "group": "delete_own_reasons",
+      "page": 1
+    },
+    {
+      "id": "cb_own_enrolled",
+      "bbox": [
+        374,
+        322,
+        31,
+        31
+      ],
+      "label_text": "Already enrolled / ஏற்கனவே பதிவுசெய்யப்பட்டுள்ளது",
+      "label_script": "tamil",
+      "group": "delete_own_reasons",
+      "page": 1
+    },
+    {
+      "id": "cb_own_not_citizen",
+      "bbox": [
+        373,
+        373,
+        31,
+        31
+      ],
+      "label_text": "Not Indian Citizen / இந்திய குடிமகன் அல்ல",
+      "label_script": "tamil",
+      "group": "delete_own_reasons",
+      "page": 1
+    },
+    {
+      "id": "cb_death_cert_yes",
+      "bbox": [
+        967,
+        457,
+        31,
+        31
+      ],
+      "label_text": "Yes / ஆம்",
+      "label_script": "tamil",
+      "group": "death_cert_attached",
+      "page": 1
+    },
+    {
+      "id": "cb_death_cert_no",
+      "bbox": [
+        1208,
+        460,
+        31,
+        31
+      ],
+      "label_text": "No / இல்லை",
+      "label_script": "tamil",
+      "group": "death_cert_attached",
+      "page": 1
+    }
+  ],
+  "fields": [
+    {
+      "id": "f_ac_number",
+      "label_text": "No/எண்.",
+      "label_script": "tamil",
+      "value_bbox": [
+        1369,
+        537,
+        31,
+        31
+      ],
+      "value_type": "serial",
+      "page": 0
+    },
+    {
+      "id": "f_form_no",
+      "label_text": "Form No/படிவம் எண்.",
+      "label_script": "tamil",
+      "value_bbox": [
+        1289,
+        208,
+        195,
+        22
+      ],
+      "value_type": "serial",
+      "page": 0
+    },
+    {
+      "id": "f_ac_name",
+      "label_text": "Name/ பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        338,
+        578,
+        901,
+        32
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_name_applicant",
+      "label_text": "(1) Name of the applicant/ விண்ணப்பதாரரின் பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        481,
+        784,
+        999,
+        57
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_epic",
+      "label_text": "EPIC No. / வாக்காளர் புகைப்பட அடையாள அட்டை எண்.",
+      "label_script": "tamil",
+      "value_bbox": [
+        944,
+        881,
+        540,
+        49
+      ],
+      "value_type": "epic",
+      "page": 0
+    },
+    {
+      "id": "f_mobile_self",
+      "label_text": "Mobile No. of Self / விண்ணப்பதாரரின் கைபேசி எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        703,
+        974,
+        540,
+        51
+      ],
+      "value_type": "phone",
+      "page": 0
+    },
+    {
+      "id": "f_mobile_relative",
+      "label_text": "Mobile No. of Relative / உறவினரின் கைபேசி எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        869,
+        1036,
+        540,
+        51
+      ],
+      "value_type": "phone",
+      "page": 0
+    },
+    {
+      "id": "f_person_surname",
+      "label_text": "Surname / குடும்பப் பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        538,
+        668,
+        572,
+        42
+      ],
+      "value_type": "name",
+      "page": 1
+    },
+    {
+      "id": "f_person_epic",
+      "label_text": "EPIC No. (if available) / வாக்காளர் புகைப்பட அடையாள அட்டை எண் (இருந்தால்)",
+      "label_script": "tamil",
+      "value_bbox": [
+        215,
+        774,
+        314,
+        30
+      ],
+      "value_type": "epic",
+      "page": 1
+    },
+    {
+      "id": "f_addr_house",
+      "label_text": "House / Building/ Apartment No/ வீடு/கட்டிடம்/ அடுக்குமாடி குடியிருப்பு எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        529,
+        860,
+        360,
+        80
+      ],
+      "value_type": "house",
+      "page": 1
+    },
+    {
+      "id": "f_addr_street",
+      "label_text": "Street/Area/Locality / Mohalla/Road / தெரு/ பகுதி/உள்ளூர்/ மொஹல்லா/சாலை",
+      "label_script": "tamil",
+      "value_bbox": [
+        1208,
+        860,
+        277,
+        80
+      ],
+      "value_type": "street",
+      "page": 1
+    },
+    {
+      "id": "f_addr_town",
+      "label_text": "Town/Village நகரம்/கிராமம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        529,
+        1065,
+        360,
+        80
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_addr_post_office",
+      "label_text": "Post Office /அஞ்சல் அலுவலகம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1208,
+        1065,
+        277,
+        80
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_addr_tehsil",
+      "label_text": "Tehsil/Taluqa/Mandal / வட்டம் /தாலுகா/ மண்டலம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1208,
+        1177,
+        277,
+        80
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_addr_district",
+      "label_text": "District/ மாவட்டம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        529,
+        1299,
+        360,
+        80
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_addr_state",
+      "label_text": "State/UT / மாநிலம்/ யூனியன் பிரதேசம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1208,
+        1299,
+        277,
+        80
+      ],
+      "value_type": "state",
+      "page": 1
+    },
+    {
+      "id": "f_decl_date",
+      "label_text": "Date/தேதி",
+      "label_script": "tamil",
+      "value_bbox": [
+        322,
+        1864,
+        213,
+        60
+      ],
+      "value_type": "date",
+      "page": 1
+    },
+    {
+      "id": "f_decl_place",
+      "label_text": "Place / இடம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        344,
+        1910,
+        195,
+        60
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_ack_number",
+      "label_text": "Acknowledgement Number/ஒப்புகை சீட்டு எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        745,
+        599,
+        308,
+        42
+      ],
+      "value_type": "id_number",
+      "page": 2
+    },
+    {
+      "id": "f_ack_date",
+      "label_text": "Date/நாள்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1211,
+        599,
+        274,
+        42
+      ],
+      "value_type": "date",
+      "page": 2
+    },
+    {
+      "id": "f_ack_received_name",
+      "label_text": "Received the application in Form 7 of Thiru / Tmt /Selvi/ திரு/திருமதி/ செல்வி",
+      "label_script": "tamil",
+      "value_bbox": [
+        1183,
+        642,
+        301,
+        60
+      ],
+      "value_type": "name",
+      "page": 2
+    },
+    {
+      "id": "f_addr_pin",
+      "label_text": "PIN Code / அஞ்சல் குறியீட்டு எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        528,
+        1178,
+        361,
+        80
+      ],
+      "value_type": "pincode",
+      "page": 1
+    },
+    {
+      "id": "f_person_name",
+      "label_text": "Name / பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        392,
+        632,
+        574,
+        29
+      ],
+      "value_type": "name",
+      "page": 1
+    }
+  ],
+  "tables": []
+}

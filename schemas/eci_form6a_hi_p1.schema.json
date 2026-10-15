@@ -1,0 +1,140 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_pp_place": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "(ट) जारी करने का स्थान"
+        },
+        "f_pp_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ट) पासपोर्ट सं."
+        },
+        "f_pp_expiry": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ट) समाप्ति होने की तारीख"
+        },
+        "f_pp_issue": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ट) जारी करने की तारीख"
+        },
+        "f_visa_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ठ) वीजा संख्या"
+        },
+        "f_visa_issue": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ठ) जारी करने की तारीख"
+        },
+        "f_visa_expiry": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ठ) समाप्ति की तारीख"
+        },
+        "f_visa_authority": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "(ठ) जारी करने वाले प्राधिकारी का नाम"
+        },
+        "f_absent_from": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ख) वह तारीख, जिससे निवास से अनुपस्थित है (दिन/मास/वर्ष)"
+        },
+        "f_curr_house": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "3. गृह सं."
+        },
+        "f_curr_street": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "3. गली/क्षेत्र/स्थान"
+        },
+        "f_curr_town": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "3. शहर/ग्राम"
+        },
+        "f_curr_state": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "3. राज्य"
+        },
+        "f_curr_country": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "3. देश"
+        },
+        "f_curr_zip": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "3. पिन कोड"
+        },
+        "f_visa_type": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "वीजा की किस्म"
+        },
+        "f_reason_other": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "अन्य (विवरण दें)"
+        }
+      },
+      "required": [
+        "f_pp_place",
+        "f_pp_no",
+        "f_pp_expiry",
+        "f_pp_issue",
+        "f_visa_no",
+        "f_visa_issue",
+        "f_visa_expiry",
+        "f_visa_authority",
+        "f_absent_from",
+        "f_curr_house",
+        "f_curr_street",
+        "f_curr_town",
+        "f_curr_state",
+        "f_curr_country",
+        "f_curr_zip",
+        "f_visa_type",
+        "f_reason_other"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_reason_employment": {
+          "type": "boolean",
+          "description": "नियोजन"
+        },
+        "cb_reason_education": {
+          "type": "boolean",
+          "description": "शिक्षा"
+        }
+      },
+      "required": [
+        "cb_reason_employment",
+        "cb_reason_education"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6a_hi_p1"
+}

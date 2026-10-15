@@ -1,0 +1,127 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_decl_place_birth_village": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Village/Town"
+        },
+        "f_decl_place_birth_district": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "District"
+        },
+        "f_decl_place_birth_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "State/UT"
+        },
+        "f_decl_resided_since": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ii) I am ordinarily a resident at the address mentioned at Sr. No. 8(a) in Form 6 since"
+        },
+        "f_decl_missing_doc": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Therefore, I have enclosed"
+        },
+        "f_decl_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date"
+        },
+        "f_decl_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Place"
+        },
+        "f_decl_place_birth_village_ta": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "கிராமம்/ நகரம்"
+        },
+        "f_decl_place_birth_district_ta": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "மாவட்டம்"
+        },
+        "f_decl_place_birth_state_ta": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "மாநிலம்/ யூனியன் பிரதேசம்"
+        },
+        "f_decl_resided_since_ta": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ii) படிவம் 6 வரிசை எண் 8(a)ல் தெரிவிக்கப்பட்டுள்ள முகவரியில் நான் சாதாரணமாக"
+        },
+        "f_decl_missing_doc_ta": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "வயதுச் சான்றுக்கு ஆதாரமாக"
+        },
+        "f_decl_date_ta": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "தேதி"
+        },
+        "f_decl_place_ta": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "இடம்"
+        },
+        "f_ack_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Acknowledgement Number/ ஒப்புகைச்சீட்டு எண்"
+        },
+        "f_ack_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date/நாள்"
+        },
+        "f_ack_received_name_2": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "இடமிருந்து படிவம் 6 பெற்றுக் கொள்ளப்பட்டது"
+        },
+        "f_ack_received_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Received the application in Form 6 of Thiru/Tmt/Selvi/ திரு/திருமதி/செல்வி"
+        }
+      },
+      "required": [
+        "f_decl_place_birth_village",
+        "f_decl_place_birth_district",
+        "f_decl_place_birth_state",
+        "f_decl_resided_since",
+        "f_decl_missing_doc",
+        "f_decl_date",
+        "f_decl_place",
+        "f_decl_place_birth_village_ta",
+        "f_decl_place_birth_district_ta",
+        "f_decl_place_birth_state_ta",
+        "f_decl_resided_since_ta",
+        "f_decl_missing_doc_ta",
+        "f_decl_date_ta",
+        "f_decl_place_ta",
+        "f_ack_number",
+        "f_ack_date",
+        "f_ack_received_name_2",
+        "f_ack_received_name"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6_ta_p2"
+}

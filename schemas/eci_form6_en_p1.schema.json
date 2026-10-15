@@ -1,0 +1,184 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_disability_other": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(9) If any other (Give description)"
+        },
+        "f_disability_pct": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(9) Percentage of disability"
+        },
+        "f_family_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(10) Name of family member"
+        },
+        "f_family_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(10) His/her EPIC no."
+        },
+        "f_family_relation": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(10) Relationship with applicant"
+        },
+        "f_decl_place_birth_village": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Declaration (i) place of my birth Village/Town"
+        },
+        "f_decl_place_birth_district": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Declaration (i) District"
+        },
+        "f_decl_place_birth_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Declaration (i) State/UT"
+        },
+        "f_decl_missing_doc": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Declaration (iv) Name of the document in support of age proof"
+        },
+        "f_decl_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date"
+        },
+        "f_decl_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Place"
+        },
+        "f_ack_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Acknowledgment Number"
+        },
+        "f_ack_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Acknowledgment Date"
+        },
+        "f_ack_received_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Received the application in Form 6 of Shri/Smt./Ms."
+        },
+        "f_decl_resided_since": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Declaration (ii) resident at the address since (mention month and year)"
+        },
+        "f_res_other": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ii) Any Other document for Proof of residence (Pl. Specify)"
+        }
+      },
+      "required": [
+        "f_disability_other",
+        "f_disability_pct",
+        "f_family_name",
+        "f_family_epic",
+        "f_family_relation",
+        "f_decl_place_birth_village",
+        "f_decl_place_birth_district",
+        "f_decl_place_birth_state",
+        "f_decl_missing_doc",
+        "f_decl_date",
+        "f_decl_place",
+        "f_ack_number",
+        "f_ack_date",
+        "f_ack_received_name",
+        "f_decl_resided_since",
+        "f_res_other"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_res_proof_1": {
+          "type": "boolean",
+          "description": "Water/Electricity/Gas connection Bill for that address (atleast 1 year)"
+        },
+        "cb_res_proof_2": {
+          "type": "boolean",
+          "description": "Aadhaar Card"
+        },
+        "cb_res_proof_3": {
+          "type": "boolean",
+          "description": "Current passbook of Nationalized/Scheduled Bank/Post Office"
+        },
+        "cb_res_proof_4": {
+          "type": "boolean",
+          "description": "Indian Passport"
+        },
+        "cb_res_proof_5": {
+          "type": "boolean",
+          "description": "Revenue Department's Land Owning records including KisanBahi"
+        },
+        "cb_res_proof_6": {
+          "type": "boolean",
+          "description": "Registered Rent Lease Deed (In case of tenant)"
+        },
+        "cb_res_proof_7": {
+          "type": "boolean",
+          "description": "Registered Sale Deed (In case of ownhouse)"
+        },
+        "cb_disability_locomotive": {
+          "type": "boolean",
+          "description": "Locomotive"
+        },
+        "cb_disability_visual": {
+          "type": "boolean",
+          "description": "Visual"
+        },
+        "cb_disability_deafdumb": {
+          "type": "boolean",
+          "description": "Deaf & Dumb"
+        },
+        "cb_disability_cert_yes": {
+          "type": "boolean",
+          "description": "Yes"
+        },
+        "cb_disability_cert_no": {
+          "type": "boolean",
+          "description": "No"
+        }
+      },
+      "required": [
+        "cb_res_proof_1",
+        "cb_res_proof_2",
+        "cb_res_proof_3",
+        "cb_res_proof_4",
+        "cb_res_proof_5",
+        "cb_res_proof_6",
+        "cb_res_proof_7",
+        "cb_disability_locomotive",
+        "cb_disability_visual",
+        "cb_disability_deafdumb",
+        "cb_disability_cert_yes",
+        "cb_disability_cert_no"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6_en_p1"
+}

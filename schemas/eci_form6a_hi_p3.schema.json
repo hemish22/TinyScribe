@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_office_recv_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "दिन/मास/वर्ष को प्राप्त आवेदन"
+        },
+        "f_office_applicant_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "श्री/श्रीमती/कुमारी (कार्यालय)"
+        },
+        "f_reg_constituency": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "निर्वाचन क्षेत्र"
+        },
+        "f_reg_serial_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "क्रम सं."
+        },
+        "f_reg_part_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "भाग सं."
+        },
+        "f_ack_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "अभिस्वीकृति सं."
+        },
+        "f_ack_received_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "श्री/श्रीमती/सुश्री"
+        },
+        "f_ack_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "तारीख"
+        }
+      },
+      "required": [
+        "f_office_recv_date",
+        "f_office_applicant_name",
+        "f_reg_constituency",
+        "f_reg_serial_no",
+        "f_reg_part_no",
+        "f_ack_number",
+        "f_ack_received_name",
+        "f_ack_date"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6a_hi_p3"
+}

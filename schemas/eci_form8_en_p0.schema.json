@@ -1,0 +1,219 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_name_applicant": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(I) Name of the applicant"
+        },
+        "f_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "EPIC No."
+        },
+        "f_aadhaar_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(a) Aadhaar Number"
+        },
+        "f_mobile_self": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Mobile No. of Self (or)"
+        },
+        "f_mobile_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Mobile No. of Father/Mother/Any other relative"
+        },
+        "f_email_self": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Email Id of Self (or)"
+        },
+        "f_email_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Email Id of Father/Mother/Any other relative"
+        },
+        "f_addr_house": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Present Ordinary Residence - House/Building/Apartment No."
+        },
+        "f_addr_street": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Present Ordinary Residence - Street/Area/Locality/Mohalla/Road"
+        },
+        "f_addr_town": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Present Ordinary Residence - Town/Village"
+        },
+        "f_addr_post_office": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Present Ordinary Residence - Post Office"
+        },
+        "f_addr_pin": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Present Ordinary Residence - PIN Code"
+        },
+        "f_addr_tehsil": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Present Ordinary Residence - Tehsil/Taluqa/Mandal"
+        },
+        "f_addr_district": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Present Ordinary Residence - District"
+        },
+        "f_addr_state": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Present Ordinary Residence - State/UT"
+        },
+        "f_other_doc": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Any Other:- (Pl. Specify)"
+        },
+        "f_ac_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. & Name of Assembly Constituency - Name"
+        },
+        "f_pc_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. & Name of Parliamentary Constituency@ - Name"
+        },
+        "f_ac_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. & Name of Assembly Constituency - No."
+        },
+        "f_pc_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. & Name of Parliamentary Constituency@ - No."
+        },
+        "f_form_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "FORM No."
+        }
+      },
+      "required": [
+        "f_name_applicant",
+        "f_epic",
+        "f_aadhaar_number",
+        "f_mobile_self",
+        "f_mobile_relative",
+        "f_email_self",
+        "f_email_relative",
+        "f_addr_house",
+        "f_addr_street",
+        "f_addr_town",
+        "f_addr_post_office",
+        "f_addr_pin",
+        "f_addr_tehsil",
+        "f_addr_district",
+        "f_addr_state",
+        "f_other_doc",
+        "f_ac_name",
+        "f_pc_name",
+        "f_ac_number",
+        "f_pc_number",
+        "f_form_no"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_aadhaar_a": {
+          "type": "boolean",
+          "description": "Aadhaar Number (if willing to provide)"
+        },
+        "cb_aadhaar_b": {
+          "type": "boolean",
+          "description": "I am not able to furnish my Aadhaar Number because I don't have Aadhaar Number"
+        },
+        "cb_app_shift": {
+          "type": "boolean",
+          "description": "Shifting of Residence (or)"
+        },
+        "cb_app_correct": {
+          "type": "boolean",
+          "description": "Correction of Entries in Existing Electoral Roll"
+        },
+        "cb_app_rep_epic": {
+          "type": "boolean",
+          "description": "Issue of Replacement EPIC without correction"
+        },
+        "cb_app_pwd": {
+          "type": "boolean",
+          "description": "Request for marking as Person with Disability"
+        },
+        "cb_addr_proof_1": {
+          "type": "boolean",
+          "description": "Water/Electricity/Gas connection Bill for that address (atleast 1 year)"
+        },
+        "cb_addr_proof_2": {
+          "type": "boolean",
+          "description": "Aadhaar Card"
+        },
+        "cb_addr_proof_3": {
+          "type": "boolean",
+          "description": "Current passbook of Nationalized/Scheduled Bank/Post Office"
+        },
+        "cb_addr_proof_4": {
+          "type": "boolean",
+          "description": "Indian Passport"
+        },
+        "cb_addr_proof_5": {
+          "type": "boolean",
+          "description": "Revenue Department's Land Owning records including KisanBahi"
+        },
+        "cb_addr_proof_6": {
+          "type": "boolean",
+          "description": "Registered Rent Lease Deed (In case of tenant)"
+        },
+        "cb_addr_proof_7": {
+          "type": "boolean",
+          "description": "Registered Sale Deed (In case of own house)"
+        }
+      },
+      "required": [
+        "cb_aadhaar_a",
+        "cb_aadhaar_b",
+        "cb_app_shift",
+        "cb_app_correct",
+        "cb_app_rep_epic",
+        "cb_app_pwd",
+        "cb_addr_proof_1",
+        "cb_addr_proof_2",
+        "cb_addr_proof_3",
+        "cb_addr_proof_4",
+        "cb_addr_proof_5",
+        "cb_addr_proof_6",
+        "cb_addr_proof_7"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form8_en_p0"
+}

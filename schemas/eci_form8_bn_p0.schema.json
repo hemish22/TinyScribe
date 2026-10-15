@@ -1,0 +1,231 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_name_applicant": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(অ) আবেদনকারীর নাম"
+        },
+        "f_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "সচিত্র ভোটার পরিচয় পত্রের নম্বর"
+        },
+        "f_aadhaar_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "আধার নম্বর"
+        },
+        "f_mobile_self": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নিজের মোবাইল নম্বর"
+        },
+        "f_mobile_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "বাবা/মা/অন্য কোনও আত্মীয় (যদি থাকে)-এর মোবাইল নম্বর"
+        },
+        "f_email_self": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নিজের ই-মেল আইডি"
+        },
+        "f_other_doc": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "অন্য কোনও নথি :- (অনুগ্রহ করে উল্লেখ করুন)"
+        },
+        "f_ac_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নং."
+        },
+        "f_ac_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নাম"
+        },
+        "f_form_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "ফর্ম নং"
+        },
+        "f_email_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "বাবা/মা/অন্য কোনও আত্মীয় (যদি থাকে)-এর ই-মেল আইডি"
+        },
+        "f_addr_house": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "গৃহ/ভবন/অ্যাপার্টমেন্ট নং"
+        },
+        "f_addr_street": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "গলি/এলাকা/অঞ্চল/মহল্লা/রাস্তা"
+        },
+        "f_addr_house_en": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "House/Building/Apartment No."
+        },
+        "f_addr_street_en": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "State/Area/Locality/Mohalla/Road"
+        },
+        "f_addr_town": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "শহর/গ্রাম"
+        },
+        "f_addr_post_office": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "ডাকঘর"
+        },
+        "f_addr_town_en": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Town/ Village"
+        },
+        "f_addr_post_office_en": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Post Office"
+        },
+        "f_addr_pin": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "পিন কোড"
+        },
+        "f_addr_district": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "জেলা"
+        },
+        "f_addr_tehsil": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "তহসিল/তালুক/মণ্ডল"
+        },
+        "f_addr_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "রাজ্য/কেন্দ্রশাসিত অঞ্চল"
+        }
+      },
+      "required": [
+        "f_name_applicant",
+        "f_epic",
+        "f_aadhaar_number",
+        "f_mobile_self",
+        "f_mobile_relative",
+        "f_email_self",
+        "f_other_doc",
+        "f_ac_number",
+        "f_ac_name",
+        "f_form_no",
+        "f_email_relative",
+        "f_addr_house",
+        "f_addr_street",
+        "f_addr_house_en",
+        "f_addr_street_en",
+        "f_addr_town",
+        "f_addr_post_office",
+        "f_addr_town_en",
+        "f_addr_post_office_en",
+        "f_addr_pin",
+        "f_addr_district",
+        "f_addr_tehsil",
+        "f_addr_state"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_aadhaar_a": {
+          "type": "boolean",
+          "description": "আধার নম্বর"
+        },
+        "cb_aadhaar_b": {
+          "type": "boolean",
+          "description": "আমি আধার নম্বর প্রদান করতে পারিনি, কারণ আমার আধার নম্বর নেই।"
+        },
+        "cb_app_shift": {
+          "type": "boolean",
+          "description": "বাসস্থান পরিবর্তন (অথবা)"
+        },
+        "cb_app_correct": {
+          "type": "boolean",
+          "description": "বর্তমান ভোটার তালিকায় থাকা তথ্য সংশোধন (অথবা)"
+        },
+        "cb_app_rep_epic": {
+          "type": "boolean",
+          "description": "সংশোধন ছাড়াই সচিত্র ভোটার পরিচয় পত্র বদলে দেওয়া (অথবা)"
+        },
+        "cb_app_pwd": {
+          "type": "boolean",
+          "description": "প্রতিবন্ধকতা যুক্ত ব্যক্তি হিসেবে চিহ্নিতকরণের জন্য অনুরোধ"
+        },
+        "cb_addr_proof_1": {
+          "type": "boolean",
+          "description": "ওই ঠিকানায় থাকা জল/বিদ্যুৎ/গ্যাস-এর লাইন সংযোগের বিল (কমপক্ষে ১ বছর)"
+        },
+        "cb_addr_proof_2": {
+          "type": "boolean",
+          "description": "আধার কার্ড"
+        },
+        "cb_addr_proof_3": {
+          "type": "boolean",
+          "description": "রাষ্ট্রায়ত্ত / তালিকাভুক্ত ব্যাঙ্ক / ডাকঘর এর সাম্প্রতিক পাসবুক"
+        },
+        "cb_addr_proof_4": {
+          "type": "boolean",
+          "description": "ভারতীয় পাসপোর্ট"
+        },
+        "cb_addr_proof_5": {
+          "type": "boolean",
+          "description": "কিষাণ বই সহ রাজস্ব দপ্তরের জমি স্বত্বাধিকার সংক্রান্ত নথি"
+        },
+        "cb_addr_proof_6": {
+          "type": "boolean",
+          "description": "নিবন্ধীকৃত ভাড়া লিজ-এর দলিল (ভাড়াটিয়ার ক্ষেত্রে)"
+        },
+        "cb_addr_proof_7": {
+          "type": "boolean",
+          "description": "নিবন্ধীকৃত বিক্রয় দলিল (নিজস্ব গৃহের ক্ষেত্রে)"
+        }
+      },
+      "required": [
+        "cb_aadhaar_a",
+        "cb_aadhaar_b",
+        "cb_app_shift",
+        "cb_app_correct",
+        "cb_app_rep_epic",
+        "cb_app_pwd",
+        "cb_addr_proof_1",
+        "cb_addr_proof_2",
+        "cb_addr_proof_3",
+        "cb_addr_proof_4",
+        "cb_addr_proof_5",
+        "cb_addr_proof_6",
+        "cb_addr_proof_7"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form8_bn_p0"
+}

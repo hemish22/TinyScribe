@@ -1,0 +1,164 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(क) नाम"
+        },
+        "f_last_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ख) अंतिम नाम"
+        },
+        "f_rel_last_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(घ) नातेदार का अंतिम नाम"
+        },
+        "f_dob": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ङ) जन्म की तारीख (दिन/मास/वर्ष)"
+        },
+        "f_pob_village": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "(च) ग्राम/शहर"
+        },
+        "f_pob_district": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "(च) जिला"
+        },
+        "f_pob_state": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "(च) राज्य"
+        },
+        "f_email": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ज) ई-मेल"
+        },
+        "f_mobile": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(झ) मोबाइल"
+        },
+        "f_addr_house": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "(ञ) गृह सं."
+        },
+        "f_addr_street": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "(ञ) गली/क्षेत्र/स्थान"
+        },
+        "f_addr_town": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "(ञ) शहर/ग्राम"
+        },
+        "f_addr_district": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "(ञ) जिला"
+        },
+        "f_addr_pin": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ञ) पिन कोड"
+        },
+        "f_constituency_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "सभा/संसदीय निर्वाचन क्षेत्र का नाम"
+        },
+        "f_form_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "अभिस्वीकृति संख्या"
+        }
+      },
+      "required": [
+        "f_name",
+        "f_last_name",
+        "f_rel_last_name",
+        "f_dob",
+        "f_pob_village",
+        "f_pob_district",
+        "f_pob_state",
+        "f_email",
+        "f_mobile",
+        "f_addr_house",
+        "f_addr_street",
+        "f_addr_town",
+        "f_addr_district",
+        "f_addr_pin",
+        "f_constituency_name",
+        "f_form_no"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_rel_father": {
+          "type": "boolean",
+          "description": "पिता"
+        },
+        "cb_rel_mother": {
+          "type": "boolean",
+          "description": "माता"
+        },
+        "cb_rel_husband": {
+          "type": "boolean",
+          "description": "पति"
+        },
+        "cb_rel_wife": {
+          "type": "boolean",
+          "description": "पत्नी"
+        },
+        "cb_rel_other": {
+          "type": "boolean",
+          "description": "अन्य"
+        },
+        "cb_gender_male": {
+          "type": "boolean",
+          "description": "पुरुष"
+        },
+        "cb_gender_female": {
+          "type": "boolean",
+          "description": "स्त्री"
+        },
+        "cb_gender_third": {
+          "type": "boolean",
+          "description": "तृतीय लिंग"
+        }
+      },
+      "required": [
+        "cb_rel_father",
+        "cb_rel_mother",
+        "cb_rel_husband",
+        "cb_rel_wife",
+        "cb_rel_other",
+        "cb_gender_male",
+        "cb_gender_female",
+        "cb_gender_third"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6a_hi_p0"
+}

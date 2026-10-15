@@ -1,0 +1,983 @@
+{
+  "schema_version": "0",
+  "template_id": "eci_form6_bn",
+  "source_url": "https://ceowestbengal.wb.gov.in/Downloads/Forms/RollRevision/Form-6_Bengali.pdf",
+  "licence": "GODL-India",
+  "language": "bengali",
+  "fillable": false,
+  "checkboxes": [
+    {
+      "id": "cb_aadhaar_a",
+      "bbox": [
+        213,
+        1311,
+        46,
+        37
+      ],
+      "label_text": "আধার নম্বর",
+      "label_script": "bengali",
+      "group": "aadhaar_choice",
+      "page": 0
+    },
+    {
+      "id": "cb_aadhaar_b",
+      "bbox": [
+        213,
+        1368,
+        46,
+        37
+      ],
+      "label_text": "আমি আধার নম্বর প্রদান করতে পারিনি, কারণ আমার আধার নম্বর নেই।",
+      "label_script": "bengali",
+      "group": "aadhaar_choice",
+      "page": 0
+    },
+    {
+      "id": "cb_gender_male",
+      "bbox": [
+        400,
+        1416,
+        46,
+        37
+      ],
+      "label_text": "পুরুষ",
+      "label_script": "bengali",
+      "group": "gender",
+      "page": 0
+    },
+    {
+      "id": "cb_gender_female",
+      "bbox": [
+        622,
+        1416,
+        47,
+        37
+      ],
+      "label_text": "নারী",
+      "label_script": "bengali",
+      "group": "gender",
+      "page": 0
+    },
+    {
+      "id": "cb_gender_third",
+      "bbox": [
+        838,
+        1416,
+        46,
+        37
+      ],
+      "label_text": "তৃতীয় লিঙ্গ",
+      "label_script": "bengali",
+      "group": "gender",
+      "page": 0
+    },
+    {
+      "id": "cb_res_proof_2",
+      "bbox": [
+        1122,
+        234,
+        39,
+        36
+      ],
+      "label_text": "আধার কার্ড",
+      "label_script": "bengali",
+      "group": "residence_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_res_proof_1",
+      "bbox": [
+        218,
+        242,
+        39,
+        36
+      ],
+      "label_text": "ওই ঠিকানায় থাকা জল/বিদ্যুৎ/গ্যাস-এর লাইন সংযোগের বিল (কমপক্ষে ১ বছর)",
+      "label_script": "bengali",
+      "group": "residence_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_res_proof_4",
+      "bbox": [
+        1122,
+        272,
+        39,
+        36
+      ],
+      "label_text": "ভারতীয় পাসপোর্ট",
+      "label_script": "bengali",
+      "group": "residence_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_res_proof_3",
+      "bbox": [
+        218,
+        280,
+        39,
+        35
+      ],
+      "label_text": "রাষ্ট্রায়ত্ত/তালিকাভুক্ত ব্যাংক/ডাকঘরের সাম্প্রতিক পাসবই",
+      "label_script": "bengali",
+      "group": "residence_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_res_proof_5",
+      "bbox": [
+        218,
+        318,
+        39,
+        35
+      ],
+      "label_text": "কিষাণ বই সহ রাজস্ব দপ্তরের জমির স্বত্ত্বাধিকার সংক্রান্ত নথি",
+      "label_script": "bengali",
+      "group": "residence_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_res_proof_6",
+      "bbox": [
+        218,
+        356,
+        39,
+        35
+      ],
+      "label_text": "নিবন্ধীকৃত ভাড়া লিজ-এর দলিল (ভাড়াটিয়ার ক্ষেত্রে)",
+      "label_script": "bengali",
+      "group": "residence_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_res_proof_7",
+      "bbox": [
+        972,
+        350,
+        39,
+        36
+      ],
+      "label_text": "নিবন্ধীকৃত বিক্রয় দলিল (নিজস্ব গৃহের ক্ষেত্রে)",
+      "label_script": "bengali",
+      "group": "residence_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_disability_locomotive",
+      "bbox": [
+        690,
+        517,
+        39,
+        36
+      ],
+      "label_text": "চলৎশক্তিহীনতা",
+      "label_script": "bengali",
+      "group": "disability_category",
+      "page": 1
+    },
+    {
+      "id": "cb_disability_visual",
+      "bbox": [
+        972,
+        517,
+        39,
+        36
+      ],
+      "label_text": "দৃষ্টিহীনতা",
+      "label_script": "bengali",
+      "group": "disability_category",
+      "page": 1
+    },
+    {
+      "id": "cb_disability_deafdumb",
+      "bbox": [
+        1175,
+        517,
+        39,
+        36
+      ],
+      "label_text": "মূক ও বধিরতা",
+      "label_script": "bengali",
+      "group": "disability_category",
+      "page": 1
+    },
+    {
+      "id": "cb_disability_cert_yes",
+      "bbox": [
+        943,
+        640,
+        52,
+        44
+      ],
+      "label_text": "হ্যাঁ",
+      "label_script": "bengali",
+      "group": "disability_cert_attached",
+      "page": 1
+    },
+    {
+      "id": "cb_disability_cert_no",
+      "bbox": [
+        1043,
+        640,
+        52,
+        44
+      ],
+      "label_text": "না",
+      "label_script": "bengali",
+      "group": "disability_cert_attached",
+      "page": 1
+    },
+    {
+      "id": "cb_rel_father",
+      "bbox": [
+        143,
+        852,
+        67,
+        40
+      ],
+      "label_text": "বাবা",
+      "label_script": "bengali",
+      "group": "relative_type",
+      "page": 0
+    },
+    {
+      "id": "cb_rel_mother",
+      "bbox": [
+        385,
+        854,
+        70,
+        38
+      ],
+      "label_text": "মা",
+      "label_script": "bengali",
+      "group": "relative_type",
+      "page": 0
+    },
+    {
+      "id": "cb_rel_husband",
+      "bbox": [
+        635,
+        848,
+        67,
+        46
+      ],
+      "label_text": "স্বামী",
+      "label_script": "bengali",
+      "group": "relative_type",
+      "page": 0
+    },
+    {
+      "id": "cb_rel_wife",
+      "bbox": [
+        902,
+        851,
+        67,
+        43
+      ],
+      "label_text": "স্ত্রী",
+      "label_script": "bengali",
+      "group": "relative_type",
+      "page": 0
+    },
+    {
+      "id": "cb_rel_guardian",
+      "bbox": [
+        144,
+        903,
+        67,
+        39
+      ],
+      "label_text": "অনাথের ক্ষেত্রে আইনসম্মত অভিভাবক/তৃতীয় লিঙ্গভুক্তের ক্ষেত্রে গুরু",
+      "label_script": "bengali",
+      "group": "relative_type",
+      "page": 0
+    },
+    {
+      "id": "cb_dob_proof_1",
+      "bbox": [
+        215,
+        1611,
+        53,
+        21
+      ],
+      "label_text": "উপযুক্ত স্থানীয় শাসনমূলক সংস্থা/পৌর কর্তৃপক্ষ/জন্ম এবং মৃত্যু নিবন্ধক কর্তৃক প্রদত্ত জন্মের শংসাপত্র",
+      "label_script": "bengali",
+      "group": "dob_proof",
+      "page": 0
+    },
+    {
+      "id": "cb_dob_proof_2",
+      "bbox": [
+        212,
+        1640,
+        53,
+        21
+      ],
+      "label_text": "আধার কার্ড",
+      "label_script": "bengali",
+      "group": "dob_proof",
+      "page": 0
+    },
+    {
+      "id": "cb_dob_proof_5",
+      "bbox": [
+        212,
+        1672,
+        53,
+        21
+      ],
+      "label_text": "সি বি এস ই/আই সি এস ই / রাজ্য শিক্ষা পর্ষদ কর্তৃক প্রদত্ত দশম বা দ্বাদশ শ্রেণির শংসাপত্র (যদি সেখানে জন্মতারিখ উল্লেখ করা থাকে)",
+      "label_script": "bengali",
+      "group": "dob_proof",
+      "page": 0
+    },
+    {
+      "id": "cb_dob_proof_3",
+      "bbox": [
+        614,
+        1641,
+        53,
+        21
+      ],
+      "label_text": "প্যান (PAN) কার্ড",
+      "label_script": "bengali",
+      "group": "dob_proof",
+      "page": 0
+    },
+    {
+      "id": "cb_dob_proof_4",
+      "bbox": [
+        962,
+        1641,
+        53,
+        21
+      ],
+      "label_text": "ড্রাইভিং লাইসেন্স",
+      "label_script": "bengali",
+      "group": "dob_proof",
+      "page": 0
+    },
+    {
+      "id": "cb_dob_proof_6",
+      "bbox": [
+        961,
+        1671,
+        53,
+        21
+      ],
+      "label_text": "ভারতীয় পাসপোর্ট",
+      "label_script": "bengali",
+      "group": "dob_proof",
+      "page": 0
+    }
+  ],
+  "fields": [
+    {
+      "id": "f_name_state",
+      "label_text": "নাম ও তারপর মধ্য নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        421,
+        438,
+        835,
+        42
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_name_state_2",
+      "label_text": "নাম ও তারপর মধ্য নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        158,
+        482,
+        1098,
+        43
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_surname_state",
+      "label_text": "পদবি (যদি থাকে)",
+      "label_script": "bengali",
+      "value_bbox": [
+        380,
+        540,
+        847,
+        36
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_name_english",
+      "label_text": "নাম ও তারপর মধ্য নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        421,
+        635,
+        835,
+        42
+      ],
+      "value_type": "name",
+      "page": 0,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_name_english_2",
+      "label_text": "নাম ও তারপর মধ্য নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        158,
+        679,
+        1098,
+        43
+      ],
+      "value_type": "name",
+      "page": 0,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_surname_english",
+      "label_text": "পদবি (যদি থাকে)",
+      "label_script": "bengali",
+      "value_bbox": [
+        395,
+        737,
+        846,
+        37
+      ],
+      "value_type": "name",
+      "page": 0,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_rel_name_state",
+      "label_text": "*(২) (ক) এর মধ্যে যে কোনও একজন আত্মীয়ের নাম ও পদবি (বাংলায়)",
+      "label_script": "bengali",
+      "value_bbox": [
+        224,
+        947,
+        1259,
+        37
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_rel_name_english",
+      "label_text": "*(২)(খ) উপরিবর্ণিত আত্মীয়ের নাম ও পদবি (ইংরেজি বড় হাতের অক্ষরে)",
+      "label_script": "bengali",
+      "value_bbox": [
+        224,
+        1031,
+        1251,
+        37
+      ],
+      "value_type": "name",
+      "page": 0,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_mobile",
+      "label_text": "(৩) নিজের মোবাইল নম্বর (যদি থাকে)",
+      "label_script": "bengali",
+      "value_bbox": [
+        738,
+        1096,
+        414,
+        37
+      ],
+      "value_type": "phone",
+      "page": 0
+    },
+    {
+      "id": "f_mobile_relative",
+      "label_text": "২নং দফায় উল্লিখিত আত্মীয়ের মোবাইল নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        738,
+        1135,
+        414,
+        37
+      ],
+      "value_type": "phone",
+      "page": 0
+    },
+    {
+      "id": "f_email",
+      "label_text": "(৪) নিজের ই-মেল আইডি (যদি থাকে)",
+      "label_script": "bengali",
+      "value_bbox": [
+        749,
+        1177,
+        416,
+        42
+      ],
+      "value_type": "email",
+      "page": 0
+    },
+    {
+      "id": "f_email_relative",
+      "label_text": "২নং দফায় উল্লিখিত আত্মীয়ের ই-মেল আইডি",
+      "label_script": "bengali",
+      "value_bbox": [
+        749,
+        1227,
+        416,
+        42
+      ],
+      "value_type": "email",
+      "page": 0
+    },
+    {
+      "id": "f_aadhaar_number",
+      "label_text": "আধার নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        580,
+        1314,
+        497,
+        36
+      ],
+      "value_type": "id_number",
+      "page": 0
+    },
+    {
+      "id": "f_dob",
+      "label_text": "(৭)(ক) জন্ম তারিখ",
+      "label_script": "bengali",
+      "value_bbox": [
+        479,
+        1466,
+        439,
+        44
+      ],
+      "value_type": "date",
+      "page": 0
+    },
+    {
+      "id": "f_res_other",
+      "label_text": "(আ) বাসস্থানের প্রমাণ সংক্রান্ত অন্য কোনও নথি :- (যদি উপরিউক্ত কোনও নথি না থাকে) (অনুগ্রহ করে উল্লেখ করুন) #",
+      "label_script": "bengali",
+      "value_bbox": [
+        740,
+        435,
+        672,
+        42
+      ],
+      "value_type": "document",
+      "page": 1
+    },
+    {
+      "id": "f_disability_other",
+      "label_text": "যদি অন্য কিছু হয় (বর্ণনা করুন)",
+      "label_script": "bengali",
+      "value_bbox": [
+        415,
+        564,
+        1019,
+        42
+      ],
+      "value_type": "disability",
+      "page": 1
+    },
+    {
+      "id": "f_family_name",
+      "label_text": "পরিবারের সদস্যের নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        362,
+        757,
+        487,
+        42
+      ],
+      "value_type": "name",
+      "page": 1
+    },
+    {
+      "id": "f_family_relation",
+      "label_text": "আবেদনকারীর সঙ্গে সম্পর্ক",
+      "label_script": "bengali",
+      "value_bbox": [
+        1171,
+        757,
+        278,
+        42
+      ],
+      "value_type": "relation",
+      "page": 1
+    },
+    {
+      "id": "f_family_epic",
+      "label_text": "তার ভোটার কার্ডের (এপিক) নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        452,
+        813,
+        397,
+        42
+      ],
+      "value_type": "epic",
+      "page": 1
+    },
+    {
+      "id": "f_decl_place_birth_state",
+      "label_text": "(i) আমি একজন ভারতীয় নাগরিক এবং",
+      "label_script": "bengali",
+      "value_bbox": [
+        481,
+        1022,
+        474,
+        21
+      ],
+      "value_type": "state",
+      "page": 1
+    },
+    {
+      "id": "f_decl_place_birth_district",
+      "label_text": "রাজ্য/কেন্দ্রশাসিত অঞ্চল-এর",
+      "label_script": "bengali",
+      "value_bbox": [
+        1229,
+        1000,
+        282,
+        43
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_decl_place_birth_village",
+      "label_text": "জেলার",
+      "label_script": "bengali",
+      "value_bbox": [
+        197,
+        1059,
+        276,
+        24
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_decl_resided_since",
+      "label_text": "(ii) আমি ফর্ম-৬ এর ৮(ক) দফায় উল্লিখিত ঠিকানায়",
+      "label_script": "bengali",
+      "value_bbox": [
+        592,
+        1094,
+        271,
+        31
+      ],
+      "value_type": "date",
+      "page": 1
+    },
+    {
+      "id": "f_decl_missing_doc",
+      "label_text": "আমি বয়সের প্রামাণ্য নথি হিসেবে",
+      "label_script": "bengali",
+      "value_bbox": [
+        203,
+        1263,
+        246,
+        21
+      ],
+      "value_type": "document",
+      "page": 1
+    },
+    {
+      "id": "f_decl_date",
+      "label_text": "তারিখ",
+      "label_script": "bengali",
+      "value_bbox": [
+        184,
+        1423,
+        216,
+        32
+      ],
+      "value_type": "date",
+      "page": 1
+    },
+    {
+      "id": "f_decl_place",
+      "label_text": "স্থান",
+      "label_script": "bengali",
+      "value_bbox": [
+        184,
+        1460,
+        216,
+        42
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_ac_number",
+      "label_text": "নং",
+      "label_script": "bengali",
+      "value_bbox": [
+        804,
+        311,
+        98,
+        39
+      ],
+      "value_type": "serial",
+      "page": 0
+    },
+    {
+      "id": "f_ac_name",
+      "label_text": "নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        986,
+        303,
+        453,
+        37
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_form_no",
+      "label_text": "ফর্ম নং",
+      "label_script": "bengali",
+      "value_bbox": [
+        1221,
+        125,
+        229,
+        42
+      ],
+      "value_type": "serial",
+      "page": 0
+    },
+    {
+      "id": "f_res_house",
+      "label_text": "গৃহ/ভবন/অ্যাপার্টমেন্ট নং",
+      "label_script": "bengali",
+      "value_bbox": [
+        565,
+        1765,
+        257,
+        50
+      ],
+      "value_type": "house",
+      "page": 0
+    },
+    {
+      "id": "f_res_house_en",
+      "label_text": "House/Building/Apartment No.",
+      "label_script": "latin",
+      "value_bbox": [
+        638,
+        1819,
+        188,
+        41
+      ],
+      "value_type": "house",
+      "page": 0,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_res_town",
+      "label_text": "শহর/গ্রাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        427,
+        1864,
+        395,
+        39
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_res_town_en",
+      "label_text": "Town/ Village",
+      "label_script": "latin",
+      "value_bbox": [
+        476,
+        1909,
+        349,
+        37
+      ],
+      "value_type": "city",
+      "page": 0,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_res_pin",
+      "label_text": "পিন কোড",
+      "label_script": "bengali",
+      "value_bbox": [
+        431,
+        1949,
+        396,
+        35
+      ],
+      "value_type": "pincode",
+      "page": 0
+    },
+    {
+      "id": "f_res_district",
+      "label_text": "জেলা",
+      "label_script": "bengali",
+      "value_bbox": [
+        388,
+        1986,
+        438,
+        39
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_res_street",
+      "label_text": "গলি/এলাকা/অঞ্চল/মহল্লা/রাস্তা",
+      "label_script": "bengali",
+      "value_bbox": [
+        1130,
+        1766,
+        390,
+        47
+      ],
+      "value_type": "street",
+      "page": 0
+    },
+    {
+      "id": "f_dob_other",
+      "label_text": "(আ) জন্ম তারিখের প্রামাণিক শংসাপত্র হিসাবে অন্য কোনও নথি :- (যদি উপরিবর্ণিত কোনও নথি না থাকে) (অনুগ্রহ করে উল্লেখ করুন)",
+      "label_script": "bengali",
+      "value_bbox": [
+        1291,
+        1704,
+        248,
+        53
+      ],
+      "value_type": "document",
+      "page": 0
+    },
+    {
+      "id": "f_res_street_en",
+      "label_text": "State/Area/Locality/Mohalla/Road",
+      "label_script": "latin",
+      "value_bbox": [
+        1177,
+        1817,
+        340,
+        41
+      ],
+      "value_type": "street",
+      "page": 0,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_res_postoffice",
+      "label_text": "ডাকঘর",
+      "label_script": "bengali",
+      "value_bbox": [
+        915,
+        1864,
+        603,
+        41
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_res_postoffice_en",
+      "label_text": "Post Office",
+      "label_script": "latin",
+      "value_bbox": [
+        956,
+        1907,
+        562,
+        38
+      ],
+      "value_type": "city",
+      "page": 0,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_res_tehsil",
+      "label_text": "তহসিল/তালুক/মণ্ডল",
+      "label_script": "bengali",
+      "value_bbox": [
+        1042,
+        1950,
+        476,
+        34
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_res_state",
+      "label_text": "রাজ্য/কেন্দ্রশাসিত অঞ্চল",
+      "label_script": "bengali",
+      "value_bbox": [
+        1066,
+        1987,
+        453,
+        34
+      ],
+      "value_type": "state",
+      "page": 0
+    },
+    {
+      "id": "f_disability_pct",
+      "label_text": "অক্ষমতার শতকরা হার",
+      "label_script": "bengali",
+      "value_bbox": [
+        354,
+        638,
+        71,
+        50
+      ],
+      "value_type": "percent",
+      "page": 1
+    },
+    {
+      "id": "f_ack_number",
+      "label_text": "প্রাপ্তিস্বীকার পত্র নং",
+      "label_script": "bengali",
+      "value_bbox": [
+        322,
+        2080,
+        750,
+        24
+      ],
+      "value_type": "id_number",
+      "page": 1
+    },
+    {
+      "id": "f_ack_received_name",
+      "label_text": "৬নং ফর্মে শ্রী/শ্রীমতী/কুমারী",
+      "label_script": "bengali",
+      "value_bbox": [
+        383,
+        2108,
+        750,
+        28
+      ],
+      "value_type": "name",
+      "page": 1
+    },
+    {
+      "id": "f_ack_date",
+      "label_text": "তারিখ",
+      "label_script": "bengali",
+      "value_bbox": [
+        1149,
+        2063,
+        361,
+        43
+      ],
+      "value_type": "date",
+      "page": 1
+    }
+  ],
+  "tables": []
+}

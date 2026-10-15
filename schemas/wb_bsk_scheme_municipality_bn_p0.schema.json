@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_municipality": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "মিউনিসিপ্যালিটি"
+        },
+        "f_district": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "জেলা"
+        },
+        "f_scheme_name": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "জন্য প্রয়োজনীয় সরকারি প্রকল্পটির নাম লিখুন)"
+        },
+        "f_previous_scheme": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "আমি পূর্বে"
+        },
+        "f_applicant_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নাম"
+        },
+        "f_address": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "ঠিকানা"
+        },
+        "f_mobile": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "মোবাইল নম্বর"
+        },
+        "f_aadhaar_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "আধার কার্ডের নম্বর"
+        },
+        "f_family_members": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "পরিবারের অন্যান্য সদস্যদের নাম"
+        },
+        "f_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "তারিখ"
+        },
+        "f_signature": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "স্বাক্ষর"
+        }
+      },
+      "required": [
+        "f_municipality",
+        "f_district",
+        "f_scheme_name",
+        "f_previous_scheme",
+        "f_applicant_name",
+        "f_address",
+        "f_mobile",
+        "f_aadhaar_number",
+        "f_family_members",
+        "f_date",
+        "f_signature"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "wb_bsk_scheme_municipality_bn_p0"
+}

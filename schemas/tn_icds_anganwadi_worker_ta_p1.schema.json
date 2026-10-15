@@ -1,0 +1,166 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_urban_centre": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "மாநகராட்சி/ நகராட்சி / பேரூராட்சி/ (நகரம்)"
+        },
+        "f_rural_centre": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "கிராமங்களிலுள்ள குழந்தைகள் மையங்களில் (ஊரகம்)"
+        },
+        "f_if_married": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "15.1) திருமணமானவர் எனில்"
+        }
+      },
+      "required": [
+        "f_urban_centre",
+        "f_rural_centre",
+        "f_if_married"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_q13_1_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q13_1_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q13_2_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q13_2_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q13_3_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q13_3_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q14_1_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q14_1_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q14_2_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q14_2_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q14_3_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q14_3_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q15_1_a_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q15_1_a_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q15_1_b_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q15_1_b_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q15_1_c_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q15_1_c_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q15_1_d_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q15_1_d_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q15_1_e_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q15_1_e_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q15_1_f_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q15_1_f_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        }
+      },
+      "required": [
+        "cb_q13_1_yes",
+        "cb_q13_1_no",
+        "cb_q13_2_no",
+        "cb_q13_2_yes",
+        "cb_q13_3_no",
+        "cb_q13_3_yes",
+        "cb_q14_1_no",
+        "cb_q14_1_yes",
+        "cb_q14_2_no",
+        "cb_q14_2_yes",
+        "cb_q14_3_no",
+        "cb_q14_3_yes",
+        "cb_q15_1_a_no",
+        "cb_q15_1_a_yes",
+        "cb_q15_1_b_no",
+        "cb_q15_1_b_yes",
+        "cb_q15_1_c_no",
+        "cb_q15_1_c_yes",
+        "cb_q15_1_d_no",
+        "cb_q15_1_d_yes",
+        "cb_q15_1_e_no",
+        "cb_q15_1_e_yes",
+        "cb_q15_1_f_no",
+        "cb_q15_1_f_yes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "tn_icds_anganwadi_worker_ta_p1"
+}

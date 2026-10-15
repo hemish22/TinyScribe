@@ -1,0 +1,131 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_person_surname": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Surname / குடும்பப் பெயர்"
+        },
+        "f_person_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "EPIC No. (if available) / வாக்காளர் புகைப்பட அடையாள அட்டை எண் (இருந்தால்)"
+        },
+        "f_addr_house": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "House / Building/ Apartment No/ வீடு/கட்டிடம்/ அடுக்குமாடி குடியிருப்பு எண்"
+        },
+        "f_addr_street": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Street/Area/Locality / Mohalla/Road / தெரு/ பகுதி/உள்ளூர்/ மொஹல்லா/சாலை"
+        },
+        "f_addr_town": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Town/Village நகரம்/கிராமம்"
+        },
+        "f_addr_post_office": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Post Office /அஞ்சல் அலுவலகம்"
+        },
+        "f_addr_tehsil": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Tehsil/Taluqa/Mandal / வட்டம் /தாலுகா/ மண்டலம்"
+        },
+        "f_addr_district": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "District/ மாவட்டம்"
+        },
+        "f_addr_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "State/UT / மாநிலம்/ யூனியன் பிரதேசம்"
+        },
+        "f_decl_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date/தேதி"
+        },
+        "f_decl_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Place / இடம்"
+        },
+        "f_addr_pin": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "PIN Code / அஞ்சல் குறியீட்டு எண்"
+        },
+        "f_person_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name / பெயர்"
+        }
+      },
+      "required": [
+        "f_person_surname",
+        "f_person_epic",
+        "f_addr_house",
+        "f_addr_street",
+        "f_addr_town",
+        "f_addr_post_office",
+        "f_addr_tehsil",
+        "f_addr_district",
+        "f_addr_state",
+        "f_decl_date",
+        "f_decl_place",
+        "f_addr_pin",
+        "f_person_name"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_own_shifted": {
+          "type": "boolean",
+          "description": "Permanently shifted / வசிக்கவில்லை / நிரந்தரமாக குடிபெயர்ந்தவர்"
+        },
+        "cb_own_enrolled": {
+          "type": "boolean",
+          "description": "Already enrolled / ஏற்கனவே பதிவுசெய்யப்பட்டுள்ளது"
+        },
+        "cb_own_not_citizen": {
+          "type": "boolean",
+          "description": "Not Indian Citizen / இந்திய குடிமகன் அல்ல"
+        },
+        "cb_death_cert_yes": {
+          "type": "boolean",
+          "description": "Yes / ஆம்"
+        },
+        "cb_death_cert_no": {
+          "type": "boolean",
+          "description": "No / இல்லை"
+        }
+      },
+      "required": [
+        "cb_own_shifted",
+        "cb_own_enrolled",
+        "cb_own_not_citizen",
+        "cb_death_cert_yes",
+        "cb_death_cert_no"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form7_ta_p1"
+}

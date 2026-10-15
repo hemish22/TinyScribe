@@ -1,0 +1,288 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_name_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নাম ও তারপর মধ্য নাম"
+        },
+        "f_name_state_2": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নাম ও তারপর মধ্য নাম"
+        },
+        "f_surname_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "পদবি (যদি থাকে)"
+        },
+        "f_name_english": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নাম ও তারপর মধ্য নাম"
+        },
+        "f_name_english_2": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নাম ও তারপর মধ্য নাম"
+        },
+        "f_surname_english": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "পদবি (যদি থাকে)"
+        },
+        "f_rel_name_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "*(২) (ক) এর মধ্যে যে কোনও একজন আত্মীয়ের নাম ও পদবি (বাংলায়)"
+        },
+        "f_rel_name_english": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "*(২)(খ) উপরিবর্ণিত আত্মীয়ের নাম ও পদবি (ইংরেজি বড় হাতের অক্ষরে)"
+        },
+        "f_mobile": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(৩) নিজের মোবাইল নম্বর (যদি থাকে)"
+        },
+        "f_mobile_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "২নং দফায় উল্লিখিত আত্মীয়ের মোবাইল নম্বর"
+        },
+        "f_email": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(৪) নিজের ই-মেল আইডি (যদি থাকে)"
+        },
+        "f_email_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "২নং দফায় উল্লিখিত আত্মীয়ের ই-মেল আইডি"
+        },
+        "f_aadhaar_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "আধার নম্বর"
+        },
+        "f_dob": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(৭)(ক) জন্ম তারিখ"
+        },
+        "f_ac_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নং"
+        },
+        "f_ac_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নাম"
+        },
+        "f_form_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "ফর্ম নং"
+        },
+        "f_res_house": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "গৃহ/ভবন/অ্যাপার্টমেন্ট নং"
+        },
+        "f_res_house_en": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "House/Building/Apartment No."
+        },
+        "f_res_town": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "শহর/গ্রাম"
+        },
+        "f_res_town_en": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Town/ Village"
+        },
+        "f_res_pin": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "পিন কোড"
+        },
+        "f_res_district": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "জেলা"
+        },
+        "f_res_street": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "গলি/এলাকা/অঞ্চল/মহল্লা/রাস্তা"
+        },
+        "f_dob_other": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(আ) জন্ম তারিখের প্রামাণিক শংসাপত্র হিসাবে অন্য কোনও নথি :- (যদি উপরিবর্ণিত কোনও নথি না থাকে) (অনুগ্রহ করে উল্লেখ করুন)"
+        },
+        "f_res_street_en": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "State/Area/Locality/Mohalla/Road"
+        },
+        "f_res_postoffice": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "ডাকঘর"
+        },
+        "f_res_postoffice_en": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Post Office"
+        },
+        "f_res_tehsil": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "তহসিল/তালুক/মণ্ডল"
+        },
+        "f_res_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "রাজ্য/কেন্দ্রশাসিত অঞ্চল"
+        }
+      },
+      "required": [
+        "f_name_state",
+        "f_name_state_2",
+        "f_surname_state",
+        "f_name_english",
+        "f_name_english_2",
+        "f_surname_english",
+        "f_rel_name_state",
+        "f_rel_name_english",
+        "f_mobile",
+        "f_mobile_relative",
+        "f_email",
+        "f_email_relative",
+        "f_aadhaar_number",
+        "f_dob",
+        "f_ac_number",
+        "f_ac_name",
+        "f_form_no",
+        "f_res_house",
+        "f_res_house_en",
+        "f_res_town",
+        "f_res_town_en",
+        "f_res_pin",
+        "f_res_district",
+        "f_res_street",
+        "f_dob_other",
+        "f_res_street_en",
+        "f_res_postoffice",
+        "f_res_postoffice_en",
+        "f_res_tehsil",
+        "f_res_state"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_aadhaar_a": {
+          "type": "boolean",
+          "description": "আধার নম্বর"
+        },
+        "cb_aadhaar_b": {
+          "type": "boolean",
+          "description": "আমি আধার নম্বর প্রদান করতে পারিনি, কারণ আমার আধার নম্বর নেই।"
+        },
+        "cb_gender_male": {
+          "type": "boolean",
+          "description": "পুরুষ"
+        },
+        "cb_gender_female": {
+          "type": "boolean",
+          "description": "নারী"
+        },
+        "cb_gender_third": {
+          "type": "boolean",
+          "description": "তৃতীয় লিঙ্গ"
+        },
+        "cb_rel_father": {
+          "type": "boolean",
+          "description": "বাবা"
+        },
+        "cb_rel_mother": {
+          "type": "boolean",
+          "description": "মা"
+        },
+        "cb_rel_husband": {
+          "type": "boolean",
+          "description": "স্বামী"
+        },
+        "cb_rel_wife": {
+          "type": "boolean",
+          "description": "স্ত্রী"
+        },
+        "cb_rel_guardian": {
+          "type": "boolean",
+          "description": "অনাথের ক্ষেত্রে আইনসম্মত অভিভাবক/তৃতীয় লিঙ্গভুক্তের ক্ষেত্রে গুরু"
+        },
+        "cb_dob_proof_1": {
+          "type": "boolean",
+          "description": "উপযুক্ত স্থানীয় শাসনমূলক সংস্থা/পৌর কর্তৃপক্ষ/জন্ম এবং মৃত্যু নিবন্ধক কর্তৃক প্রদত্ত জন্মের শংসাপত্র"
+        },
+        "cb_dob_proof_2": {
+          "type": "boolean",
+          "description": "আধার কার্ড"
+        },
+        "cb_dob_proof_5": {
+          "type": "boolean",
+          "description": "সি বি এস ই/আই সি এস ই / রাজ্য শিক্ষা পর্ষদ কর্তৃক প্রদত্ত দশম বা দ্বাদশ শ্রেণির শংসাপত্র (যদি সেখানে জন্মতারিখ উল্লেখ করা থাকে)"
+        },
+        "cb_dob_proof_3": {
+          "type": "boolean",
+          "description": "প্যান (PAN) কার্ড"
+        },
+        "cb_dob_proof_4": {
+          "type": "boolean",
+          "description": "ড্রাইভিং লাইসেন্স"
+        },
+        "cb_dob_proof_6": {
+          "type": "boolean",
+          "description": "ভারতীয় পাসপোর্ট"
+        }
+      },
+      "required": [
+        "cb_aadhaar_a",
+        "cb_aadhaar_b",
+        "cb_gender_male",
+        "cb_gender_female",
+        "cb_gender_third",
+        "cb_rel_father",
+        "cb_rel_mother",
+        "cb_rel_husband",
+        "cb_rel_wife",
+        "cb_rel_guardian",
+        "cb_dob_proof_1",
+        "cb_dob_proof_2",
+        "cb_dob_proof_5",
+        "cb_dob_proof_3",
+        "cb_dob_proof_4",
+        "cb_dob_proof_6"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6_bn_p0"
+}

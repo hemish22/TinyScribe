@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_ack_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Acknowledgement Number/ஒப்புகை சீட்டு எண்"
+        },
+        "f_ack_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date/நாள்"
+        },
+        "f_ack_received_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Received the application in Form 7 of Thiru / Tmt /Selvi/ திரு/திருமதி/ செல்வி"
+        }
+      },
+      "required": [
+        "f_ack_number",
+        "f_ack_date",
+        "f_ack_received_name"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form7_ta_p2"
+}

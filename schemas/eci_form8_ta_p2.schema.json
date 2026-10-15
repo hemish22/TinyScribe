@@ -1,0 +1,133 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_disability_pct": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Percentage of disability: / இயலாமையின் சதவிகிதம்"
+        },
+        "f_corr_doc": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name of Document in support of above claim attached / மேற்கண்ட ஏற்புரைக்கு ஆதாரமாக இணைக்கப்பட்ட ஆவணத்தின் பெயர்"
+        },
+        "f_corr_doc_2": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name of Document in support of above claim attached / மேற்கண்ட ஏற்புரைக்கு ஆதாரமாக இணைக்கப்பட்ட ஆவணத்தின் பெயர்"
+        },
+        "f_disability_other": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "If any other (Give Description) / வேறு ஏதேனும் இருந்தால் (விளக்கம் தரவும்)"
+        },
+        "f_decl_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date / தேதி"
+        },
+        "f_decl_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Place / இடம்"
+        },
+        "f_ack_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Acknowledgement Number/ஒப்புகை சீட்டு எண்"
+        },
+        "f_ack_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date/நாள்"
+        },
+        "f_ack_received_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Received the application in Form 8 of Thiru / Tmt /Selvi/ திரு/திருமதி/ செல்வி"
+        },
+        "f_ack_received_name_2": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "இடமிருந்து படிவம் 8 பெற்றுக் கொள்ளப்பட்டது"
+        }
+      },
+      "required": [
+        "f_disability_pct",
+        "f_corr_doc",
+        "f_corr_doc_2",
+        "f_disability_other",
+        "f_decl_date",
+        "f_decl_place",
+        "f_ack_no",
+        "f_ack_date",
+        "f_ack_received_name",
+        "f_ack_received_name_2"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_epic_lost": {
+          "type": "boolean",
+          "description": "Lost / தொலைந்ததால்"
+        },
+        "cb_epic_destroyed": {
+          "type": "boolean",
+          "description": "Destroyed due to reason beyond control like floods, fire, other natural disaster etc / வெள்ளம், தீ, பிற இயற்கை பேரிடர் போன்ற கட்டுப்பாடற்ற காரணங்களால் அழிக்கப்பட்டதால்"
+        },
+        "cb_epic_mutilated": {
+          "type": "boolean",
+          "description": "Mutilated / சிதைக்கப்பட்டதால்"
+        },
+        "cb_dis_locomotive": {
+          "type": "boolean",
+          "description": "Locomotive / உடலியக்க இயலாமை"
+        },
+        "cb_dis_visual": {
+          "type": "boolean",
+          "description": "Visual /கண் பார்வை"
+        },
+        "cb_dis_deafdumb": {
+          "type": "boolean",
+          "description": "Deaf & Dumb / காது கேளாமை & வாய் பேசாமை"
+        },
+        "cb_dis_other": {
+          "type": "boolean",
+          "description": "If any other (Give Description) / வேறு ஏதேனும் இருந்தால் (விளக்கம் தரவும்)"
+        },
+        "cb_dis_cert_yes": {
+          "type": "boolean",
+          "description": "Yes/ ஆம்"
+        },
+        "cb_dis_cert_no": {
+          "type": "boolean",
+          "description": "No/ இல்லை"
+        }
+      },
+      "required": [
+        "cb_epic_lost",
+        "cb_epic_destroyed",
+        "cb_epic_mutilated",
+        "cb_dis_locomotive",
+        "cb_dis_visual",
+        "cb_dis_deafdumb",
+        "cb_dis_other",
+        "cb_dis_cert_yes",
+        "cb_dis_cert_no"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form8_ta_p2"
+}

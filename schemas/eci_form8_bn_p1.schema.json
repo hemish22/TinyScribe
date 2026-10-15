@@ -1,0 +1,173 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_corrected_value": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "বাংলায়"
+        },
+        "f_corrected_value_en": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "ইংরেজিতে"
+        },
+        "f_corr_doc": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "উপরিবর্ণিত দাবির সমর্থনে সংযোজিত নথির নাম"
+        },
+        "f_corr_doc_2": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "উপরিবর্ণিত দাবির সমর্থনে সংযোজিত নথির নাম"
+        },
+        "f_decl_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "তারিখ"
+        },
+        "f_ack_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "প্রাপ্তিস্বীক্ষার পত্র নং"
+        },
+        "f_ack_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "তারিখ"
+        },
+        "f_ack_received_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "৮ নং ফর্মে শ্রী/শ্রীমতী/কুমারী"
+        },
+        "f_disability_pct": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "অক্ষমতার শতকরা হার"
+        },
+        "f_decl_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "স্থান"
+        }
+      },
+      "required": [
+        "f_corrected_value",
+        "f_corrected_value_en",
+        "f_corr_doc",
+        "f_corr_doc_2",
+        "f_decl_date",
+        "f_ack_no",
+        "f_ack_date",
+        "f_ack_received_name",
+        "f_disability_pct",
+        "f_decl_place"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_corr_name": {
+          "type": "boolean",
+          "description": "নাম"
+        },
+        "cb_corr_gender": {
+          "type": "boolean",
+          "description": "লিঙ্গ"
+        },
+        "cb_corr_dob": {
+          "type": "boolean",
+          "description": "জন্ম তারিখ/বয়স"
+        },
+        "cb_corr_relation_type": {
+          "type": "boolean",
+          "description": "সম্পর্কের ধরণ"
+        },
+        "cb_corr_relation_name": {
+          "type": "boolean",
+          "description": "সম্পর্কিত ব্যক্তির নাম"
+        },
+        "cb_corr_address": {
+          "type": "boolean",
+          "description": "ঠিকানা"
+        },
+        "cb_corr_mobile": {
+          "type": "boolean",
+          "description": "মোবাইল নম্বর"
+        },
+        "cb_corr_photo": {
+          "type": "boolean",
+          "description": "ফোটো"
+        },
+        "cb_epic_lost": {
+          "type": "boolean",
+          "description": "হারিয়ে যাওয়া"
+        },
+        "cb_epic_destroyed": {
+          "type": "boolean",
+          "description": "বন্যা, অগ্নিকান্ড, অন্যান্য প্রাকৃতিক বিপর্যয় ইত্যাদি কারণে বিনষ্ট"
+        },
+        "cb_epic_mutilated": {
+          "type": "boolean",
+          "description": "ছিঁড়ে যাওয়া"
+        },
+        "cb_dis_locomotive": {
+          "type": "boolean",
+          "description": "চলৎশক্তিহীনতা"
+        },
+        "cb_dis_visual": {
+          "type": "boolean",
+          "description": "দৃষ্টিহীনতা"
+        },
+        "cb_dis_deafdumb": {
+          "type": "boolean",
+          "description": "মূক ও বধিরতা"
+        },
+        "cb_dis_other": {
+          "type": "boolean",
+          "description": "যদি অন্য কিছু হয় (বর্ণনা করুন)"
+        },
+        "cb_dis_cert_yes": {
+          "type": "boolean",
+          "description": "হ্যাঁ"
+        },
+        "cb_dis_cert_no": {
+          "type": "boolean",
+          "description": "না"
+        }
+      },
+      "required": [
+        "cb_corr_name",
+        "cb_corr_gender",
+        "cb_corr_dob",
+        "cb_corr_relation_type",
+        "cb_corr_relation_name",
+        "cb_corr_address",
+        "cb_corr_mobile",
+        "cb_corr_photo",
+        "cb_epic_lost",
+        "cb_epic_destroyed",
+        "cb_epic_mutilated",
+        "cb_dis_locomotive",
+        "cb_dis_visual",
+        "cb_dis_deafdumb",
+        "cb_dis_other",
+        "cb_dis_cert_yes",
+        "cb_dis_cert_no"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form8_bn_p1"
+}

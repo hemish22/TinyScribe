@@ -1,0 +1,264 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_form_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "प्ररूप सं0."
+        },
+        "f_ac_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "विधान सभा निर्वाचन क्षेत्र की संख्या और नाम - सं."
+        },
+        "f_ac_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "विधान सभा निर्वाचन क्षेत्र की संख्या और नाम - नाम"
+        },
+        "f_pc_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "संसदीय निर्वाचन क्षेत्र की संख्या और नाम@ - सं."
+        },
+        "f_pc_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "संसदीय निर्वाचन क्षेत्र की संख्या और नाम@ - नाम"
+        },
+        "f_name_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(1)(क) नाम (राज्य की राजभाषा में) - प्रथम नाम, उसके पश्चात मध्य नाम"
+        },
+        "f_surname_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(1)(क) उपनाम (यदि कोई हो)"
+        },
+        "f_name_english": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(1)(ख) नाम (अंग्रेजी में, बड़े अक्षरों में) - प्रथम नाम, उसके पश्चात् मध्य नाम"
+        },
+        "f_surname_english": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(1)(ख) उपनाम (यदि कोई हो)"
+        },
+        "f_rel_name_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "*(2)(क) नातेदार में से किसी एक का नाम और उपनाम (राज्य की राजभाषा में)"
+        },
+        "f_rel_name_english": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "*(2)(ख) उपरोक्त उल्लिखित नातेदार का नाम और उपनाम (अंग्रेजी में, बड़े अक्षरों में)"
+        },
+        "f_mobile": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(3) स्वयं का मोबाइल सं0 (यदि उपलब्ध है) (या) मद सं.2 पर उल्लिखित नातेदार की मोबाइल सं0."
+        },
+        "f_email": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(4) स्वयं का ई-मेल खाता (यदि उपलब्ध है) (या) मद सं.2 पर उल्लिखित नातेदार का ई-मेल खाता"
+        },
+        "f_aadhaar_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(5)(क) आधार सं0"
+        },
+        "f_dob": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(7)(क) जन्म तारीख"
+        },
+        "f_dob_other": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(7)(ख)(ii) जन्म तारीख के सबूत के लिए कोई अन्ये दस्तावेज़:-(यदि कोई प्रमुख दस्तावेज़ उपलब्ध नहीं हो) (कृपया विनिर्दिष्ट करे)"
+        },
+        "f_res_house": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(क) मकान/भवन/अपार्टमेंट सं0"
+        },
+        "f_res_street": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(क) गली/क्षेत्र/स्थानीय क्षेत्र\\मोहल्ला/रोड"
+        },
+        "f_res_town": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(क) नगर/गाँव"
+        },
+        "f_res_postoffice": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(क) डाक घर"
+        },
+        "f_res_pin": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(क) पिन कोड"
+        },
+        "f_res_tehsil": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(क) तहसील/तालुका/मंडल"
+        },
+        "f_res_district": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(क) जिला"
+        },
+        "f_res_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(क) राज्य/संघ राज्यक्षेत्र"
+        },
+        "f_mobile_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(3) स्वयं का मोबाइल सं0 (यदि उपलब्ध है) (या) मद सं.2 पर उल्लिखित नातेदार की मोबाइल सं0."
+        },
+        "f_email_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(4) स्वयं का ई-मेल खाता (यदि उपलब्ध है) (या) मद सं.2 पर उल्लिखित नातेदार का ई-मेल खाता"
+        }
+      },
+      "required": [
+        "f_form_no",
+        "f_ac_number",
+        "f_ac_name",
+        "f_pc_number",
+        "f_pc_name",
+        "f_name_state",
+        "f_surname_state",
+        "f_name_english",
+        "f_surname_english",
+        "f_rel_name_state",
+        "f_rel_name_english",
+        "f_mobile",
+        "f_email",
+        "f_aadhaar_number",
+        "f_dob",
+        "f_dob_other",
+        "f_res_house",
+        "f_res_street",
+        "f_res_town",
+        "f_res_postoffice",
+        "f_res_pin",
+        "f_res_tehsil",
+        "f_res_district",
+        "f_res_state",
+        "f_mobile_relative",
+        "f_email_relative"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_rel_father": {
+          "type": "boolean",
+          "description": "पिता या"
+        },
+        "cb_rel_mother": {
+          "type": "boolean",
+          "description": "माता या"
+        },
+        "cb_rel_husband": {
+          "type": "boolean",
+          "description": "पति या"
+        },
+        "cb_rel_wife": {
+          "type": "boolean",
+          "description": "पत्नी या"
+        },
+        "cb_rel_guardian": {
+          "type": "boolean",
+          "description": "अनाथ की दशा में विधिक संरक्षक / तृतीय लिंग की दशा में गुरु"
+        },
+        "cb_aadhaar_a": {
+          "type": "boolean",
+          "description": "आधार सं0"
+        },
+        "cb_aadhaar_b": {
+          "type": "boolean",
+          "description": "मैं आधार सं0 प्रस्तुत नहीं कर सकता, क्योंकि मेरे पास आधार संख्या नहीं है।"
+        },
+        "cb_gender_male": {
+          "type": "boolean",
+          "description": "पुरुष"
+        },
+        "cb_gender_female": {
+          "type": "boolean",
+          "description": "स्त्री"
+        },
+        "cb_gender_third": {
+          "type": "boolean",
+          "description": "तृतीय लिंग"
+        },
+        "cb_dob_proof_1": {
+          "type": "boolean",
+          "description": "सक्षम स्थानीय निकाय/नगरपालिक प्राधिकरण / जन्म-मृत्यु रजिस्ट्रार द्वारा जारी जन्म प्रमाणपत्र"
+        },
+        "cb_dob_proof_2": {
+          "type": "boolean",
+          "description": "आधार कार्ड"
+        },
+        "cb_dob_proof_3": {
+          "type": "boolean",
+          "description": "पैन कार्ड"
+        },
+        "cb_dob_proof_4": {
+          "type": "boolean",
+          "description": "चालन अनुज्ञप्ति"
+        },
+        "cb_dob_proof_5": {
+          "type": "boolean",
+          "description": "सीबीएसई/आईसीएसई/राज्य शिक्षा बोर्डो द्वारा जारी कक्षा 10 या 12 का प्रमाणपत्र, यदि इनमे जन्म तारीख अंतर्विष्ट है।"
+        },
+        "cb_dob_proof_6": {
+          "type": "boolean",
+          "description": "भारतीय पासपोर्ट"
+        }
+      },
+      "required": [
+        "cb_rel_father",
+        "cb_rel_mother",
+        "cb_rel_husband",
+        "cb_rel_wife",
+        "cb_rel_guardian",
+        "cb_aadhaar_a",
+        "cb_aadhaar_b",
+        "cb_gender_male",
+        "cb_gender_female",
+        "cb_gender_third",
+        "cb_dob_proof_1",
+        "cb_dob_proof_2",
+        "cb_dob_proof_3",
+        "cb_dob_proof_4",
+        "cb_dob_proof_5",
+        "cb_dob_proof_6"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6_hi_p0"
+}

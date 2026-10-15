@@ -1,0 +1,264 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_form_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "FORM No."
+        },
+        "f_name_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(1)(a) Name (In Official Language of State) - First Name followed by Middle Name"
+        },
+        "f_surname_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(1)(a) Surname (if any)"
+        },
+        "f_name_english": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(1)(b) Name (In English in BLOCK LETTERS) - First Name followed by Middle Name"
+        },
+        "f_surname_english": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(1)(b) Surname (if any)"
+        },
+        "f_rel_name_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "*(2)(a) Name and Surname (in official language of State) of relative"
+        },
+        "f_rel_name_english": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "*(2)(b) Name and Surname (In English in BLOCK LETTERS) of the relative mentioned at Item No. 2(a)"
+        },
+        "f_mobile": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(3) Mobile No. of Self (if available) (or) Of relative mentioned at Item No. 2"
+        },
+        "f_email": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(4) Email ID of Self (If available) (or) Of relative mentioned at Item No. 2"
+        },
+        "f_aadhaar_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(5)(a) Aadhaar Number"
+        },
+        "f_dob": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(7)(a) Date of Birth"
+        },
+        "f_res_house": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(a) House/Building/Apartment No."
+        },
+        "f_res_street": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(a) Street/Area/Locality/Mohalla/Road"
+        },
+        "f_res_town": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(a) Town/Village"
+        },
+        "f_res_postoffice": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(a) Post Office"
+        },
+        "f_res_pin": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(a) PIN Code"
+        },
+        "f_res_tehsil": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(a) Tehsil/Taluqa/Mandal"
+        },
+        "f_res_district": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(a) District"
+        },
+        "f_res_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(8)(a) State/UT"
+        },
+        "f_dob_other": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(7)(b)(ii) Any Other Document for Proof of Date of Birth - Pl. Specify"
+        },
+        "f_ac_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. & Name of Assembly Constituency - No."
+        },
+        "f_ac_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. & Name of Assembly Constituency - Name"
+        },
+        "f_pc_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. & Name of Parliamentary Constituency@ - No."
+        },
+        "f_pc_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. & Name of Parliamentary Constituency@ - Name"
+        },
+        "f_mobile_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(3) Mobile No. of Self (if available) (or) Of relative mentioned at Item No. 2"
+        },
+        "f_email_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(4) Email ID of Self (If available) (or) Of relative mentioned at Item No. 2"
+        }
+      },
+      "required": [
+        "f_form_no",
+        "f_name_state",
+        "f_surname_state",
+        "f_name_english",
+        "f_surname_english",
+        "f_rel_name_state",
+        "f_rel_name_english",
+        "f_mobile",
+        "f_email",
+        "f_aadhaar_number",
+        "f_dob",
+        "f_res_house",
+        "f_res_street",
+        "f_res_town",
+        "f_res_postoffice",
+        "f_res_pin",
+        "f_res_tehsil",
+        "f_res_district",
+        "f_res_state",
+        "f_dob_other",
+        "f_ac_number",
+        "f_ac_name",
+        "f_pc_number",
+        "f_pc_name",
+        "f_mobile_relative",
+        "f_email_relative"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_rel_father": {
+          "type": "boolean",
+          "description": "Father"
+        },
+        "cb_rel_mother": {
+          "type": "boolean",
+          "description": "Mother"
+        },
+        "cb_rel_husband": {
+          "type": "boolean",
+          "description": "Husband"
+        },
+        "cb_rel_wife": {
+          "type": "boolean",
+          "description": "Wife"
+        },
+        "cb_rel_guardian": {
+          "type": "boolean",
+          "description": "Legal Guardian in case of orphan/Guru in case of Third Gender"
+        },
+        "cb_aadhaar_a": {
+          "type": "boolean",
+          "description": "Aadhaar Number"
+        },
+        "cb_aadhaar_b": {
+          "type": "boolean",
+          "description": "I am not able to furnish my Aadhaar Number because I don't have Aadhaar Number"
+        },
+        "cb_gender_male": {
+          "type": "boolean",
+          "description": "Male"
+        },
+        "cb_gender_female": {
+          "type": "boolean",
+          "description": "Female"
+        },
+        "cb_gender_third": {
+          "type": "boolean",
+          "description": "Third Gender"
+        },
+        "cb_dob_proof_1": {
+          "type": "boolean",
+          "description": "Birth certificate issued by Competent Local Body/Municipal Authority/Registrar of Births and Deaths"
+        },
+        "cb_dob_proof_2": {
+          "type": "boolean",
+          "description": "Aadhaar Card"
+        },
+        "cb_dob_proof_3": {
+          "type": "boolean",
+          "description": "PAN Card"
+        },
+        "cb_dob_proof_4": {
+          "type": "boolean",
+          "description": "Driving License"
+        },
+        "cb_dob_proof_5": {
+          "type": "boolean",
+          "description": "Certificates of Class X or Class XII issued by CBSE/ICSE/State Education Boards, if it contains Date of Birth"
+        },
+        "cb_dob_proof_6": {
+          "type": "boolean",
+          "description": "Indian Passport"
+        }
+      },
+      "required": [
+        "cb_rel_father",
+        "cb_rel_mother",
+        "cb_rel_husband",
+        "cb_rel_wife",
+        "cb_rel_guardian",
+        "cb_aadhaar_a",
+        "cb_aadhaar_b",
+        "cb_gender_male",
+        "cb_gender_female",
+        "cb_gender_third",
+        "cb_dob_proof_1",
+        "cb_dob_proof_2",
+        "cb_dob_proof_3",
+        "cb_dob_proof_4",
+        "cb_dob_proof_5",
+        "cb_dob_proof_6"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6_en_p0"
+}

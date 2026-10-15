@@ -1,0 +1,494 @@
+{
+  "schema_version": "0",
+  "template_id": "eci_form7_bn",
+  "source_url": "https://ceowestbengal.wb.gov.in/Downloads/Forms/RollRevision/Form-7_Bengali.pdf",
+  "licence": "GODL-India",
+  "language": "bengali",
+  "fillable": false,
+  "checkboxes": [
+    {
+      "id": "cb_del_root",
+      "bbox": [
+        165,
+        715,
+        57,
+        41
+      ],
+      "label_text": "(ক) নিম্নলিখিত যে কোনও একটি কারণে আমি ইতিমধ্যে বর্তমান ভোটার তালিকায় অন্তর্ভুক্ত নিম্নবর্ণিত ব্যক্তির নাম বাদ দেওয়ার অনুরোধ জানাচ্ছি",
+      "label_script": "bengali",
+      "group": "deletion_application",
+      "page": 0
+    },
+    {
+      "id": "cb_del_death",
+      "bbox": [
+        224,
+        774,
+        44,
+        34
+      ],
+      "label_text": "মৃত্যু",
+      "label_script": "bengali",
+      "group": "deletion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_del_under_age",
+      "bbox": [
+        581,
+        774,
+        45,
+        34
+      ],
+      "label_text": "কম বয়স",
+      "label_script": "bengali",
+      "group": "deletion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_del_absent",
+      "bbox": [
+        881,
+        767,
+        45,
+        34
+      ],
+      "label_text": "অনুপস্থিত/স্থায়ীভাবে স্থানান্তরিত",
+      "label_script": "bengali",
+      "group": "deletion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_del_enrolled",
+      "bbox": [
+        224,
+        822,
+        44,
+        34
+      ],
+      "label_text": "ইতিমধ্যে অন্তর্ভুক্ত",
+      "label_script": "bengali",
+      "group": "deletion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_del_not_citizen",
+      "bbox": [
+        581,
+        822,
+        45,
+        34
+      ],
+      "label_text": "ভারতীয় নাগরিক নয়",
+      "label_script": "bengali",
+      "group": "deletion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_inc_root",
+      "bbox": [
+        165,
+        882,
+        57,
+        42
+      ],
+      "label_text": "(খ) নিম্নলিখিত যে কোনও একটি কারণে আমি নিম্নবর্ণিত ব্যক্তির নাম প্রস্তাবিত অন্তর্ভুক্তির ক্ষেত্রে আপত্তি জানাচ্ছি",
+      "label_script": "bengali",
+      "group": "inclusion_application",
+      "page": 0
+    },
+    {
+      "id": "cb_inc_absent",
+      "bbox": [
+        881,
+        933,
+        45,
+        34
+      ],
+      "label_text": "অনুপস্থিত/স্থায়ীভাবে স্থানান্তরিত",
+      "label_script": "bengali",
+      "group": "inclusion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_inc_death",
+      "bbox": [
+        224,
+        944,
+        44,
+        34
+      ],
+      "label_text": "মৃত্যু",
+      "label_script": "bengali",
+      "group": "inclusion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_inc_under_age",
+      "bbox": [
+        581,
+        944,
+        45,
+        34
+      ],
+      "label_text": "কম বয়স",
+      "label_script": "bengali",
+      "group": "inclusion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_inc_enrolled",
+      "bbox": [
+        224,
+        991,
+        44,
+        34
+      ],
+      "label_text": "ইতিমধ্যে অন্তর্ভুক্ত",
+      "label_script": "bengali",
+      "group": "inclusion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_inc_not_citizen",
+      "bbox": [
+        581,
+        991,
+        45,
+        34
+      ],
+      "label_text": "ভারতীয় নাগরিক নয়",
+      "label_script": "bengali",
+      "group": "inclusion_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_own_shifted",
+      "bbox": [
+        211,
+        1096,
+        57,
+        42
+      ],
+      "label_text": "স্থায়ীভাবে স্থানান্তরিত",
+      "label_script": "bengali",
+      "group": "delete_own_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_own_enrolled",
+      "bbox": [
+        569,
+        1096,
+        57,
+        42
+      ],
+      "label_text": "ইতিমধ্যে অন্তর্ভুক্ত",
+      "label_script": "bengali",
+      "group": "delete_own_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_own_not_citizen",
+      "bbox": [
+        881,
+        1096,
+        57,
+        42
+      ],
+      "label_text": "ভারতীয় নাগরিক নয়",
+      "label_script": "bengali",
+      "group": "delete_own_reasons",
+      "page": 0
+    },
+    {
+      "id": "cb_death_cert_yes",
+      "bbox": [
+        780,
+        1151,
+        39,
+        41
+      ],
+      "label_text": "হ্যাঁ",
+      "label_script": "bengali",
+      "group": "death_cert_attached",
+      "page": 0
+    },
+    {
+      "id": "cb_death_cert_no",
+      "bbox": [
+        910,
+        1151,
+        39,
+        41
+      ],
+      "label_text": "না",
+      "label_script": "bengali",
+      "group": "death_cert_attached",
+      "page": 0
+    }
+  ],
+  "fields": [
+    {
+      "id": "f_name_applicant",
+      "label_text": "(১) আবেদনকারীর নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        438,
+        472,
+        1010,
+        41
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_mobile_self",
+      "label_text": "নিজের মোবাইল নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        421,
+        572,
+        461,
+        38
+      ],
+      "value_type": "phone",
+      "page": 0
+    },
+    {
+      "id": "f_mobile_relative",
+      "label_text": "আত্মীয়ের মোবাইল নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        422,
+        623,
+        461,
+        38
+      ],
+      "value_type": "phone",
+      "page": 0
+    },
+    {
+      "id": "f_person_name",
+      "label_text": "নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        228,
+        1250,
+        303,
+        42
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_person_surname",
+      "label_text": "পদবি",
+      "label_script": "bengali",
+      "value_bbox": [
+        605,
+        1250,
+        261,
+        42
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_person_epic",
+      "label_text": "সচিত্র ভোটার পরিচয় পত্রের নম্বর (যদি থাকে)",
+      "label_script": "bengali",
+      "value_bbox": [
+        1271,
+        1250,
+        216,
+        42
+      ],
+      "value_type": "epic",
+      "page": 0
+    },
+    {
+      "id": "f_addr_house",
+      "label_text": "গৃহ/ভবন/ অ্যাপার্টমেন্ট নং",
+      "label_script": "bengali",
+      "value_bbox": [
+        457,
+        1324,
+        383,
+        104
+      ],
+      "value_type": "house",
+      "page": 0
+    },
+    {
+      "id": "f_addr_street",
+      "label_text": "গলি/এলাকা/অঞ্চল/ মহল্লা/রোড",
+      "label_script": "bengali",
+      "value_bbox": [
+        1114,
+        1324,
+        403,
+        91
+      ],
+      "value_type": "street",
+      "page": 0
+    },
+    {
+      "id": "f_addr_post_office",
+      "label_text": "ডাকঘর",
+      "label_script": "bengali",
+      "value_bbox": [
+        1114,
+        1416,
+        403,
+        52
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_addr_town",
+      "label_text": "শহর/গ্রাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        457,
+        1429,
+        383,
+        57
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_addr_tehsil",
+      "label_text": "তহসিল / তালুক / মণ্ডল",
+      "label_script": "bengali",
+      "value_bbox": [
+        1134,
+        1469,
+        383,
+        54
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_addr_pin",
+      "label_text": "পিন কোড",
+      "label_script": "bengali",
+      "value_bbox": [
+        527,
+        1487,
+        315,
+        53
+      ],
+      "value_type": "pincode",
+      "page": 0
+    },
+    {
+      "id": "f_addr_state",
+      "label_text": "রাজ্য / কেন্দ্রশাসিত অঞ্চল",
+      "label_script": "bengali",
+      "value_bbox": [
+        1114,
+        1524,
+        403,
+        70
+      ],
+      "value_type": "state",
+      "page": 0
+    },
+    {
+      "id": "f_addr_district",
+      "label_text": "জেলা",
+      "label_script": "bengali",
+      "value_bbox": [
+        462,
+        1541,
+        378,
+        52
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_ack_number",
+      "label_text": "প্রাপ্তিস্বীকার পত্র নং",
+      "label_script": "bengali",
+      "value_bbox": [
+        323,
+        2019,
+        748,
+        33
+      ],
+      "value_type": "id_number",
+      "page": 0
+    },
+    {
+      "id": "f_ack_date",
+      "label_text": "তারিখ",
+      "label_script": "bengali",
+      "value_bbox": [
+        1150,
+        2012,
+        359,
+        42
+      ],
+      "value_type": "date",
+      "page": 0
+    },
+    {
+      "id": "f_ack_received_name",
+      "label_text": "৭নং ফরমে শ্রী/শ্রীমতী/কুমারী",
+      "label_script": "bengali",
+      "value_bbox": [
+        404,
+        2066,
+        727,
+        33
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_ac_number",
+      "label_text": "নং",
+      "label_script": "bengali",
+      "value_bbox": [
+        804,
+        351,
+        91,
+        38
+      ],
+      "value_type": "serial",
+      "page": 0
+    },
+    {
+      "id": "f_ac_name",
+      "label_text": "নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        993,
+        353,
+        455,
+        36
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_form_no",
+      "label_text": "ফর্ম নং",
+      "label_script": "bengali",
+      "value_bbox": [
+        1222,
+        134,
+        232,
+        34
+      ],
+      "value_type": "serial",
+      "page": 0
+    }
+  ],
+  "tables": []
+}

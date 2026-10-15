@@ -1,0 +1,291 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_bank_account": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Bank A/c Number*"
+        },
+        "f_bank_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Bank Name*"
+        },
+        "f_bank_branch": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Bank Branch*"
+        },
+        "f_full_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Full Name*"
+        },
+        "f_dob": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date of Birth*"
+        },
+        "f_age": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Age"
+        },
+        "f_mobile": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Mobile No"
+        },
+        "f_email": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Email ID"
+        },
+        "f_aadhaar_self": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Aadhaar*"
+        },
+        "f_spouse_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name of Spouse"
+        },
+        "f_spouse_aadhaar": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Aadhaar (Spouse)"
+        },
+        "f_nominee_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Nominee's Name*"
+        },
+        "f_nominee_aadhaar": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Aadhaar (Nominee)"
+        },
+        "f_nominee_relationship": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Nominee's relationship with the subscriber"
+        },
+        "f_minor_dob": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date of Birth* (of Minor Nominee)"
+        },
+        "f_guardian_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Guardian's Name*"
+        },
+        "f_decl_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date (Declaration & Authorization)"
+        },
+        "f_decl_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Place (Declaration & Authorization)"
+        },
+        "f_contribution_amount_bank": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Contribution Amount (in Rs.) (To be filled by the Bank)"
+        },
+        "f_ack_subscriber_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name of the Subscriber: (Acknowledgement)"
+        },
+        "f_ack_pran": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "PRAN Number (Acknowledgement)"
+        },
+        "f_ack_pension_amount": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Guaranteed Pension Amount"
+        },
+        "f_ack_contribution_amount": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Contribution Amount under APY (in Rs.)"
+        },
+        "f_ack_bank_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name of the Bank:"
+        },
+        "f_ack_bank_branch": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Bank Branch:"
+        },
+        "f_ack_officer_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Receiving Officer's Name:"
+        },
+        "f_ack_receipt_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date of Receipt of Application:"
+        },
+        "f_ack_periodicity": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Periodicity of Contribution"
+        }
+      },
+      "required": [
+        "f_bank_account",
+        "f_bank_name",
+        "f_bank_branch",
+        "f_full_name",
+        "f_dob",
+        "f_age",
+        "f_mobile",
+        "f_email",
+        "f_aadhaar_self",
+        "f_spouse_name",
+        "f_spouse_aadhaar",
+        "f_nominee_name",
+        "f_nominee_aadhaar",
+        "f_nominee_relationship",
+        "f_minor_dob",
+        "f_guardian_name",
+        "f_decl_date",
+        "f_decl_place",
+        "f_contribution_amount_bank",
+        "f_ack_subscriber_name",
+        "f_ack_pran",
+        "f_ack_pension_amount",
+        "f_ack_contribution_amount",
+        "f_ack_bank_name",
+        "f_ack_bank_branch",
+        "f_ack_officer_name",
+        "f_ack_receipt_date",
+        "f_ack_periodicity"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_shri": {
+          "type": "boolean",
+          "description": "Shri"
+        },
+        "cb_smt": {
+          "type": "boolean",
+          "description": "Smt."
+        },
+        "cb_kumari": {
+          "type": "boolean",
+          "description": "Kumari"
+        },
+        "cb_married_yes": {
+          "type": "boolean",
+          "description": "Married - Yes"
+        },
+        "cb_married_no": {
+          "type": "boolean",
+          "description": "Married - No"
+        },
+        "cb_beneficiary_yes": {
+          "type": "boolean",
+          "description": "Whether beneficiary of other statutory social security schemes - Yes"
+        },
+        "cb_beneficiary_no": {
+          "type": "boolean",
+          "description": "Whether beneficiary of other statutory social security schemes - No"
+        },
+        "cb_incometax_yes": {
+          "type": "boolean",
+          "description": "Whether Income Tax Payer - Yes"
+        },
+        "cb_incometax_no": {
+          "type": "boolean",
+          "description": "Whether Income Tax Payer - No"
+        },
+        "cb_fatca_yes": {
+          "type": "boolean",
+          "description": "Is FATCA/CRS* applicable $ - Yes"
+        },
+        "cb_fatca_no": {
+          "type": "boolean",
+          "description": "Is FATCA/CRS* applicable $ - No"
+        },
+        "cb_freq_monthly": {
+          "type": "boolean",
+          "description": "Frequency of Contribution - Monthly"
+        },
+        "cb_freq_quarterly": {
+          "type": "boolean",
+          "description": "Frequency of Contribution - Quarterly"
+        },
+        "cb_freq_half_yearly": {
+          "type": "boolean",
+          "description": "Frequency of Contribution - Half Yearly"
+        },
+        "cb_pension_1000": {
+          "type": "boolean",
+          "description": "Pension Amount - 1000"
+        },
+        "cb_pension_2000": {
+          "type": "boolean",
+          "description": "Pension Amount - 2000"
+        },
+        "cb_pension_3000": {
+          "type": "boolean",
+          "description": "Pension Amount - 3000"
+        },
+        "cb_pension_4000": {
+          "type": "boolean",
+          "description": "Pension Amount - 4000"
+        },
+        "cb_pension_5000": {
+          "type": "boolean",
+          "description": "Pension Amount - 5000"
+        }
+      },
+      "required": [
+        "cb_shri",
+        "cb_smt",
+        "cb_kumari",
+        "cb_married_yes",
+        "cb_married_no",
+        "cb_beneficiary_yes",
+        "cb_beneficiary_no",
+        "cb_incometax_yes",
+        "cb_incometax_no",
+        "cb_fatca_yes",
+        "cb_fatca_no",
+        "cb_freq_monthly",
+        "cb_freq_quarterly",
+        "cb_freq_half_yearly",
+        "cb_pension_1000",
+        "cb_pension_2000",
+        "cb_pension_3000",
+        "cb_pension_4000",
+        "cb_pension_5000"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pfrda_apy_reg_en_p0"
+}

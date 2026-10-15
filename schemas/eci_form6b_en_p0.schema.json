@@ -1,0 +1,147 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_elector_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(Name of Elector)"
+        },
+        "f_constituency_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(Name of Assembly/Parliamentary Constituency)"
+        },
+        "f_epic_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "EPIC Number"
+        },
+        "f_aadhaar_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(i) Aadhaar No."
+        },
+        "f_name_elector_bottom": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name of the elector:"
+        },
+        "f_email_mobile": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "E-mail ID/Mobile Number:"
+        },
+        "f_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Place:"
+        },
+        "f_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date"
+        },
+        "f_signature_elector": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Signature of the elector:"
+        }
+      },
+      "required": [
+        "f_elector_name",
+        "f_constituency_name",
+        "f_epic_number",
+        "f_aadhaar_number",
+        "f_name_elector_bottom",
+        "f_email_mobile",
+        "f_place",
+        "f_date",
+        "f_signature_elector"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_aadhaar_yes": {
+          "type": "boolean",
+          "description": "Aadhaar No."
+        },
+        "cb_aadhaar_no": {
+          "type": "boolean",
+          "description": "I am not able to furnish my Aadhaar Number because I don't have Aadhaar number. Therefore, I hereby submit a copy of one of the following documents :-"
+        },
+        "cb_doc_mgnrega": {
+          "type": "boolean",
+          "description": "MGNREGA Job Card."
+        },
+        "cb_doc_passbook": {
+          "type": "boolean",
+          "description": "Passbook with photograph issued by Bank/Post Office."
+        },
+        "cb_doc_health_insurance": {
+          "type": "boolean",
+          "description": "Health Insurance Smart Card issued under the scheme of Ministry of Labour."
+        },
+        "cb_doc_driving_license": {
+          "type": "boolean",
+          "description": "Driving License."
+        },
+        "cb_doc_pan": {
+          "type": "boolean",
+          "description": "PAN Card"
+        },
+        "cb_doc_npr_smartcard": {
+          "type": "boolean",
+          "description": "Smart Card issued by RGI under NPR."
+        },
+        "cb_doc_passport": {
+          "type": "boolean",
+          "description": "Indian Passport."
+        },
+        "cb_doc_pension": {
+          "type": "boolean",
+          "description": "Pension document with photograph."
+        },
+        "cb_doc_service_id": {
+          "type": "boolean",
+          "description": "Service Identity Card with photograph issued to employees by Central/State Govt./PSUs/Public Limited Companies."
+        },
+        "cb_doc_official_id": {
+          "type": "boolean",
+          "description": "Official Identity Card issued to MPs/MLAs/MLCs."
+        },
+        "cb_doc_udid": {
+          "type": "boolean",
+          "description": "Unique Identity ID (UDID) Card, issued by M/o Social Justice and Empowerment, Government of India."
+        }
+      },
+      "required": [
+        "cb_aadhaar_yes",
+        "cb_aadhaar_no",
+        "cb_doc_mgnrega",
+        "cb_doc_passbook",
+        "cb_doc_health_insurance",
+        "cb_doc_driving_license",
+        "cb_doc_pan",
+        "cb_doc_npr_smartcard",
+        "cb_doc_passport",
+        "cb_doc_pension",
+        "cb_doc_service_id",
+        "cb_doc_official_id",
+        "cb_doc_udid"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6b_en_p0"
+}

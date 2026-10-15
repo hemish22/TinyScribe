@@ -1,0 +1,778 @@
+{
+  "schema_version": "0",
+  "template_id": "tn_icds_anganwadi_worker_ta",
+  "source_url": "https://www.icds.tn.gov.in/icdstn/pdf/Anganwadi_worker_application.pdf",
+  "licence": "GODL-India",
+  "language": "tamil",
+  "fillable": false,
+  "checkboxes": [
+    {
+      "id": "cb_community_1",
+      "bbox": [
+        1133,
+        1596,
+        83,
+        40
+      ],
+      "label_text": "தா.வ",
+      "label_script": "tamil",
+      "group": "community",
+      "page": 0,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_community_2",
+      "bbox": [
+        1224,
+        1595,
+        87,
+        41
+      ],
+      "label_text": "தா.ப",
+      "label_script": "tamil",
+      "group": "community",
+      "page": 0,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_community_3",
+      "bbox": [
+        1328,
+        1595,
+        134,
+        40
+      ],
+      "label_text": "மி.பி.வ",
+      "label_script": "tamil",
+      "group": "community",
+      "page": 0,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_community_4",
+      "bbox": [
+        1133,
+        1660,
+        85,
+        39
+      ],
+      "label_text": "பி.வ",
+      "label_script": "tamil",
+      "group": "community",
+      "page": 0,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_community_5",
+      "bbox": [
+        1225,
+        1660,
+        80,
+        43
+      ],
+      "label_text": "இ.வ",
+      "label_script": "tamil",
+      "group": "community",
+      "page": 0,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q13_1_yes",
+      "bbox": [
+        1172,
+        279,
+        99,
+        61
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q13_1",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q13_1_no",
+      "bbox": [
+        1282,
+        277,
+        115,
+        65
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q13_1",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q13_2_no",
+      "bbox": [
+        1284,
+        442,
+        115,
+        65
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q13_2",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q13_2_yes",
+      "bbox": [
+        1174,
+        444,
+        99,
+        61
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q13_2",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q13_3_no",
+      "bbox": [
+        1283,
+        573,
+        115,
+        65
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q13_3",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q13_3_yes",
+      "bbox": [
+        1178,
+        575,
+        99,
+        61
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q13_3",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q14_1_no",
+      "bbox": [
+        1282,
+        795,
+        115,
+        65
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q14_1",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q14_1_yes",
+      "bbox": [
+        1169,
+        797,
+        99,
+        61
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q14_1",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q14_2_no",
+      "bbox": [
+        1283,
+        934,
+        115,
+        65
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q14_2",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q14_2_yes",
+      "bbox": [
+        1173,
+        936,
+        99,
+        61
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q14_2",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q14_3_no",
+      "bbox": [
+        1281,
+        1131,
+        115,
+        65
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q14_3",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q14_3_yes",
+      "bbox": [
+        1171,
+        1133,
+        99,
+        61
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q14_3",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_1_a_no",
+      "bbox": [
+        1282,
+        1498,
+        115,
+        65
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q15_1_a",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_1_a_yes",
+      "bbox": [
+        1172,
+        1500,
+        99,
+        61
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q15_1_a",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_1_b_no",
+      "bbox": [
+        1282,
+        1572,
+        115,
+        65
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q15_1_b",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_1_b_yes",
+      "bbox": [
+        1172,
+        1574,
+        99,
+        61
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q15_1_b",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_1_c_no",
+      "bbox": [
+        1287,
+        1653,
+        115,
+        65
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q15_1_c",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_1_c_yes",
+      "bbox": [
+        1177,
+        1655,
+        99,
+        61
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q15_1_c",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_1_d_no",
+      "bbox": [
+        1287,
+        1742,
+        115,
+        65
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q15_1_d",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_1_d_yes",
+      "bbox": [
+        1177,
+        1744,
+        99,
+        61
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q15_1_d",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_1_e_no",
+      "bbox": [
+        1289,
+        1845,
+        115,
+        65
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q15_1_e",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_1_e_yes",
+      "bbox": [
+        1179,
+        1847,
+        99,
+        61
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q15_1_e",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_1_f_no",
+      "bbox": [
+        1282,
+        1925,
+        115,
+        65
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q15_1_f",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_1_f_yes",
+      "bbox": [
+        1172,
+        1927,
+        99,
+        61
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q15_1_f",
+      "page": 1,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_2_a_yes",
+      "bbox": [
+        1186,
+        244,
+        85,
+        46
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q15_2_a",
+      "page": 2,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q15_2_a_no",
+      "bbox": [
+        1274,
+        243,
+        130,
+        47
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q15_2_a",
+      "page": 2,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q16_1_no",
+      "bbox": [
+        1278,
+        358,
+        130,
+        47
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q16_1",
+      "page": 2,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q16_1_yes",
+      "bbox": [
+        1190,
+        359,
+        85,
+        46
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q16_1",
+      "page": 2,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q16_2_no",
+      "bbox": [
+        1274,
+        513,
+        130,
+        47
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q16_2",
+      "page": 2,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q16_2_yes",
+      "bbox": [
+        1186,
+        514,
+        85,
+        46
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q16_2",
+      "page": 2,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q16_3_no",
+      "bbox": [
+        1273,
+        708,
+        130,
+        47
+      ],
+      "label_text": "இல்லை",
+      "label_script": "tamil",
+      "group": "q16_3",
+      "page": 2,
+      "mark": "circle"
+    },
+    {
+      "id": "cb_q16_3_yes",
+      "bbox": [
+        1185,
+        709,
+        85,
+        46
+      ],
+      "label_text": "ஆம்",
+      "label_script": "tamil",
+      "group": "q16_3",
+      "page": 2,
+      "mark": "circle"
+    }
+  ],
+  "fields": [
+    {
+      "id": "f_applicant_name",
+      "label_text": "விண்ணப்பதாரர் பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        613,
+        342,
+        77
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_father_husband_name",
+      "label_text": "தகப்பனார்/ கணவர் பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        692,
+        342,
+        77
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_address",
+      "label_text": "விண்ணப்பதாரரின் இருப்பிட முகவரி, கைப்பேசி எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        770,
+        342,
+        155
+      ],
+      "value_type": "address",
+      "page": 0
+    },
+    {
+      "id": "f_aadhaar_number",
+      "label_text": "விண்ணப்பதாரரின் ஆதார் எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        926,
+        342,
+        67
+      ],
+      "value_type": "id_number",
+      "page": 0
+    },
+    {
+      "id": "f_town_body",
+      "label_text": "விண்ணப்பதாரரின் இருப்பிடம் பேரூராட்சி / நகராட்சி / மாநகராட்சியின் பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        995,
+        342,
+        77
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_village_panchayat",
+      "label_text": "விண்ணப்பதாரரின் இருப்பிட ஊராட்சி/ கிராமம் பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        1073,
+        342,
+        77
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_centre_address",
+      "label_text": "அங்கன்வாடி பணியாளர் நியமனம் கோரும் காலிப்பணியிட குழந்தைகள் மையத்தின் எண்., பெயர் / முகவரி",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        1152,
+        342,
+        154
+      ],
+      "value_type": "address",
+      "page": 0
+    },
+    {
+      "id": "f_education",
+      "label_text": "கல்வி தகுதி",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        1308,
+        342,
+        77
+      ],
+      "value_type": "text",
+      "page": 0
+    },
+    {
+      "id": "f_class12_details",
+      "label_text": "12 ஆம் வகுப்பு தேர்ச்சி (தமிழ்நாடு அரசுதேர்வுகள் இயக்கம் ) பெற்ற விவரம் (சான்றிதழ் சுயசான்றொப்பமிட்ட நகலுடன் )",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        1386,
+        342,
+        116
+      ],
+      "value_type": "text",
+      "page": 0
+    },
+    {
+      "id": "f_dob_age",
+      "label_text": "பிறந்த தேதி மற்றும் பூர்த்தியடைந்த வயது ( அறிவிப்பு வந்த மாதத்தின் முதல் நாளின் படி)",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        1503,
+        342,
+        77
+      ],
+      "value_type": "date",
+      "page": 0
+    },
+    {
+      "id": "f_address_proof",
+      "label_text": "விண்ணப்பதாரரின் இருப்பிட முகவரி சான்று (ஏதேனும் ஒன்று)",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        1761,
+        342,
+        150
+      ],
+      "value_type": "document",
+      "page": 0
+    },
+    {
+      "id": "f_urban_centre",
+      "label_text": "மாநகராட்சி/ நகராட்சி / பேரூராட்சி/ (நகரம்)",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        202,
+        342,
+        51
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_rural_centre",
+      "label_text": "கிராமங்களிலுள்ள குழந்தைகள் மையங்களில் (ஊரகம்)",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        744,
+        342,
+        51
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_if_married",
+      "label_text": "15.1) திருமணமானவர் எனில்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        1459,
+        342,
+        38
+      ],
+      "value_type": "text",
+      "page": 1
+    },
+    {
+      "id": "f_if_unmarried",
+      "label_text": "திருமணம் ஆகாதவர் எனில்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        202,
+        342,
+        38
+      ],
+      "value_type": "text",
+      "page": 2
+    },
+    {
+      "id": "f_if_disabled",
+      "label_text": "விண்ணப்பதாரர் மாற்றுத்திறனாளி எனில்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1126,
+        320,
+        342,
+        39
+      ],
+      "value_type": "text",
+      "page": 2
+    },
+    {
+      "id": "f_ack_name",
+      "label_text": "திருமதி/ செல்வி",
+      "label_script": "tamil",
+      "value_bbox": [
+        507,
+        1742,
+        380,
+        62
+      ],
+      "value_type": "name",
+      "page": 3
+    },
+    {
+      "id": "f_ack_date",
+      "label_text": "என்பவரிடமிருந்து",
+      "label_script": "tamil",
+      "value_bbox": [
+        1305,
+        1739,
+        194,
+        62
+      ],
+      "value_type": "date",
+      "page": 3
+    },
+    {
+      "id": "f_ack_office",
+      "label_text": "தேதியில்",
+      "label_script": "tamil",
+      "value_bbox": [
+        417,
+        1815,
+        270,
+        51
+      ],
+      "value_type": "city",
+      "page": 3
+    }
+  ],
+  "tables": []
+}

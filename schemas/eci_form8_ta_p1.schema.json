@@ -1,0 +1,169 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_addr_house": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "House / Building/ Apartment No/ வீடு/ கட்டிடம்/ அடுக்குமாடி குடியிருப்பு எண்"
+        },
+        "f_addr_street": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Street/Area/Locality / Mohalla/Road / தெரு/ பகுதி/உள்ளூர்/ மொஹல்லா/சாலை"
+        },
+        "f_addr_town": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Town/Village நகரம்/ கிராமம்"
+        },
+        "f_addr_post_office": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Post Office /அஞ்சல் அலுவலகம்"
+        },
+        "f_addr_tehsil": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Tehsil/Taluqa/Mandal / வட்டம் /தாலுகா/ மண்டலம்"
+        },
+        "f_addr_district": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "District/ மாவட்டம்"
+        },
+        "f_addr_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "State/UT / மாநிலம்/ யூனியன் பிரதேசம்"
+        },
+        "f_other_doc": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Any Other:- (Pl. Specify) / வேறு ஏதேனும் இருந்தால் (தயவுசெய்து குறிப்பிடவும்) :-"
+        },
+        "f_corrected_value": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "The correct particulars in the entry to be corrected are as under :–/திருத்தப்பட வேண்டிய பதிவுகளின் சரியான விவரங்கள் :–"
+        },
+        "f_corrected_value_2": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "The correct particulars in the entry to be corrected are as under :–/திருத்தப்பட வேண்டிய பதிவுகளின் சரியான விவரங்கள் :–"
+        },
+        "f_addr_pin": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "PIN Code / அஞ்சல் குறியீட்டு எண்"
+        }
+      },
+      "required": [
+        "f_addr_house",
+        "f_addr_street",
+        "f_addr_town",
+        "f_addr_post_office",
+        "f_addr_tehsil",
+        "f_addr_district",
+        "f_addr_state",
+        "f_other_doc",
+        "f_corrected_value",
+        "f_corrected_value_2",
+        "f_addr_pin"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_addr_proof_1": {
+          "type": "boolean",
+          "description": "Water/Electricity /Gas Connection Bill for that address (atleast 1 year) / அந்த முகவரியில் குடிநீர்/மின்சாரம்/ எரிவாயு இணைப்பின் ரசீது (குறைந்தது 1 வருடம்)"
+        },
+        "cb_addr_proof_2": {
+          "type": "boolean",
+          "description": "Aadhaar Card / ஆதார் அட்டை"
+        },
+        "cb_addr_proof_3": {
+          "type": "boolean",
+          "description": "Current passbook of Nationalized /Scheduled Bank/ Postoffice தேசியமயமாக்கப்பட்ட / அட்டவணைப்படுத்தப்பட்ட வங்கி / அஞ்சல் அலுவலகத்தின் தற்போதைய கணக்கு புத்தகம்"
+        },
+        "cb_addr_proof_4": {
+          "type": "boolean",
+          "description": "Indian Passport/இந்திய கடவுச்சீட்டு"
+        },
+        "cb_addr_proof_5": {
+          "type": "boolean",
+          "description": "Revenue Departments Land Owning Records including Kisan Bahi /விவசாயி அட்டை உட்பட வருவாய்த் துறைகளின் நில உரிமைப் பதிவுகள்"
+        },
+        "cb_addr_proof_6": {
+          "type": "boolean",
+          "description": "Registered Rent Lease Deed (in case of tenant) / பதிவுசெய்யப்பட்ட வாடகை குத்தகை பத்திரம் (குத்தகைதாரராக இருந்தால்)"
+        },
+        "cb_addr_proof_7": {
+          "type": "boolean",
+          "description": "Registered Sale Deed (in Case of own house) /பதிவு செய்யப்பட்ட விற்பனைப் பத்திரம் (சொந்த வீடு எனில்)"
+        },
+        "cb_corr_name": {
+          "type": "boolean",
+          "description": "Name/ பெயர்"
+        },
+        "cb_corr_gender": {
+          "type": "boolean",
+          "description": "Gender/ பாலினம்"
+        },
+        "cb_corr_dob": {
+          "type": "boolean",
+          "description": "DoB/Age/ பிறந்த தேதி / வயது"
+        },
+        "cb_corr_relation_type": {
+          "type": "boolean",
+          "description": "Relation Type/உறவு முறை"
+        },
+        "cb_corr_relation_name": {
+          "type": "boolean",
+          "description": "Relation Name/உறவினர் பெயர்"
+        },
+        "cb_corr_address": {
+          "type": "boolean",
+          "description": "Address/முகவரி"
+        },
+        "cb_corr_mobile": {
+          "type": "boolean",
+          "description": "Mobile Number/கைபேசி எண்"
+        },
+        "cb_corr_photo": {
+          "type": "boolean",
+          "description": "Photo/புகைப்படம்"
+        }
+      },
+      "required": [
+        "cb_addr_proof_1",
+        "cb_addr_proof_2",
+        "cb_addr_proof_3",
+        "cb_addr_proof_4",
+        "cb_addr_proof_5",
+        "cb_addr_proof_6",
+        "cb_addr_proof_7",
+        "cb_corr_name",
+        "cb_corr_gender",
+        "cb_corr_dob",
+        "cb_corr_relation_type",
+        "cb_corr_relation_name",
+        "cb_corr_address",
+        "cb_corr_mobile",
+        "cb_corr_photo"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form8_ta_p1"
+}

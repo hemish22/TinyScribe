@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_if_unmarried": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "திருமணம் ஆகாதவர் எனில்"
+        },
+        "f_if_disabled": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "விண்ணப்பதாரர் மாற்றுத்திறனாளி எனில்"
+        }
+      },
+      "required": [
+        "f_if_unmarried",
+        "f_if_disabled"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_q15_2_a_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q15_2_a_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q16_1_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q16_1_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q16_2_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q16_2_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        },
+        "cb_q16_3_no": {
+          "type": "boolean",
+          "description": "இல்லை"
+        },
+        "cb_q16_3_yes": {
+          "type": "boolean",
+          "description": "ஆம்"
+        }
+      },
+      "required": [
+        "cb_q15_2_a_yes",
+        "cb_q15_2_a_no",
+        "cb_q16_1_no",
+        "cb_q16_1_yes",
+        "cb_q16_2_no",
+        "cb_q16_2_yes",
+        "cb_q16_3_no",
+        "cb_q16_3_yes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "tn_icds_anganwadi_worker_ta_p2"
+}

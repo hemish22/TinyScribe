@@ -17,3 +17,10 @@ wandb/
 *.safetensors
 *.bin
 *.imatrix
+
+# Toolchains and builds (rebuilt by scripts/)
+third_party/llama.cpp/
+.cuda/
+.venv-convert/
+tools/
+data_smoke/

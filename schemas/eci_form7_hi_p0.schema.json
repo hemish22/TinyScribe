@@ -1,0 +1,268 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_name_applicant": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(1) आवेदक का नाम"
+        },
+        "f_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "ईपीआईसी सं."
+        },
+        "f_mobile_self": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "स्वयं का मोबाइल संख्या"
+        },
+        "f_mobile_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "नातेदार का मोबाइल संख्या"
+        },
+        "f_person_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(3) ऐसे व्यक्ति के ब्यौरे जिसके संबंध में आक्षेप किया गया है - नाम"
+        },
+        "f_person_surname": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(3) उपनाम"
+        },
+        "f_person_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(3) ईपीआईसी सं.( यदि उपलब्ध हो)"
+        },
+        "f_addr_house": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "मकान/भवन/अपार्टमेंट सं0"
+        },
+        "f_addr_street": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "गली/क्षेत्र/स्थानीय क्षेत्र\\मोहल्ला/सड़क"
+        },
+        "f_addr_town": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "नगर/ग्राम"
+        },
+        "f_addr_post_office": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "डाक घर"
+        },
+        "f_addr_pin": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "पिन कोड"
+        },
+        "f_addr_tehsil": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "तहसील/तालुका/मंडल"
+        },
+        "f_addr_district": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "जिला"
+        },
+        "f_addr_state": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "राज्य/संघ राज्यक्षेत्र"
+        },
+        "f_decl_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "तारीख:"
+        },
+        "f_decl_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "स्थान:"
+        },
+        "f_ac_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "सं. (विधान सभा निर्वाचन क्षेत्र)"
+        },
+        "f_pc_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "सं. (संसदीय निर्वाचन क्षेत्र)"
+        },
+        "f_ac_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "नाम (विधान सभा निर्वाचन क्षेत्र)"
+        },
+        "f_pc_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "नाम (संसदीय निर्वाचन क्षेत्र)"
+        },
+        "f_form_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "प्ररूप सं."
+        },
+        "f_ack_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "अभिस्वीकृति संख्या"
+        },
+        "f_ack_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "तारीख"
+        },
+        "f_ack_received_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "श्री/श्रीमती/ सुश्री"
+        }
+      },
+      "required": [
+        "f_name_applicant",
+        "f_epic",
+        "f_mobile_self",
+        "f_mobile_relative",
+        "f_person_name",
+        "f_person_surname",
+        "f_person_epic",
+        "f_addr_house",
+        "f_addr_street",
+        "f_addr_town",
+        "f_addr_post_office",
+        "f_addr_pin",
+        "f_addr_tehsil",
+        "f_addr_district",
+        "f_addr_state",
+        "f_decl_date",
+        "f_decl_place",
+        "f_ac_number",
+        "f_pc_number",
+        "f_ac_name",
+        "f_pc_name",
+        "f_form_no",
+        "f_ack_number",
+        "f_ack_date",
+        "f_ack_received_name"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_del_root": {
+          "type": "boolean",
+          "description": "(i) मैं वर्तमान नामावली में पहले से सूचीबद्ध व्यक्ति का नाम हटाने हेतु आवेदन करता हूँ"
+        },
+        "cb_del_death": {
+          "type": "boolean",
+          "description": "मृत्यु"
+        },
+        "cb_del_under_age": {
+          "type": "boolean",
+          "description": "अवयस्क"
+        },
+        "cb_del_absent": {
+          "type": "boolean",
+          "description": "अनुपस्थित / स्थायी रूप से स्थानांतरित"
+        },
+        "cb_del_enrolled": {
+          "type": "boolean",
+          "description": "पहले से नामांकित"
+        },
+        "cb_del_not_citizen": {
+          "type": "boolean",
+          "description": "भारतीय नागरिक नहीं"
+        },
+        "cb_inc_root": {
+          "type": "boolean",
+          "description": "(ii) मैं नीचे उल्लिखित व्यक्ति का नाम निर्वाचक नामावली में शामिल किए जाने संबंधी प्रस्ताव के विरुद्ध आपत्ति करता हूँ"
+        },
+        "cb_inc_death": {
+          "type": "boolean",
+          "description": "मृत्यु"
+        },
+        "cb_inc_under_age": {
+          "type": "boolean",
+          "description": "अवयस्क"
+        },
+        "cb_inc_absent": {
+          "type": "boolean",
+          "description": "अनुपस्थित / स्थायी रूप से स्थानांतरित"
+        },
+        "cb_inc_enrolled": {
+          "type": "boolean",
+          "description": "पहले से नामांकित"
+        },
+        "cb_inc_not_citizen": {
+          "type": "boolean",
+          "description": "भारतीय नागरिक नहीं"
+        },
+        "cb_own_root": {
+          "type": "boolean",
+          "description": "(iii) मैं उपरोक्त पते का स्थायी निवासी न होने से अपना नाम निर्वाचक नामावली से हटाने हेतु आवेदन करता हूँ"
+        },
+        "cb_own_shifted": {
+          "type": "boolean",
+          "description": "स्थायी रूप से स्थानांतरित"
+        },
+        "cb_own_enrolled": {
+          "type": "boolean",
+          "description": "पहले से नामांकित"
+        },
+        "cb_own_not_citizen": {
+          "type": "boolean",
+          "description": "भारतीय नागरिक नहीं"
+        },
+        "cb_death_cert_yes": {
+          "type": "boolean",
+          "description": "हाँ"
+        },
+        "cb_death_cert_no": {
+          "type": "boolean",
+          "description": "नहीं"
+        }
+      },
+      "required": [
+        "cb_del_root",
+        "cb_del_death",
+        "cb_del_under_age",
+        "cb_del_absent",
+        "cb_del_enrolled",
+        "cb_del_not_citizen",
+        "cb_inc_root",
+        "cb_inc_death",
+        "cb_inc_under_age",
+        "cb_inc_absent",
+        "cb_inc_enrolled",
+        "cb_inc_not_citizen",
+        "cb_own_root",
+        "cb_own_shifted",
+        "cb_own_enrolled",
+        "cb_own_not_citizen",
+        "cb_death_cert_yes",
+        "cb_death_cert_no"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form7_hi_p0"
+}

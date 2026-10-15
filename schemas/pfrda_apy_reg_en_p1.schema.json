@@ -1,0 +1,164 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_subscriber_name_p1": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name of Subscriber:"
+        },
+        "f_pran": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Permanent Retirement Account Number (PRAN):"
+        },
+        "f_dob_p1": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date of Birth: (FATCA form)"
+        }
+      },
+      "required": [
+        "f_subscriber_name_p1",
+        "f_pran",
+        "f_dob_p1"
+      ],
+      "additionalProperties": false
+    },
+    "tables": {
+      "type": "object",
+      "properties": {
+        "tbl_fatca_country": {
+          "type": "object",
+          "properties": {
+            "r1": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r2": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r3": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r4": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            }
+          },
+          "required": [
+            "r1",
+            "r2",
+            "r3",
+            "r4"
+          ],
+          "additionalProperties": false
+        },
+        "tbl_fatca_tin": {
+          "type": "object",
+          "properties": {
+            "r0": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r1": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r2": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r3": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r4": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r5": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            }
+          },
+          "required": [
+            "r0",
+            "r1",
+            "r2",
+            "r3",
+            "r4",
+            "r5"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "tbl_fatca_country",
+        "tbl_fatca_tin"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "tables"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pfrda_apy_reg_en_p1"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "0",
+  "template_id": "eci_form6b_hi",
+  "source_url": "https://voters.eci.gov.in/formspdf/Form_6B_Hindi.pdf",
+  "licence": "GODL-India",
+  "language": "hindi",
+  "fillable": false,
+  "checkboxes": [
+    {"id": "cb_aadhaar_yes", "bbox": [167, 881, 83, 71], "label_text": "आधार सं0", "label_script": "devanagari", "group": "aadhaar_choice", "page": 0},
+    {"id": "cb_aadhaar_no", "bbox": [167, 981, 83, 94], "label_text": "मैं आधार सं0 प्रस्तुत नहीं कर सकता, क्योंकि मेरे पास आधार संख्या नहीं है। इसलिए मैं निम्नलिखित में से किसी एक दस्तावेज की प्रति प्रस्तुत करता हूँ :-", "label_script": "devanagari", "group": "aadhaar_choice", "page": 0},
+    {"id": "cb_doc_mgnrega", "bbox": [167, 1173, 83, 48], "label_text": "मनरेगा जॉब कार्ड", "label_script": "devanagari", "group": "document_choice", "page": 0},
+    {"id": "cb_doc_passbook", "bbox": [167, 1241, 83, 48], "label_text": "बैंक/डाकघर द्वारा जारी की गई पासबुक", "label_script": "devanagari", "group": "document_choice", "page": 0},
+    {"id": "cb_doc_health", "bbox": [167, 1309, 83, 48], "label_text": "श्रम मंत्रालय की योजना के अधीन जारी स्वास्थ्य बीमा स्मार्ट कार्ड", "label_script": "devanagari", "group": "document_choice", "page": 0},
+    {"id": "cb_doc_driving", "bbox": [167, 1377, 83, 48], "label_text": "चालन अनुज्ञप्ति", "label_script": "devanagari", "group": "document_choice", "page": 0},
+    {"id": "cb_doc_pan", "bbox": [167, 1445, 83, 48], "label_text": "पैन कार्ड", "label_script": "devanagari", "group": "document_choice", "page": 0},
+    {"id": "cb_doc_smart", "bbox": [167, 1514, 83, 48], "label_text": "एनपीआर के अधीन आरजीआई द्वारा जारी स्मार्ट कार्ड", "label_script": "devanagari", "group": "document_choice", "page": 0},
+    {"id": "cb_doc_indian", "bbox": [167, 1582, 83, 48], "label_text": "भारतीय पासपोर्ट", "label_script": "devanagari", "group": "document_choice", "page": 0},
+    {"id": "cb_doc_pension", "bbox": [167, 1650, 83, 48], "label_text": "छायाचित्र के साथ पेंशन दस्तावेज", "label_script": "devanagari", "group": "document_choice", "page": 0},
+    {"id": "cb_doc_idcard", "bbox": [163, 1722, 84, 80], "label_text": "केन्द्रीय/राज्य सरकार/पीएसयू / पब्लिक लिमिटेड कंपनियों द्वारा कर्मचारियों को जारी छायाचित्र के साथ सेवा पहचान कार्ड", "label_script": "devanagari", "group": "id_proof_document", "page": 0},
+    {"id": "cb_doc_official", "bbox": [167, 1832, 84, 50], "label_text": "संसद् सदस्यों / विधान सभा सदस्यों/विधान परिषद् सदस्यों को जारी शासकीय पहचान पत्र", "label_script": "devanagari", "group": "id_proof_document", "page": 0},
+    {"id": "cb_doc_udid", "bbox": [166, 1900, 85, 50], "label_text": "सामाजिक न्याय और अधिकारिता मंत्रालय, भारत सरकार द्वारा जारी विशिष्ट पहचान परिचय-पत्र (यूडीआईडी)", "label_script": "devanagari", "group": "id_proof_document", "page": 0}
+  ],
+  "fields": [
+    {"id": "f_elector_name", "label_text": "नाम", "label_script": "devanagari", "value_type": "name", "value_bbox": [125, 381, 620, 51], "page": 0},
+    {"id": "f_constituency", "label_text": "विधान सभा निर्वाचन क्षेत्र/संसदीय निर्वाचन क्षेत्र का नाम", "label_script": "devanagari", "value_type": "text", "value_bbox": [988, 385, 572, 48], "page": 0},
+    {"id": "f_elector_number", "label_text": "पत्र सं0", "label_script": "devanagari", "value_type": "epic", "value_bbox": [193, 632.7, 1266.3, 71.3], "page": 0},
+    {"id": "f_name", "label_text": "निर्वाचक का नाम", "label_script": "devanagari", "value_type": "name", "value_bbox": [1224, 2034, 326, 48], "page": 0},
+    {"id": "f_email_mobile", "label_text": "ई-मेल पता/मोबाइल सं0", "label_script": "devanagari", "value_type": "email", "value_bbox": [1226, 2087, 324, 48], "page": 0},
+    {"id": "f_place", "label_text": "स्थान", "label_script": "devanagari", "value_type": "city", "value_bbox": [201, 2145, 326, 44], "page": 0},
+    {"id": "f_date", "label_text": "तारीख", "label_script": "devanagari", "value_type": "date", "value_bbox": [200, 2198, 345, 42], "page": 0},
+    {"id": "f_aadhaar_number", "label_text": "आधार सं0", "label_script": "devanagari", "value_bbox": [417, 883, 1068, 70], "value_type": "id_number", "page": 0},
+    {"id": "f_signature_elector", "label_text": "निर्वाचक के हस्ताक्षर", "label_script": "devanagari", "value_bbox": [1226, 1974, 324, 54], "value_type": "name", "page": 0}
+  ],
+  "tables": []
+}

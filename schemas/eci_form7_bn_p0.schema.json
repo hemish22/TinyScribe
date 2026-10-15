@@ -1,0 +1,233 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_name_applicant": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(১) আবেদনকারীর নাম"
+        },
+        "f_mobile_self": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নিজের মোবাইল নম্বর"
+        },
+        "f_mobile_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "আত্মীয়ের মোবাইল নম্বর"
+        },
+        "f_person_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নাম"
+        },
+        "f_person_surname": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "পদবি"
+        },
+        "f_person_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "সচিত্র ভোটার পরিচয় পত্রের নম্বর (যদি থাকে)"
+        },
+        "f_addr_house": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "গৃহ/ভবন/ অ্যাপার্টমেন্ট নং"
+        },
+        "f_addr_street": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "গলি/এলাকা/অঞ্চল/ মহল্লা/রোড"
+        },
+        "f_addr_post_office": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "ডাকঘর"
+        },
+        "f_addr_town": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "শহর/গ্রাম"
+        },
+        "f_addr_tehsil": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "তহসিল / তালুক / মণ্ডল"
+        },
+        "f_addr_pin": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "পিন কোড"
+        },
+        "f_addr_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "রাজ্য / কেন্দ্রশাসিত অঞ্চল"
+        },
+        "f_addr_district": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "জেলা"
+        },
+        "f_ack_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "প্রাপ্তিস্বীকার পত্র নং"
+        },
+        "f_ack_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "তারিখ"
+        },
+        "f_ack_received_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "৭নং ফরমে শ্রী/শ্রীমতী/কুমারী"
+        },
+        "f_ac_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নং"
+        },
+        "f_ac_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "নাম"
+        },
+        "f_form_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "ফর্ম নং"
+        }
+      },
+      "required": [
+        "f_name_applicant",
+        "f_mobile_self",
+        "f_mobile_relative",
+        "f_person_name",
+        "f_person_surname",
+        "f_person_epic",
+        "f_addr_house",
+        "f_addr_street",
+        "f_addr_post_office",
+        "f_addr_town",
+        "f_addr_tehsil",
+        "f_addr_pin",
+        "f_addr_state",
+        "f_addr_district",
+        "f_ack_number",
+        "f_ack_date",
+        "f_ack_received_name",
+        "f_ac_number",
+        "f_ac_name",
+        "f_form_no"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_del_root": {
+          "type": "boolean",
+          "description": "(ক) নিম্নলিখিত যে কোনও একটি কারণে আমি ইতিমধ্যে বর্তমান ভোটার তালিকায় অন্তর্ভুক্ত নিম্নবর্ণিত ব্যক্তির নাম বাদ দেওয়ার অনুরোধ জানাচ্ছি"
+        },
+        "cb_del_death": {
+          "type": "boolean",
+          "description": "মৃত্যু"
+        },
+        "cb_del_under_age": {
+          "type": "boolean",
+          "description": "কম বয়স"
+        },
+        "cb_del_absent": {
+          "type": "boolean",
+          "description": "অনুপস্থিত/স্থায়ীভাবে স্থানান্তরিত"
+        },
+        "cb_del_enrolled": {
+          "type": "boolean",
+          "description": "ইতিমধ্যে অন্তর্ভুক্ত"
+        },
+        "cb_del_not_citizen": {
+          "type": "boolean",
+          "description": "ভারতীয় নাগরিক নয়"
+        },
+        "cb_inc_root": {
+          "type": "boolean",
+          "description": "(খ) নিম্নলিখিত যে কোনও একটি কারণে আমি নিম্নবর্ণিত ব্যক্তির নাম প্রস্তাবিত অন্তর্ভুক্তির ক্ষেত্রে আপত্তি জানাচ্ছি"
+        },
+        "cb_inc_absent": {
+          "type": "boolean",
+          "description": "অনুপস্থিত/স্থায়ীভাবে স্থানান্তরিত"
+        },
+        "cb_inc_death": {
+          "type": "boolean",
+          "description": "মৃত্যু"
+        },
+        "cb_inc_under_age": {
+          "type": "boolean",
+          "description": "কম বয়স"
+        },
+        "cb_inc_enrolled": {
+          "type": "boolean",
+          "description": "ইতিমধ্যে অন্তর্ভুক্ত"
+        },
+        "cb_inc_not_citizen": {
+          "type": "boolean",
+          "description": "ভারতীয় নাগরিক নয়"
+        },
+        "cb_own_shifted": {
+          "type": "boolean",
+          "description": "স্থায়ীভাবে স্থানান্তরিত"
+        },
+        "cb_own_enrolled": {
+          "type": "boolean",
+          "description": "ইতিমধ্যে অন্তর্ভুক্ত"
+        },
+        "cb_own_not_citizen": {
+          "type": "boolean",
+          "description": "ভারতীয় নাগরিক নয়"
+        },
+        "cb_death_cert_yes": {
+          "type": "boolean",
+          "description": "হ্যাঁ"
+        },
+        "cb_death_cert_no": {
+          "type": "boolean",
+          "description": "না"
+        }
+      },
+      "required": [
+        "cb_del_root",
+        "cb_del_death",
+        "cb_del_under_age",
+        "cb_del_absent",
+        "cb_del_enrolled",
+        "cb_del_not_citizen",
+        "cb_inc_root",
+        "cb_inc_absent",
+        "cb_inc_death",
+        "cb_inc_under_age",
+        "cb_inc_enrolled",
+        "cb_inc_not_citizen",
+        "cb_own_shifted",
+        "cb_own_enrolled",
+        "cb_own_not_citizen",
+        "cb_death_cert_yes",
+        "cb_death_cert_no"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form7_bn_p0"
+}

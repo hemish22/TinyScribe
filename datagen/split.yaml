@@ -1,0 +1,24 @@
+# Dataset recipe for datagen/build.py. Changing anything here changes the data: bump `version`.
+version: 1
+
+# Held out by FORM TYPE across all scripts (template id minus its _en/_hi/_bn/_ta suffix),
+# so no test layout is ever seen in training, not even in another language.
+test_form_types: [eci_form7, synth_job_application]
+
+pages:
+  train: 10000        # spread evenly over scripts, then over each script's train templates
+  test: 400
+calib_pages: 800      # sampled from train, equal per script; feeds the form importance matrix
+
+seed_base: {train: 1000000, test: 9000000}
+image_long_side: 1536  # every page is resized once here; train, DGX scoring and the Mac see these exact pixels
+jpeg_quality: 95
+
+# share of instances written by hand (EMNIST capitals for Latin, IIIT words for Devanagari).
+# Only scripts with a handwriting bank; others are always printed.
+handwriting_fraction: 0.5
+handwriting_scripts: [english, hindi]
+
+degradation:
+  train: {clean: 0.30, light: 0.40, medium: 0.25, heavy: 0.05}
+  test: {clean: 0.25, light: 0.25, medium: 0.25, heavy: 0.25}

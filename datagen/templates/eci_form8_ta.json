@@ -1,0 +1,793 @@
+{
+  "schema_version": "0",
+  "template_id": "eci_form8_ta",
+  "source_url": "https://elections.tn.gov.in/ta/Forms/Form%208-Tamil.pdf",
+  "licence": "GODL-India",
+  "language": "tamil",
+  "fillable": false,
+  "checkboxes": [
+    {
+      "id": "cb_aadhaar_a",
+      "bbox": [
+        214,
+        865,
+        36,
+        36
+      ],
+      "label_text": "Aadhaar Number/ஆதார் எண்",
+      "label_script": "tamil",
+      "group": "aadhaar_choice",
+      "page": 0
+    },
+    {
+      "id": "cb_aadhaar_b",
+      "bbox": [
+        214,
+        937,
+        36,
+        36
+      ],
+      "label_text": "I am not able to furnish my Aadhaar Number because I don't have Aadhaar Number. / என்னிடம் ஆதார் எண் இல்லாததால், என்னால் ஆதார் எண்ணை வழங்க இயலவில்லை.",
+      "label_script": "tamil",
+      "group": "aadhaar_choice",
+      "page": 0
+    },
+    {
+      "id": "cb_app_shift",
+      "bbox": [
+        221,
+        1426,
+        47,
+        43
+      ],
+      "label_text": "Shifting of Residence (or) / குடியிருப்பு மாற்றத்திற்காக (அல்லது)",
+      "label_script": "tamil",
+      "group": "application_type",
+      "page": 0
+    },
+    {
+      "id": "cb_app_correct",
+      "bbox": [
+        221,
+        1485,
+        47,
+        44
+      ],
+      "label_text": "Correction of Entries in Existing Electoral Roll (or) / நடப்பு பட்டியலில் சேர்க்கப்பட்டுள்ள பதிவுகளை திருத்தம் செய்வதற்காக (அல்லது)",
+      "label_script": "tamil",
+      "group": "application_type",
+      "page": 0
+    },
+    {
+      "id": "cb_app_rep_epic",
+      "bbox": [
+        221,
+        1557,
+        47,
+        43
+      ],
+      "label_text": "Issue of Replacement EPIC without correction (or) / திருத்தம் இல்லாத மாற்று வாக்காளர் புகைப்பட அடையாள அட்டையை பெறுவதற்காக (அல்லது)",
+      "label_script": "tamil",
+      "group": "application_type",
+      "page": 0
+    },
+    {
+      "id": "cb_app_pwd",
+      "bbox": [
+        221,
+        1620,
+        47,
+        44
+      ],
+      "label_text": "Request for marking as Person with Disability / மாற்றுத்திறனாளிகளை குறிப்பதற்காக",
+      "label_script": "tamil",
+      "group": "application_type",
+      "page": 0
+    },
+    {
+      "id": "cb_addr_proof_1",
+      "bbox": [
+        206,
+        857,
+        47,
+        43
+      ],
+      "label_text": "Water/Electricity /Gas Connection Bill for that address (atleast 1 year) / அந்த முகவரியில் குடிநீர்/மின்சாரம்/ எரிவாயு இணைப்பின் ரசீது (குறைந்தது 1 வருடம்)",
+      "label_script": "tamil",
+      "group": "address_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_addr_proof_2",
+      "bbox": [
+        206,
+        914,
+        47,
+        43
+      ],
+      "label_text": "Aadhaar Card / ஆதார் அட்டை",
+      "label_script": "tamil",
+      "group": "address_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_addr_proof_3",
+      "bbox": [
+        206,
+        967,
+        47,
+        44
+      ],
+      "label_text": "Current passbook of Nationalized /Scheduled Bank/ Postoffice தேசியமயமாக்கப்பட்ட / அட்டவணைப்படுத்தப்பட்ட வங்கி / அஞ்சல் அலுவலகத்தின் தற்போதைய கணக்கு புத்தகம்",
+      "label_script": "tamil",
+      "group": "address_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_addr_proof_4",
+      "bbox": [
+        206,
+        1021,
+        47,
+        44
+      ],
+      "label_text": "Indian Passport/இந்திய கடவுச்சீட்டு",
+      "label_script": "tamil",
+      "group": "address_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_addr_proof_5",
+      "bbox": [
+        206,
+        1075,
+        47,
+        44
+      ],
+      "label_text": "Revenue Departments Land Owning Records including Kisan Bahi /விவசாயி அட்டை உட்பட வருவாய்த் துறைகளின் நில உரிமைப் பதிவுகள்",
+      "label_script": "tamil",
+      "group": "address_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_addr_proof_6",
+      "bbox": [
+        206,
+        1143,
+        47,
+        44
+      ],
+      "label_text": "Registered Rent Lease Deed (in case of tenant) / பதிவுசெய்யப்பட்ட வாடகை குத்தகை பத்திரம் (குத்தகைதாரராக இருந்தால்)",
+      "label_script": "tamil",
+      "group": "address_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_addr_proof_7",
+      "bbox": [
+        206,
+        1200,
+        47,
+        43
+      ],
+      "label_text": "Registered Sale Deed (in Case of own house) /பதிவு செய்யப்பட்ட விற்பனைப் பத்திரம் (சொந்த வீடு எனில்)",
+      "label_script": "tamil",
+      "group": "address_proof",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_name",
+      "bbox": [
+        206,
+        1629,
+        47,
+        43
+      ],
+      "label_text": "Name/ பெயர்",
+      "label_script": "tamil",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_gender",
+      "bbox": [
+        678,
+        1629,
+        47,
+        43
+      ],
+      "label_text": "Gender/ பாலினம்",
+      "label_script": "tamil",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_dob",
+      "bbox": [
+        206,
+        1696,
+        47,
+        43
+      ],
+      "label_text": "DoB/Age/ பிறந்த தேதி / வயது",
+      "label_script": "tamil",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_relation_type",
+      "bbox": [
+        678,
+        1696,
+        47,
+        43
+      ],
+      "label_text": "Relation Type/உறவு முறை",
+      "label_script": "tamil",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_relation_name",
+      "bbox": [
+        206,
+        1768,
+        47,
+        44
+      ],
+      "label_text": "Relation Name/உறவினர் பெயர்",
+      "label_script": "tamil",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_address",
+      "bbox": [
+        678,
+        1768,
+        47,
+        44
+      ],
+      "label_text": "Address/முகவரி",
+      "label_script": "tamil",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_mobile",
+      "bbox": [
+        206,
+        1835,
+        47,
+        43
+      ],
+      "label_text": "Mobile Number/கைபேசி எண்",
+      "label_script": "tamil",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_photo",
+      "bbox": [
+        678,
+        1835,
+        47,
+        43
+      ],
+      "label_text": "Photo/புகைப்படம்",
+      "label_script": "tamil",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_epic_lost",
+      "bbox": [
+        175,
+        533,
+        47,
+        44
+      ],
+      "label_text": "Lost / தொலைந்ததால்",
+      "label_script": "tamil",
+      "group": "epic_status",
+      "page": 2
+    },
+    {
+      "id": "cb_epic_destroyed",
+      "bbox": [
+        650,
+        542,
+        47,
+        43
+      ],
+      "label_text": "Destroyed due to reason beyond control like floods, fire, other natural disaster etc / வெள்ளம், தீ, பிற இயற்கை பேரிடர் போன்ற கட்டுப்பாடற்ற காரணங்களால் அழிக்கப்பட்டதால்",
+      "label_script": "tamil",
+      "group": "epic_status",
+      "page": 2
+    },
+    {
+      "id": "cb_epic_mutilated",
+      "bbox": [
+        175,
+        620,
+        47,
+        43
+      ],
+      "label_text": "Mutilated / சிதைக்கப்பட்டதால்",
+      "label_script": "tamil",
+      "group": "epic_status",
+      "page": 2
+    },
+    {
+      "id": "cb_dis_locomotive",
+      "bbox": [
+        178,
+        899,
+        29,
+        28
+      ],
+      "label_text": "Locomotive / உடலியக்க இயலாமை",
+      "label_script": "tamil",
+      "group": "disability_category",
+      "page": 2
+    },
+    {
+      "id": "cb_dis_visual",
+      "bbox": [
+        178,
+        938,
+        29,
+        28
+      ],
+      "label_text": "Visual /கண் பார்வை",
+      "label_script": "tamil",
+      "group": "disability_category",
+      "page": 2
+    },
+    {
+      "id": "cb_dis_deafdumb",
+      "bbox": [
+        178,
+        977,
+        29,
+        28
+      ],
+      "label_text": "Deaf & Dumb / காது கேளாமை & வாய் பேசாமை",
+      "label_script": "tamil",
+      "group": "disability_category",
+      "page": 2
+    },
+    {
+      "id": "cb_dis_other",
+      "bbox": [
+        178,
+        1016,
+        29,
+        29
+      ],
+      "label_text": "If any other (Give Description) / வேறு ஏதேனும் இருந்தால் (விளக்கம் தரவும்)",
+      "label_script": "tamil",
+      "group": "disability_category",
+      "page": 2
+    },
+    {
+      "id": "cb_dis_cert_yes",
+      "bbox": [
+        755,
+        1128,
+        28,
+        29
+      ],
+      "label_text": "Yes/ ஆம்",
+      "label_script": "tamil",
+      "group": "disability_cert_attached",
+      "page": 2
+    },
+    {
+      "id": "cb_dis_cert_no",
+      "bbox": [
+        934,
+        1128,
+        29,
+        29
+      ],
+      "label_text": "No/ இல்லை",
+      "label_script": "tamil",
+      "group": "disability_cert_attached",
+      "page": 2
+    }
+  ],
+  "fields": [
+    {
+      "id": "f_ac_number",
+      "label_text": "No. / எண்.",
+      "label_script": "tamil",
+      "value_bbox": [
+        1290,
+        544,
+        48,
+        65
+      ],
+      "value_type": "serial",
+      "page": 0
+    },
+    {
+      "id": "f_disability_pct",
+      "label_text": "Percentage of disability: / இயலாமையின் சதவிகிதம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        764,
+        1090,
+        29,
+        28
+      ],
+      "value_type": "percent",
+      "page": 2
+    },
+    {
+      "id": "f_ac_name",
+      "label_text": "Name/ பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        318,
+        592,
+        491,
+        24
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_name_applicant",
+      "label_text": "(I) Name of the applicant/ விண்ணப்பதாரரின் பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        589,
+        673,
+        898,
+        64
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_epic",
+      "label_text": "EPIC No. / வாக்காளர் புகைப்பட அடையாள அட்டை எண்.",
+      "label_script": "tamil",
+      "value_bbox": [
+        851,
+        732,
+        492,
+        54
+      ],
+      "value_type": "epic",
+      "page": 0
+    },
+    {
+      "id": "f_aadhaar_number",
+      "label_text": "Aadhaar Number/ஆதார் எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        684,
+        847,
+        599,
+        64
+      ],
+      "value_type": "id_number",
+      "page": 0
+    },
+    {
+      "id": "f_mobile_self",
+      "label_text": "Mobile No. of Self / விண்ணப்பதாரரின் கைபேசி எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        784,
+        1013,
+        499,
+        64
+      ],
+      "value_type": "phone",
+      "page": 0
+    },
+    {
+      "id": "f_mobile_relative",
+      "label_text": "Mobile No. of Father/Mother/Any other relative (if available) / தந்தை/தாய்/ வேறு ஏதாவது உறவினரின் கைபேசி எண் (இருப்பின்)",
+      "label_script": "tamil",
+      "value_bbox": [
+        852,
+        1101,
+        499,
+        64
+      ],
+      "value_type": "phone",
+      "page": 0
+    },
+    {
+      "id": "f_email_self",
+      "label_text": "Email Id of Self / விண்ணப்பதாரரின் மின்னஞ்சல் முகவரி",
+      "label_script": "tamil",
+      "value_bbox": [
+        1012,
+        1190,
+        467,
+        45
+      ],
+      "value_type": "email",
+      "page": 0
+    },
+    {
+      "id": "f_email_relative",
+      "label_text": "Email Id of Father/Mother/Any other relative (if available) / தந்தை/தாய்/ வேறு ஏதாவது உறவினரின் மின்னஞ்சல் முகவரி (இருப்பின்)",
+      "label_script": "tamil",
+      "value_bbox": [
+        890,
+        1251,
+        592,
+        45
+      ],
+      "value_type": "email",
+      "page": 0
+    },
+    {
+      "id": "f_addr_house",
+      "label_text": "House / Building/ Apartment No/ வீடு/ கட்டிடம்/ அடுக்குமாடி குடியிருப்பு எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        525,
+        157,
+        293,
+        80
+      ],
+      "value_type": "house",
+      "page": 1
+    },
+    {
+      "id": "f_addr_street",
+      "label_text": "Street/Area/Locality / Mohalla/Road / தெரு/ பகுதி/உள்ளூர்/ மொஹல்லா/சாலை",
+      "label_script": "tamil",
+      "value_bbox": [
+        1131,
+        157,
+        346,
+        80
+      ],
+      "value_type": "street",
+      "page": 1
+    },
+    {
+      "id": "f_addr_town",
+      "label_text": "Town/Village நகரம்/ கிராமம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        525,
+        413,
+        293,
+        80
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_addr_post_office",
+      "label_text": "Post Office /அஞ்சல் அலுவலகம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1131,
+        413,
+        346,
+        80
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_addr_tehsil",
+      "label_text": "Tehsil/Taluqa/Mandal / வட்டம் /தாலுகா/ மண்டலம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1131,
+        515,
+        346,
+        80
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_addr_district",
+      "label_text": "District/ மாவட்டம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        525,
+        644,
+        293,
+        68
+      ],
+      "value_type": "city",
+      "page": 1
+    },
+    {
+      "id": "f_addr_state",
+      "label_text": "State/UT / மாநிலம்/ யூனியன் பிரதேசம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1131,
+        644,
+        346,
+        68
+      ],
+      "value_type": "state",
+      "page": 1
+    },
+    {
+      "id": "f_other_doc",
+      "label_text": "Any Other:- (Pl. Specify) / வேறு ஏதேனும் இருந்தால் (தயவுசெய்து குறிப்பிடவும்) :-",
+      "label_script": "tamil",
+      "value_bbox": [
+        671,
+        1238,
+        615,
+        45
+      ],
+      "value_type": "document",
+      "page": 1
+    },
+    {
+      "id": "f_corrected_value",
+      "label_text": "The correct particulars in the entry to be corrected are as under :–/திருத்தப்பட வேண்டிய பதிவுகளின் சரியான விவரங்கள் :–",
+      "label_script": "tamil",
+      "value_bbox": [
+        171,
+        1953,
+        1310,
+        43
+      ],
+      "value_type": "name",
+      "page": 1
+    },
+    {
+      "id": "f_corrected_value_2",
+      "label_text": "The correct particulars in the entry to be corrected are as under :–/திருத்தப்பட வேண்டிய பதிவுகளின் சரியான விவரங்கள் :–",
+      "label_script": "tamil",
+      "value_bbox": [
+        171,
+        1999,
+        1310,
+        44
+      ],
+      "value_type": "name",
+      "page": 1
+    },
+    {
+      "id": "f_corr_doc",
+      "label_text": "Name of Document in support of above claim attached / மேற்கண்ட ஏற்புரைக்கு ஆதாரமாக இணைக்கப்பட்ட ஆவணத்தின் பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        173,
+        219,
+        1307,
+        31
+      ],
+      "value_type": "document",
+      "page": 2
+    },
+    {
+      "id": "f_corr_doc_2",
+      "label_text": "Name of Document in support of above claim attached / மேற்கண்ட ஏற்புரைக்கு ஆதாரமாக இணைக்கப்பட்ட ஆவணத்தின் பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        173,
+        253,
+        1307,
+        32
+      ],
+      "value_type": "document",
+      "page": 2
+    },
+    {
+      "id": "f_disability_other",
+      "label_text": "If any other (Give Description) / வேறு ஏதேனும் இருந்தால் (விளக்கம் தரவும்)",
+      "label_script": "tamil",
+      "value_bbox": [
+        566,
+        1007,
+        661,
+        31
+      ],
+      "value_type": "disability",
+      "page": 2
+    },
+    {
+      "id": "f_decl_date",
+      "label_text": "Date / தேதி",
+      "label_script": "tamil",
+      "value_bbox": [
+        306,
+        1428,
+        170,
+        28
+      ],
+      "value_type": "date",
+      "page": 2
+    },
+    {
+      "id": "f_decl_place",
+      "label_text": "Place / இடம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        316,
+        1458,
+        160,
+        21
+      ],
+      "value_type": "city",
+      "page": 2
+    },
+    {
+      "id": "f_ack_no",
+      "label_text": "Acknowledgement Number/ஒப்புகை சீட்டு எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        687,
+        1828,
+        340,
+        54
+      ],
+      "value_type": "id_number",
+      "page": 2
+    },
+    {
+      "id": "f_ack_date",
+      "label_text": "Date/நாள்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1170,
+        1828,
+        312,
+        54
+      ],
+      "value_type": "date",
+      "page": 2
+    },
+    {
+      "id": "f_ack_received_name",
+      "label_text": "Received the application in Form 8 of Thiru / Tmt /Selvi/ திரு/திருமதி/ செல்வி",
+      "label_script": "tamil",
+      "value_bbox": [
+        1021,
+        1883,
+        461,
+        54
+      ],
+      "value_type": "name",
+      "page": 2
+    },
+    {
+      "id": "f_ack_received_name_2",
+      "label_text": "இடமிருந்து படிவம் 8 பெற்றுக் கொள்ளப்பட்டது",
+      "label_script": "tamil",
+      "value_bbox": [
+        169,
+        1934,
+        551,
+        36
+      ],
+      "value_type": "name",
+      "page": 2
+    },
+    {
+      "id": "f_addr_pin",
+      "label_text": "PIN Code / அஞ்சல் குறியீட்டு எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        524,
+        513,
+        295,
+        80
+      ],
+      "value_type": "pincode",
+      "page": 1
+    }
+  ],
+  "tables": []
+}

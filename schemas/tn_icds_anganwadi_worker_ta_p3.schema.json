@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_ack_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "திருமதி/ செல்வி"
+        },
+        "f_ack_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "என்பவரிடமிருந்து"
+        },
+        "f_ack_office": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "தேதியில்"
+        }
+      },
+      "required": [
+        "f_ack_name",
+        "f_ack_date",
+        "f_ack_office"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "tn_icds_anganwadi_worker_ta_p3"
+}

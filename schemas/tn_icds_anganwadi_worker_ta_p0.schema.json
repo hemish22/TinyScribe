@@ -1,0 +1,119 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_applicant_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "விண்ணப்பதாரர் பெயர்"
+        },
+        "f_father_husband_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "தகப்பனார்/ கணவர் பெயர்"
+        },
+        "f_address": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "விண்ணப்பதாரரின் இருப்பிட முகவரி, கைப்பேசி எண்"
+        },
+        "f_aadhaar_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "விண்ணப்பதாரரின் ஆதார் எண்"
+        },
+        "f_town_body": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "விண்ணப்பதாரரின் இருப்பிடம் பேரூராட்சி / நகராட்சி / மாநகராட்சியின் பெயர்"
+        },
+        "f_village_panchayat": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "விண்ணப்பதாரரின் இருப்பிட ஊராட்சி/ கிராமம் பெயர்"
+        },
+        "f_centre_address": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "அங்கன்வாடி பணியாளர் நியமனம் கோரும் காலிப்பணியிட குழந்தைகள் மையத்தின் எண்., பெயர் / முகவரி"
+        },
+        "f_education": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "கல்வி தகுதி"
+        },
+        "f_class12_details": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "12 ஆம் வகுப்பு தேர்ச்சி (தமிழ்நாடு அரசுதேர்வுகள் இயக்கம் ) பெற்ற விவரம் (சான்றிதழ் சுயசான்றொப்பமிட்ட நகலுடன் )"
+        },
+        "f_dob_age": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "பிறந்த தேதி மற்றும் பூர்த்தியடைந்த வயது ( அறிவிப்பு வந்த மாதத்தின் முதல் நாளின் படி)"
+        },
+        "f_address_proof": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "விண்ணப்பதாரரின் இருப்பிட முகவரி சான்று (ஏதேனும் ஒன்று)"
+        }
+      },
+      "required": [
+        "f_applicant_name",
+        "f_father_husband_name",
+        "f_address",
+        "f_aadhaar_number",
+        "f_town_body",
+        "f_village_panchayat",
+        "f_centre_address",
+        "f_education",
+        "f_class12_details",
+        "f_dob_age",
+        "f_address_proof"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_community_1": {
+          "type": "boolean",
+          "description": "தா.வ"
+        },
+        "cb_community_2": {
+          "type": "boolean",
+          "description": "தா.ப"
+        },
+        "cb_community_3": {
+          "type": "boolean",
+          "description": "மி.பி.வ"
+        },
+        "cb_community_4": {
+          "type": "boolean",
+          "description": "பி.வ"
+        },
+        "cb_community_5": {
+          "type": "boolean",
+          "description": "இ.வ"
+        }
+      },
+      "required": [
+        "cb_community_1",
+        "cb_community_2",
+        "cb_community_3",
+        "cb_community_4",
+        "cb_community_5"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "tn_icds_anganwadi_worker_ta_p0"
+}

@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_prev_epic_constituency": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(झ) पूर्व निर्वाचन क्षेत्र का नाम"
+        },
+        "f_prev_address": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "(झ) पूर्व मामूली निवास का पूर्ण पता"
+        },
+        "f_epic_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(झ) निर्वाचक फोटो पहचान-पत्र सं0"
+        },
+        "f_epic_issue_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(झ) जारी करने की तारीख"
+        },
+        "f_decl_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "स्थान"
+        },
+        "f_decl_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "तारीख"
+        },
+        "f_applicant_signature": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "आवेदक के हस्ताक्षर"
+        },
+        "f_decl_other_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "राज्य (अन्य निर्वाचन-क्षेत्र में नाम)"
+        }
+      },
+      "required": [
+        "f_prev_epic_constituency",
+        "f_prev_address",
+        "f_epic_number",
+        "f_epic_issue_date",
+        "f_decl_place",
+        "f_decl_date",
+        "f_applicant_signature",
+        "f_decl_other_state"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6a_hi_p2"
+}

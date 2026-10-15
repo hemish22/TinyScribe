@@ -1,0 +1,338 @@
+{
+  "schema_version": "0",
+  "template_id": "eci_form6b_ta",
+  "source_url": "https://elections.tn.gov.in/ta/Forms/Form%206B-Tamil.pdf",
+  "licence": "GODL-India",
+  "language": "tamil",
+  "fillable": false,
+  "checkboxes": [
+    {
+      "id": "cb_aadhaar_yes",
+      "bbox": [
+        209,
+        803,
+        36,
+        37
+      ],
+      "label_text": "Aadhaar No. / ஆதார் எண்",
+      "label_script": "tamil",
+      "group": "aadhaar_choice",
+      "page": 0
+    },
+    {
+      "id": "cb_aadhaar_no",
+      "bbox": [
+        209,
+        868,
+        36,
+        36
+      ],
+      "label_text": "I am not able to furnish my Aadhaar Number because I don't have Aadhaar number. Therefore, I hereby submit a copy of one of the following documents :- / என்னிடம் ஆதார் எண் இல்லாததால், என்னால் ஆதார் எண்ணை வழங்க இயலவில்லை. எனவே, கீழ்க்கண்ட ஆவணங்களில் ஒன்றின் நகலை நான் சமர்ப்பிக்கிறேன்.",
+      "label_script": "tamil",
+      "group": "aadhaar_choice",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_mgnrega",
+      "bbox": [
+        209,
+        1056,
+        36,
+        36
+      ],
+      "label_text": "MGNREGA Job Card / மகாத்மா காந்தி தேசிய ஊரக வேலை உறுதிச் சட்ட அடையாள அட்டை",
+      "label_script": "tamil",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_passbook",
+      "bbox": [
+        209,
+        1116,
+        36,
+        37
+      ],
+      "label_text": "Passbooks with photograph issued by Bank / Post Office / வங்கி / அஞ்சல் அலுவலகத்தால் வழங்கப்பட்ட புகைப்படத்துடன் கூடிய கணக்குப் புத்தகம்",
+      "label_script": "tamil",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_health_insurance",
+      "bbox": [
+        209,
+        1187,
+        36,
+        36
+      ],
+      "label_text": "Health Insurance Smart Card issued under the scheme of Ministry of Labour/ தொழிலாளர் அமைச்சகத்தின் கீழ் வழங்கப்பட்ட சுகாதார காப்பீட்டின் ஸ்மார்ட் கார்டு",
+      "label_script": "tamil",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_driving_license",
+      "bbox": [
+        209,
+        1247,
+        36,
+        36
+      ],
+      "label_text": "Driving License / ஓட்டுனர் உரிமம்",
+      "label_script": "tamil",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_pan",
+      "bbox": [
+        209,
+        1303,
+        36,
+        36
+      ],
+      "label_text": "PAN Card / நிரந்தர கணக்கு எண் அட்டை",
+      "label_script": "tamil",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_npr_smartcard",
+      "bbox": [
+        209,
+        1361,
+        36,
+        36
+      ],
+      "label_text": "Smart Card Issued by RGI under NPR /தேசிய மக்கள் தொகை பதிவேட்டின்படி வழங்கப்பட்ட இருப்பிட அடையாளச் சான்று",
+      "label_script": "tamil",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_passport",
+      "bbox": [
+        209,
+        1422,
+        36,
+        36
+      ],
+      "label_text": "Indian Passport / இந்தியக் கடவுச்சீட்டு",
+      "label_script": "tamil",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_pension",
+      "bbox": [
+        209,
+        1475,
+        36,
+        36
+      ],
+      "label_text": "Pension document with photograph / புகைப்படத்துடன் கூடிய ஓய்வூதிய ஆவணம்",
+      "label_script": "tamil",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_service_id",
+      "bbox": [
+        209,
+        1533,
+        36,
+        36
+      ],
+      "label_text": "Service Identity card with photograph issued to employees by Central / State Govt./ PSUs/Public Limited Companies / மத்திய / மாநில அரசு / பொதுத்துறை நிறுவனங்கள் / வரையறுக்கப்பட்ட பொது நிறுவனங்களால் ஊழியர்களுக்கு வழங்கப்பட்ட புகைப்படத்துடன் கூடிய பணிக்கான அடையாள அட்டை",
+      "label_script": "tamil",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_official_id",
+      "bbox": [
+        209,
+        1628,
+        36,
+        36
+      ],
+      "label_text": "Official Identity Card issued to MPs/MLAs/MLCs./ பாராளுமன்ற உறுப்பினர்கள்/ சட்டமன்ற உறுப்பினர்கள் / மேல்சபை உறுப்பினர்களுக்கு வழங்கப்படும் அலுவலக அடையாள அட்டை.",
+      "label_script": "tamil",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_udid",
+      "bbox": [
+        209,
+        1711,
+        36,
+        36
+      ],
+      "label_text": "Unique Identity ID (UDID) Card, issued by M/o Social Justice and Empowerment, Government of India/ இந்திய அரசாங்கத்தின் சமூக நீதி மற்றும் அதிகாரமளித்தல் துறையால் வழங்கப்பட்ட தனிப்பட்ட அடையாள அட்டை (UDID)",
+      "label_script": "tamil",
+      "group": "id_proof_document",
+      "page": 0
+    }
+  ],
+  "fields": [
+    {
+      "id": "f_elector_name",
+      "label_text": "(Name of Elector) am Enrolled in electoral roll of",
+      "label_script": "latin",
+      "value_bbox": [
+        185,
+        357,
+        581,
+        45
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_constituency_name",
+      "label_text": "(Name of Assembly/ Parliamentary Constituency)",
+      "label_script": "latin",
+      "value_bbox": [
+        173,
+        403,
+        581,
+        45
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_epic_number",
+      "label_text": "having EPIC Number",
+      "label_script": "latin",
+      "value_bbox": [
+        395,
+        459,
+        599,
+        43
+      ],
+      "value_type": "epic",
+      "page": 0
+    },
+    {
+      "id": "f_elector_name_ta",
+      "label_text": "(வாக்காளரின் பெயர்)",
+      "label_script": "tamil",
+      "value_bbox": [
+        219,
+        501,
+        500,
+        23
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_constituency_name_ta",
+      "label_text": "(சட்டமன்றம்/ நாடாளுமன்றத் தொகுதி பெயர்)",
+      "label_script": "tamil",
+      "value_bbox": [
+        979,
+        508,
+        490,
+        45
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_epic_number_ta",
+      "label_text": "வாக்காளர் அடையாள அட்டை எண்ணுடன்",
+      "label_script": "tamil",
+      "value_bbox": [
+        738,
+        577,
+        599,
+        43
+      ],
+      "value_type": "epic",
+      "page": 0
+    },
+    {
+      "id": "f_aadhaar_number",
+      "label_text": "Aadhaar No. / ஆதார் எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        591,
+        797,
+        719,
+        43
+      ],
+      "value_type": "id_number",
+      "page": 0
+    },
+    {
+      "id": "f_signature_elector",
+      "label_text": "Signature of the elector/ வாக்காளர் கையொப்பம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1062,
+        1780,
+        433,
+        45
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_name_elector_bottom",
+      "label_text": "Name of the elector / வாக்காளர் பெயர்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1062,
+        1825,
+        433,
+        45
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_email_mobile",
+      "label_text": "Email ID/Mobile Number / மின்னஞ்சல் முகவரி/ கைபேசி எண்",
+      "label_script": "tamil",
+      "value_bbox": [
+        1062,
+        1871,
+        433,
+        45
+      ],
+      "value_type": "email",
+      "page": 0
+    },
+    {
+      "id": "f_place",
+      "label_text": "Place/ இடம்",
+      "label_script": "tamil",
+      "value_bbox": [
+        329,
+        1933,
+        330,
+        45
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_date",
+      "label_text": "Date / தேதி",
+      "label_script": "tamil",
+      "value_bbox": [
+        325,
+        1986,
+        330,
+        45
+      ],
+      "value_type": "date",
+      "page": 0
+    }
+  ],
+  "tables": []
+}

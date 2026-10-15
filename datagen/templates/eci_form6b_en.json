@@ -1,0 +1,35 @@
+{
+  "schema_version": "0",
+  "template_id": "eci_form6b_en",
+  "source_url": "https://voters.eci.gov.in/formspdf/Form_6B_English.pdf",
+  "licence": "GODL-India",
+  "language": "english",
+  "fillable": false,
+  "checkboxes": [
+    {"id": "cb_aadhaar_yes", "bbox": [215, 686, 62, 64], "label_text": "Aadhaar No.", "label_script": "latin", "group": "aadhaar_choice", "page": 0},
+    {"id": "cb_aadhaar_no", "bbox": [228, 802, 62, 85], "label_text": "I am not able to furnish my Aadhaar Number because I don't have Aadhaar number. Therefore, I hereby submit a copy of one of the following documents :-", "label_script": "latin", "group": "aadhaar_choice", "page": 0},
+    {"id": "cb_doc_mgnrega", "bbox": [228, 1026, 62, 64], "label_text": "MGNREGA Job Card.", "label_script": "latin", "group": "id_proof_document", "page": 0},
+    {"id": "cb_doc_passbook", "bbox": [228, 1101, 62, 64], "label_text": "Passbook with photograph issued by Bank/Post Office.", "label_script": "latin", "group": "id_proof_document", "page": 0},
+    {"id": "cb_doc_health_insurance", "bbox": [228, 1175, 62, 65], "label_text": "Health Insurance Smart Card issued under the scheme of Ministry of Labour.", "label_script": "latin", "group": "id_proof_document", "page": 0},
+    {"id": "cb_doc_driving_license", "bbox": [228, 1254, 62, 64], "label_text": "Driving License.", "label_script": "latin", "group": "id_proof_document", "page": 0},
+    {"id": "cb_doc_pan", "bbox": [228, 1328, 62, 65], "label_text": "PAN Card", "label_script": "latin", "group": "id_proof_document", "page": 0},
+    {"id": "cb_doc_npr_smartcard", "bbox": [228, 1403, 62, 64], "label_text": "Smart Card issued by RGI under NPR.", "label_script": "latin", "group": "id_proof_document", "page": 0},
+    {"id": "cb_doc_passport", "bbox": [228, 1477, 62, 65], "label_text": "Indian Passport.", "label_script": "latin", "group": "id_proof_document", "page": 0},
+    {"id": "cb_doc_pension", "bbox": [228, 1552, 62, 64], "label_text": "Pension document with photograph.", "label_script": "latin", "group": "id_proof_document", "page": 0},
+    {"id": "cb_doc_service_id", "bbox": [228, 1627, 62, 84], "label_text": "Service Identity Card with photograph issued to employees by Central/State Govt./PSUs/Public Limited Companies.", "label_script": "latin", "group": "id_proof_document", "page": 0},
+    {"id": "cb_doc_official_id", "bbox": [228, 1733, 62, 64], "label_text": "Official Identity Card issued to MPs/MLAs/MLCs.", "label_script": "latin", "group": "id_proof_document", "page": 0},
+    {"id": "cb_doc_udid", "bbox": [228, 1807, 62, 85], "label_text": "Unique Identity ID (UDID) Card, issued by M/o Social Justice and Empowerment, Government of India.", "label_script": "latin", "group": "id_proof_document", "page": 0}
+  ],
+  "fields": [
+    {"id": "f_elector_name", "label_text": "(Name of Elector)", "label_script": "latin", "value_bbox": [118, 362, 592, 36], "value_type": "name", "page": 0},
+    {"id": "f_constituency_name", "label_text": "(Name of Assembly/Parliamentary Constituency)", "label_script": "latin", "value_bbox": [100, 420, 521, 39], "value_type": "city", "page": 0},
+    {"id": "f_epic_number", "label_text": "EPIC Number", "label_script": "latin", "value_bbox": [247, 490, 860, 49], "value_type": "epic", "page": 0},
+    {"id": "f_aadhaar_number", "label_text": "(i) Aadhaar No.", "label_script": "latin", "value_bbox": [478, 686, 842, 64], "value_type": "id_number", "page": 0},
+    {"id": "f_name_elector_bottom", "label_text": "Name of the elector:", "label_script": "latin", "value_bbox": [1209, 2017, 348, 35], "value_type": "name", "page": 0},
+    {"id": "f_email_mobile", "label_text": "E-mail ID/Mobile Number:", "label_script": "latin", "value_bbox": [1209, 2083, 348, 33], "value_type": "email", "page": 0},
+    {"id": "f_place", "label_text": "Place:", "label_script": "latin", "value_bbox": [177, 2143, 354, 39], "value_type": "city", "page": 0},
+    {"id": "f_date", "label_text": "Date", "label_script": "latin", "value_bbox": [171, 2221, 259, 35], "value_type": "date", "page": 0},
+    {"id": "f_signature_elector", "label_text": "Signature of the elector:", "label_script": "latin", "value_bbox": [1207, 1951, 350, 37], "value_type": "name", "page": 0}
+  ],
+  "tables": []
+}

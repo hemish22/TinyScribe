@@ -1,0 +1,837 @@
+{
+  "schema_version": "0",
+  "template_id": "eci_form8_bn",
+  "source_url": "https://ceowestbengal.wb.gov.in/Downloads/Forms/RollRevision/Form-8_Bengali.pdf",
+  "licence": "GODL-India",
+  "language": "bengali",
+  "fillable": false,
+  "checkboxes": [
+    {
+      "id": "cb_aadhaar_a",
+      "bbox": [
+        261,
+        556,
+        37,
+        30
+      ],
+      "label_text": "আধার নম্বর",
+      "label_script": "bengali",
+      "group": "aadhaar_choice",
+      "page": 0
+    },
+    {
+      "id": "cb_aadhaar_b",
+      "bbox": [
+        261,
+        611,
+        37,
+        30
+      ],
+      "label_text": "আমি আধার নম্বর প্রদান করতে পারিনি, কারণ আমার আধার নম্বর নেই।",
+      "label_script": "bengali",
+      "group": "aadhaar_choice",
+      "page": 0
+    },
+    {
+      "id": "cb_app_shift",
+      "bbox": [
+        223,
+        921,
+        46,
+        37
+      ],
+      "label_text": "বাসস্থান পরিবর্তন (অথবা)",
+      "label_script": "bengali",
+      "group": "application_type",
+      "page": 0
+    },
+    {
+      "id": "cb_app_correct",
+      "bbox": [
+        223,
+        970,
+        46,
+        37
+      ],
+      "label_text": "বর্তমান ভোটার তালিকায় থাকা তথ্য সংশোধন (অথবা)",
+      "label_script": "bengali",
+      "group": "application_type",
+      "page": 0
+    },
+    {
+      "id": "cb_app_rep_epic",
+      "bbox": [
+        223,
+        1017,
+        46,
+        38
+      ],
+      "label_text": "সংশোধন ছাড়াই সচিত্র ভোটার পরিচয় পত্র বদলে দেওয়া (অথবা)",
+      "label_script": "bengali",
+      "group": "application_type",
+      "page": 0
+    },
+    {
+      "id": "cb_app_pwd",
+      "bbox": [
+        223,
+        1064,
+        46,
+        38
+      ],
+      "label_text": "প্রতিবন্ধকতা যুক্ত ব্যক্তি হিসেবে চিহ্নিতকরণের জন্য অনুরোধ",
+      "label_script": "bengali",
+      "group": "application_type",
+      "page": 0
+    },
+    {
+      "id": "cb_addr_proof_1",
+      "bbox": [
+        214,
+        1643,
+        43,
+        43
+      ],
+      "label_text": "ওই ঠিকানায় থাকা জল/বিদ্যুৎ/গ্যাস-এর লাইন সংযোগের বিল (কমপক্ষে ১ বছর)",
+      "label_script": "bengali",
+      "group": "address_proof",
+      "page": 0
+    },
+    {
+      "id": "cb_addr_proof_2",
+      "bbox": [
+        1166,
+        1643,
+        44,
+        43
+      ],
+      "label_text": "আধার কার্ড",
+      "label_script": "bengali",
+      "group": "address_proof",
+      "page": 0
+    },
+    {
+      "id": "cb_addr_proof_3",
+      "bbox": [
+        214,
+        1708,
+        43,
+        44
+      ],
+      "label_text": "রাষ্ট্রায়ত্ত / তালিকাভুক্ত ব্যাঙ্ক / ডাকঘর এর সাম্প্রতিক পাসবুক",
+      "label_script": "bengali",
+      "group": "address_proof",
+      "page": 0
+    },
+    {
+      "id": "cb_addr_proof_4",
+      "bbox": [
+        1167,
+        1708,
+        44,
+        44
+      ],
+      "label_text": "ভারতীয় পাসপোর্ট",
+      "label_script": "bengali",
+      "group": "address_proof",
+      "page": 0
+    },
+    {
+      "id": "cb_addr_proof_5",
+      "bbox": [
+        214,
+        1768,
+        43,
+        44
+      ],
+      "label_text": "কিষাণ বই সহ রাজস্ব দপ্তরের জমি স্বত্বাধিকার সংক্রান্ত নথি",
+      "label_script": "bengali",
+      "group": "address_proof",
+      "page": 0
+    },
+    {
+      "id": "cb_addr_proof_6",
+      "bbox": [
+        214,
+        1830,
+        43,
+        43
+      ],
+      "label_text": "নিবন্ধীকৃত ভাড়া লিজ-এর দলিল (ভাড়াটিয়ার ক্ষেত্রে)",
+      "label_script": "bengali",
+      "group": "address_proof",
+      "page": 0
+    },
+    {
+      "id": "cb_addr_proof_7",
+      "bbox": [
+        906,
+        1831,
+        44,
+        43
+      ],
+      "label_text": "নিবন্ধীকৃত বিক্রয় দলিল (নিজস্ব গৃহের ক্ষেত্রে)",
+      "label_script": "bengali",
+      "group": "address_proof",
+      "page": 0
+    },
+    {
+      "id": "cb_corr_name",
+      "bbox": [
+        244,
+        319,
+        51,
+        46
+      ],
+      "label_text": "নাম",
+      "label_script": "bengali",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_gender",
+      "bbox": [
+        566,
+        319,
+        51,
+        46
+      ],
+      "label_text": "লিঙ্গ",
+      "label_script": "bengali",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_dob",
+      "bbox": [
+        888,
+        319,
+        51,
+        46
+      ],
+      "label_text": "জন্ম তারিখ/বয়স",
+      "label_script": "bengali",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_relation_type",
+      "bbox": [
+        244,
+        378,
+        51,
+        46
+      ],
+      "label_text": "সম্পর্কের ধরণ",
+      "label_script": "bengali",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_relation_name",
+      "bbox": [
+        566,
+        378,
+        51,
+        46
+      ],
+      "label_text": "সম্পর্কিত ব্যক্তির নাম",
+      "label_script": "bengali",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_address",
+      "bbox": [
+        891,
+        378,
+        51,
+        46
+      ],
+      "label_text": "ঠিকানা",
+      "label_script": "bengali",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_mobile",
+      "bbox": [
+        244,
+        437,
+        51,
+        46
+      ],
+      "label_text": "মোবাইল নম্বর",
+      "label_script": "bengali",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_corr_photo",
+      "bbox": [
+        566,
+        437,
+        51,
+        46
+      ],
+      "label_text": "ফোটো",
+      "label_script": "bengali",
+      "group": "correction_particulars",
+      "page": 1
+    },
+    {
+      "id": "cb_epic_lost",
+      "bbox": [
+        177,
+        1028,
+        53,
+        44
+      ],
+      "label_text": "হারিয়ে যাওয়া",
+      "label_script": "bengali",
+      "group": "epic_status",
+      "page": 1
+    },
+    {
+      "id": "cb_epic_destroyed",
+      "bbox": [
+        478,
+        1028,
+        52,
+        44
+      ],
+      "label_text": "বন্যা, অগ্নিকান্ড, অন্যান্য প্রাকৃতিক বিপর্যয় ইত্যাদি কারণে বিনষ্ট",
+      "label_script": "bengali",
+      "group": "epic_status",
+      "page": 1
+    },
+    {
+      "id": "cb_epic_mutilated",
+      "bbox": [
+        177,
+        1084,
+        53,
+        44
+      ],
+      "label_text": "ছিঁড়ে যাওয়া",
+      "label_script": "bengali",
+      "group": "epic_status",
+      "page": 1
+    },
+    {
+      "id": "cb_dis_locomotive",
+      "bbox": [
+        162,
+        1312,
+        52,
+        45
+      ],
+      "label_text": "চলৎশক্তিহীনতা",
+      "label_script": "bengali",
+      "group": "disability_category",
+      "page": 1
+    },
+    {
+      "id": "cb_dis_visual",
+      "bbox": [
+        386,
+        1313,
+        52,
+        45
+      ],
+      "label_text": "দৃষ্টিহীনতা",
+      "label_script": "bengali",
+      "group": "disability_category",
+      "page": 1
+    },
+    {
+      "id": "cb_dis_deafdumb",
+      "bbox": [
+        641,
+        1309,
+        52,
+        45
+      ],
+      "label_text": "মূক ও বধিরতা",
+      "label_script": "bengali",
+      "group": "disability_category",
+      "page": 1
+    },
+    {
+      "id": "cb_dis_other",
+      "bbox": [
+        891,
+        1311,
+        53,
+        44
+      ],
+      "label_text": "যদি অন্য কিছু হয় (বর্ণনা করুন)",
+      "label_script": "bengali",
+      "group": "disability_category",
+      "page": 1
+    },
+    {
+      "id": "cb_dis_cert_yes",
+      "bbox": [
+        957,
+        1367,
+        53,
+        45
+      ],
+      "label_text": "হ্যাঁ",
+      "label_script": "bengali",
+      "group": "disability_cert_attached",
+      "page": 1
+    },
+    {
+      "id": "cb_dis_cert_no",
+      "bbox": [
+        1058,
+        1367,
+        52,
+        45
+      ],
+      "label_text": "না",
+      "label_script": "bengali",
+      "group": "disability_cert_attached",
+      "page": 1
+    }
+  ],
+  "fields": [
+    {
+      "id": "f_name_applicant",
+      "label_text": "(অ) আবেদনকারীর নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        448,
+        389,
+        990,
+        41
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_epic",
+      "label_text": "সচিত্র ভোটার পরিচয় পত্রের নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        524,
+        438,
+        600,
+        42
+      ],
+      "value_type": "epic",
+      "page": 0
+    },
+    {
+      "id": "f_aadhaar_number",
+      "label_text": "আধার নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        507,
+        539,
+        610,
+        59
+      ],
+      "value_type": "id_number",
+      "page": 0
+    },
+    {
+      "id": "f_mobile_self",
+      "label_text": "নিজের মোবাইল নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        845,
+        664,
+        451,
+        38
+      ],
+      "value_type": "phone",
+      "page": 0
+    },
+    {
+      "id": "f_mobile_relative",
+      "label_text": "বাবা/মা/অন্য কোনও আত্মীয় (যদি থাকে)-এর মোবাইল নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        845,
+        726,
+        451,
+        38
+      ],
+      "value_type": "phone",
+      "page": 0
+    },
+    {
+      "id": "f_email_self",
+      "label_text": "নিজের ই-মেল আইডি",
+      "label_script": "bengali",
+      "value_bbox": [
+        416,
+        767,
+        837,
+        42
+      ],
+      "value_type": "email",
+      "page": 0
+    },
+    {
+      "id": "f_other_doc",
+      "label_text": "অন্য কোনও নথি :- (অনুগ্রহ করে উল্লেখ করুন)",
+      "label_script": "bengali",
+      "value_bbox": [
+        608,
+        1902,
+        874,
+        42
+      ],
+      "value_type": "document",
+      "page": 0
+    },
+    {
+      "id": "f_corrected_value",
+      "label_text": "বাংলায়",
+      "label_script": "bengali",
+      "value_bbox": [
+        126,
+        577,
+        700,
+        115
+      ],
+      "value_type": "name",
+      "page": 1
+    },
+    {
+      "id": "f_corrected_value_en",
+      "label_text": "ইংরেজিতে",
+      "label_script": "bengali",
+      "value_bbox": [
+        827,
+        577,
+        700,
+        115
+      ],
+      "value_type": "name",
+      "page": 1,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_corr_doc",
+      "label_text": "উপরিবর্ণিত দাবির সমর্থনে সংযোজিত নথির নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        127,
+        750,
+        1399,
+        34
+      ],
+      "value_type": "document",
+      "page": 1
+    },
+    {
+      "id": "f_corr_doc_2",
+      "label_text": "উপরিবর্ণিত দাবির সমর্থনে সংযোজিত নথির নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        127,
+        786,
+        1399,
+        34
+      ],
+      "value_type": "document",
+      "page": 1
+    },
+    {
+      "id": "f_decl_date",
+      "label_text": "তারিখ",
+      "label_script": "bengali",
+      "value_bbox": [
+        230,
+        1628,
+        262,
+        42
+      ],
+      "value_type": "date",
+      "page": 1
+    },
+    {
+      "id": "f_ack_no",
+      "label_text": "প্রাপ্তিস্বীক্ষার পত্র নং",
+      "label_script": "bengali",
+      "value_bbox": [
+        314,
+        1999,
+        704,
+        30
+      ],
+      "value_type": "id_number",
+      "page": 1
+    },
+    {
+      "id": "f_ack_date",
+      "label_text": "তারিখ",
+      "label_script": "bengali",
+      "value_bbox": [
+        1091,
+        1987,
+        367,
+        42
+      ],
+      "value_type": "date",
+      "page": 1
+    },
+    {
+      "id": "f_ack_received_name",
+      "label_text": "৮ নং ফর্মে শ্রী/শ্রীমতী/কুমারী",
+      "label_script": "bengali",
+      "value_bbox": [
+        397,
+        2045,
+        732,
+        33
+      ],
+      "value_type": "name",
+      "page": 1
+    },
+    {
+      "id": "f_ac_number",
+      "label_text": "নং.",
+      "label_script": "bengali",
+      "value_bbox": [
+        808,
+        316,
+        83,
+        50
+      ],
+      "value_type": "serial",
+      "page": 0
+    },
+    {
+      "id": "f_ac_name",
+      "label_text": "নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        977,
+        322,
+        530,
+        45
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_form_no",
+      "label_text": "ফর্ম নং",
+      "label_script": "bengali",
+      "value_bbox": [
+        1204,
+        141,
+        229,
+        38
+      ],
+      "value_type": "serial",
+      "page": 0
+    },
+    {
+      "id": "f_email_relative",
+      "label_text": "বাবা/মা/অন্য কোনও আত্মীয় (যদি থাকে)-এর ই-মেল আইডি",
+      "label_script": "bengali",
+      "value_bbox": [
+        755,
+        818,
+        604,
+        39
+      ],
+      "value_type": "email",
+      "page": 0
+    },
+    {
+      "id": "f_addr_house",
+      "label_text": "গৃহ/ভবন/অ্যাপার্টমেন্ট নং",
+      "label_script": "bengali",
+      "value_bbox": [
+        579,
+        1262,
+        259,
+        51
+      ],
+      "value_type": "house",
+      "page": 0
+    },
+    {
+      "id": "f_addr_street",
+      "label_text": "গলি/এলাকা/অঞ্চল/মহল্লা/রাস্তা",
+      "label_script": "bengali",
+      "value_bbox": [
+        1144,
+        1264,
+        390,
+        49
+      ],
+      "value_type": "street",
+      "page": 0
+    },
+    {
+      "id": "f_addr_house_en",
+      "label_text": "House/Building/Apartment No.",
+      "label_script": "latin",
+      "value_bbox": [
+        652,
+        1318,
+        185,
+        39
+      ],
+      "value_type": "house",
+      "page": 0,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_addr_street_en",
+      "label_text": "State/Area/Locality/Mohalla/Road",
+      "label_script": "latin",
+      "value_bbox": [
+        1191,
+        1318,
+        340,
+        39
+      ],
+      "value_type": "street",
+      "page": 0,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_addr_town",
+      "label_text": "শহর/গ্রাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        441,
+        1364,
+        395,
+        38
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_addr_post_office",
+      "label_text": "ডাকঘর",
+      "label_script": "bengali",
+      "value_bbox": [
+        929,
+        1360,
+        600,
+        43
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_addr_town_en",
+      "label_text": "Town/ Village",
+      "label_script": "latin",
+      "value_bbox": [
+        490,
+        1407,
+        346,
+        36
+      ],
+      "value_type": "city",
+      "page": 0,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_addr_post_office_en",
+      "label_text": "Post Office",
+      "label_script": "latin",
+      "value_bbox": [
+        970,
+        1407,
+        559,
+        36
+      ],
+      "value_type": "city",
+      "page": 0,
+      "value_script": "latin"
+    },
+    {
+      "id": "f_addr_pin",
+      "label_text": "পিন কোড",
+      "label_script": "bengali",
+      "value_bbox": [
+        445,
+        1447,
+        388,
+        34
+      ],
+      "value_type": "pincode",
+      "page": 0
+    },
+    {
+      "id": "f_addr_district",
+      "label_text": "জেলা",
+      "label_script": "bengali",
+      "value_bbox": [
+        402,
+        1486,
+        433,
+        35
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_addr_tehsil",
+      "label_text": "তহসিল/তালুক/মণ্ডল",
+      "label_script": "bengali",
+      "value_bbox": [
+        1056,
+        1448,
+        473,
+        33
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_addr_state",
+      "label_text": "রাজ্য/কেন্দ্রশাসিত অঞ্চল",
+      "label_script": "bengali",
+      "value_bbox": [
+        1080,
+        1482,
+        453,
+        42
+      ],
+      "value_type": "state",
+      "page": 0
+    },
+    {
+      "id": "f_disability_pct",
+      "label_text": "অক্ষমতার শতকরা হার",
+      "label_script": "bengali",
+      "value_bbox": [
+        370,
+        1366,
+        65,
+        45
+      ],
+      "value_type": "percent",
+      "page": 1
+    },
+    {
+      "id": "f_decl_place",
+      "label_text": "স্থান",
+      "label_script": "bengali",
+      "value_bbox": [
+        231,
+        1675,
+        258,
+        31
+      ],
+      "value_type": "city",
+      "page": 1
+    }
+  ],
+  "tables": []
+}

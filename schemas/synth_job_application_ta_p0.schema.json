@@ -1,0 +1,182 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_applicant_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "விண்ணப்பதாரரின் பெயர்"
+        },
+        "f_father_husband_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "தந்தை / கணவர் பெயர்"
+        },
+        "f_dob": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "பிறந்த தேதி"
+        },
+        "f_mobile": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "கைபேசி எண்"
+        },
+        "f_address": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "தொடர்பு முகவரி"
+        },
+        "f_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "இடம்"
+        },
+        "f_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "தேதி"
+        }
+      },
+      "required": [
+        "f_applicant_name",
+        "f_father_husband_name",
+        "f_dob",
+        "f_mobile",
+        "f_address",
+        "f_place",
+        "f_date"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_gender_male": {
+          "type": "boolean",
+          "description": "ஆண்"
+        },
+        "cb_gender_female": {
+          "type": "boolean",
+          "description": "பெண்"
+        },
+        "cb_gender_transgender": {
+          "type": "boolean",
+          "description": "மூன்றாம் பாலினம்"
+        }
+      },
+      "required": [
+        "cb_gender_male",
+        "cb_gender_female",
+        "cb_gender_transgender"
+      ],
+      "additionalProperties": false
+    },
+    "tables": {
+      "type": "object",
+      "properties": {
+        "tbl_education": {
+          "type": "object",
+          "properties": {
+            "r2": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r3": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r4": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r5": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            }
+          },
+          "required": [
+            "r2",
+            "r3",
+            "r4",
+            "r5"
+          ],
+          "additionalProperties": false
+        },
+        "tbl_experience": {
+          "type": "object",
+          "properties": {
+            "r2": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r3": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r4": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            }
+          },
+          "required": [
+            "r2",
+            "r3",
+            "r4"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "tbl_education",
+        "tbl_experience"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes",
+    "tables"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "synth_job_application_ta_p0"
+}

@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_from_applicant_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "From: Applicant Name"
+        },
+        "f_from_applicant_address": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "From: Applicant Address"
+        },
+        "f_appellant_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "1. Full Name of the Appellant"
+        },
+        "f_appellant_address": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "2. Address"
+        },
+        "f_faa_particulars": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "3. Particulars of the First Appellate Authority"
+        },
+        "f_order_receipt_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "4. Date of receipt of the order appealed against"
+        },
+        "f_appeal_last_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "5. Last date for filing the Appeal"
+        },
+        "f_info_nature_subject": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "6. (a) Nature and subject matter of the information required"
+        },
+        "f_info_office_dept": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "6. (b) Name of the office or Department to which the information relates"
+        },
+        "f_appeal_grounds": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "7. The grounds for appeal"
+        }
+      },
+      "required": [
+        "f_from_applicant_name",
+        "f_from_applicant_address",
+        "f_appellant_name",
+        "f_appellant_address",
+        "f_faa_particulars",
+        "f_order_receipt_date",
+        "f_appeal_last_date",
+        "f_info_nature_subject",
+        "f_info_office_dept",
+        "f_appeal_grounds"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "rti_odisha_second_appeal_en_p0"
+}

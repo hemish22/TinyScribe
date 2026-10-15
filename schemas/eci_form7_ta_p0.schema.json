@@ -1,0 +1,130 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_ac_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No/எண்."
+        },
+        "f_form_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Form No/படிவம் எண்."
+        },
+        "f_ac_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name/ பெயர்"
+        },
+        "f_name_applicant": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(1) Name of the applicant/ விண்ணப்பதாரரின் பெயர்"
+        },
+        "f_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "EPIC No. / வாக்காளர் புகைப்பட அடையாள அட்டை எண்."
+        },
+        "f_mobile_self": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Mobile No. of Self / விண்ணப்பதாரரின் கைபேசி எண்"
+        },
+        "f_mobile_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Mobile No. of Relative / உறவினரின் கைபேசி எண்"
+        }
+      },
+      "required": [
+        "f_ac_number",
+        "f_form_no",
+        "f_ac_name",
+        "f_name_applicant",
+        "f_epic",
+        "f_mobile_self",
+        "f_mobile_relative"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_del_root": {
+          "type": "boolean",
+          "description": "(i) I request to delete name of the person mentioned below already included in the current roll due to any one of the following reasons: (tick any one) / தற்போதைய வாக்காளர் பட்டியலில் ஏற்கெனவே சேர்க்கப்பட்டு கீழே குறிப்பிடப்பட்டுள்ள நபரின் பெயரை பின்வரும் காரணங்களில் ஏதேனும் ஒன்றின் கீழ் நீக்குமாறு கேட்டுக்கொள்கிறேன்: (ஏதேனும் ஒன்றைத் தேர்வு செய்க)"
+        },
+        "cb_del_death": {
+          "type": "boolean",
+          "description": "Death/இறப்பு"
+        },
+        "cb_del_under_age": {
+          "type": "boolean",
+          "description": "Under Age/ குறைவு வயது"
+        },
+        "cb_del_absent": {
+          "type": "boolean",
+          "description": "Absent / Permanently shifted / வசிக்கவில்லை / நிரந்தரமாக குடிபெயர்ந்தவர்"
+        },
+        "cb_del_enrolled": {
+          "type": "boolean",
+          "description": "Already enrolled / ஏற்கெனவே பதிவுசெய்யப்பட்டுள்ளது"
+        },
+        "cb_del_not_citizen": {
+          "type": "boolean",
+          "description": "Not Indian Citizen / இந்திய குடிமகன் அல்ல"
+        },
+        "cb_inc_root": {
+          "type": "boolean",
+          "description": "(ii) I object to proposed inclusion of name of the person mentioned below due to any one of the following reasons: (tick any one)/ வாக்காளர் பட்டியலில் சேர்ப்பதற்கு விண்ணப்பிக்கப்பட்ட கீழே குறிப்பிடப்பட்டுள்ள நபரின் பெயரை பின் வரும் காரணங்களில் ஏதேனும் ஒன்றின் கீழ் நான் ஆட்சேபிக்கிறேன். (ஏதேனும் ஒன்றைத் தேர்வுசெய்க)"
+        },
+        "cb_inc_death": {
+          "type": "boolean",
+          "description": "Death/இறப்பு"
+        },
+        "cb_inc_under_age": {
+          "type": "boolean",
+          "description": "Under Age/ குறைவு வயது"
+        },
+        "cb_inc_absent": {
+          "type": "boolean",
+          "description": "Absent / Permanently shifted / வசிக்கவில்லை / நிரந்தரமாக குடிபெயர்ந்தவர்"
+        },
+        "cb_inc_enrolled": {
+          "type": "boolean",
+          "description": "Already enrolled / ஏற்கெனவே பதிவுசெய்யப்பட்டுள்ளது"
+        },
+        "cb_inc_not_citizen": {
+          "type": "boolean",
+          "description": "Not Indian Citizen / இந்திய குடிமகன் அல்ல"
+        }
+      },
+      "required": [
+        "cb_del_root",
+        "cb_del_death",
+        "cb_del_under_age",
+        "cb_del_absent",
+        "cb_del_enrolled",
+        "cb_del_not_citizen",
+        "cb_inc_root",
+        "cb_inc_death",
+        "cb_inc_under_age",
+        "cb_inc_absent",
+        "cb_inc_enrolled",
+        "cb_inc_not_citizen"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form7_ta_p0"
+}

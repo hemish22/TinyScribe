@@ -1,0 +1,147 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_elector_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "नाम"
+        },
+        "f_constituency": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "विधान सभा निर्वाचन क्षेत्र/संसदीय निर्वाचन क्षेत्र का नाम"
+        },
+        "f_elector_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "पत्र सं0"
+        },
+        "f_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "निर्वाचक का नाम"
+        },
+        "f_email_mobile": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "ई-मेल पता/मोबाइल सं0"
+        },
+        "f_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "स्थान"
+        },
+        "f_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "तारीख"
+        },
+        "f_aadhaar_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "आधार सं0"
+        },
+        "f_signature_elector": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "निर्वाचक के हस्ताक्षर"
+        }
+      },
+      "required": [
+        "f_elector_name",
+        "f_constituency",
+        "f_elector_number",
+        "f_name",
+        "f_email_mobile",
+        "f_place",
+        "f_date",
+        "f_aadhaar_number",
+        "f_signature_elector"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_aadhaar_yes": {
+          "type": "boolean",
+          "description": "आधार सं0"
+        },
+        "cb_aadhaar_no": {
+          "type": "boolean",
+          "description": "मैं आधार सं0 प्रस्तुत नहीं कर सकता, क्योंकि मेरे पास आधार संख्या नहीं है। इसलिए मैं निम्नलिखित में से किसी एक दस्तावेज की प्रति प्रस्तुत करता हूँ :-"
+        },
+        "cb_doc_mgnrega": {
+          "type": "boolean",
+          "description": "मनरेगा जॉब कार्ड"
+        },
+        "cb_doc_passbook": {
+          "type": "boolean",
+          "description": "बैंक/डाकघर द्वारा जारी की गई पासबुक"
+        },
+        "cb_doc_health": {
+          "type": "boolean",
+          "description": "श्रम मंत्रालय की योजना के अधीन जारी स्वास्थ्य बीमा स्मार्ट कार्ड"
+        },
+        "cb_doc_driving": {
+          "type": "boolean",
+          "description": "चालन अनुज्ञप्ति"
+        },
+        "cb_doc_pan": {
+          "type": "boolean",
+          "description": "पैन कार्ड"
+        },
+        "cb_doc_smart": {
+          "type": "boolean",
+          "description": "एनपीआर के अधीन आरजीआई द्वारा जारी स्मार्ट कार्ड"
+        },
+        "cb_doc_indian": {
+          "type": "boolean",
+          "description": "भारतीय पासपोर्ट"
+        },
+        "cb_doc_pension": {
+          "type": "boolean",
+          "description": "छायाचित्र के साथ पेंशन दस्तावेज"
+        },
+        "cb_doc_idcard": {
+          "type": "boolean",
+          "description": "केन्द्रीय/राज्य सरकार/पीएसयू / पब्लिक लिमिटेड कंपनियों द्वारा कर्मचारियों को जारी छायाचित्र के साथ सेवा पहचान कार्ड"
+        },
+        "cb_doc_official": {
+          "type": "boolean",
+          "description": "संसद् सदस्यों / विधान सभा सदस्यों/विधान परिषद् सदस्यों को जारी शासकीय पहचान पत्र"
+        },
+        "cb_doc_udid": {
+          "type": "boolean",
+          "description": "सामाजिक न्याय और अधिकारिता मंत्रालय, भारत सरकार द्वारा जारी विशिष्ट पहचान परिचय-पत्र (यूडीआईडी)"
+        }
+      },
+      "required": [
+        "cb_aadhaar_yes",
+        "cb_aadhaar_no",
+        "cb_doc_mgnrega",
+        "cb_doc_passbook",
+        "cb_doc_health",
+        "cb_doc_driving",
+        "cb_doc_pan",
+        "cb_doc_smart",
+        "cb_doc_indian",
+        "cb_doc_pension",
+        "cb_doc_idcard",
+        "cb_doc_official",
+        "cb_doc_udid"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6b_hi_p0"
+}

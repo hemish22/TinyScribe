@@ -1,0 +1,268 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_name_applicant": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(1) Name of the applicant"
+        },
+        "f_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "EPIC No."
+        },
+        "f_mobile_self": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Mobile No. of Self"
+        },
+        "f_mobile_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Mobile No. of Relative"
+        },
+        "f_person_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(3) The details of the person in respect of whom objection has been raised - Name"
+        },
+        "f_person_surname": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(3) Surname"
+        },
+        "f_person_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(3) EPIC No.(if available)"
+        },
+        "f_addr_house": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "House/Building/Apartment No."
+        },
+        "f_addr_street": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Street/Area/Locality/Mohalla/Road"
+        },
+        "f_addr_town": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Town/Village"
+        },
+        "f_addr_post_office": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Post Office"
+        },
+        "f_addr_pin": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "PIN Code"
+        },
+        "f_addr_tehsil": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Tehsil/Taluqa/Mandal"
+        },
+        "f_addr_district": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "District"
+        },
+        "f_addr_state": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "State/UT"
+        },
+        "f_decl_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date"
+        },
+        "f_decl_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Place"
+        },
+        "f_form_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "FORM No."
+        },
+        "f_ac_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. & Name of Assembly Constituency - Name"
+        },
+        "f_pc_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. & Name of Parliamentary Constituency@ - Name"
+        },
+        "f_ac_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. & Name of Assembly Constituency - No."
+        },
+        "f_pc_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. & Name of Parliamentary Constituency@ - No."
+        },
+        "f_ack_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Acknowledgment Number"
+        },
+        "f_ack_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Acknowledgment Date"
+        },
+        "f_ack_received_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Received the application in Form 7 of Shri/Smt./Ms."
+        }
+      },
+      "required": [
+        "f_name_applicant",
+        "f_epic",
+        "f_mobile_self",
+        "f_mobile_relative",
+        "f_person_name",
+        "f_person_surname",
+        "f_person_epic",
+        "f_addr_house",
+        "f_addr_street",
+        "f_addr_town",
+        "f_addr_post_office",
+        "f_addr_pin",
+        "f_addr_tehsil",
+        "f_addr_district",
+        "f_addr_state",
+        "f_decl_date",
+        "f_decl_place",
+        "f_form_no",
+        "f_ac_name",
+        "f_pc_name",
+        "f_ac_number",
+        "f_pc_number",
+        "f_ack_number",
+        "f_ack_date",
+        "f_ack_received_name"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_del_root": {
+          "type": "boolean",
+          "description": "(i) I request to delete name of the person mentioned below as he/she has been declared dead / not entitled"
+        },
+        "cb_del_death": {
+          "type": "boolean",
+          "description": "Death"
+        },
+        "cb_del_under_age": {
+          "type": "boolean",
+          "description": "Under Age"
+        },
+        "cb_del_absent": {
+          "type": "boolean",
+          "description": "Absent / Permanently shifted"
+        },
+        "cb_del_enrolled": {
+          "type": "boolean",
+          "description": "Already enrolled"
+        },
+        "cb_del_not_citizen": {
+          "type": "boolean",
+          "description": "Not Indian Citizen"
+        },
+        "cb_inc_root": {
+          "type": "boolean",
+          "description": "(ii) I object to proposed inclusion of name of the person mentioned below in the Electoral Roll"
+        },
+        "cb_inc_death": {
+          "type": "boolean",
+          "description": "Death"
+        },
+        "cb_inc_under_age": {
+          "type": "boolean",
+          "description": "Under Age"
+        },
+        "cb_inc_absent": {
+          "type": "boolean",
+          "description": "Absent / Permanently shifted"
+        },
+        "cb_inc_enrolled": {
+          "type": "boolean",
+          "description": "Already enrolled"
+        },
+        "cb_inc_not_citizen": {
+          "type": "boolean",
+          "description": "Not Indian Citizen"
+        },
+        "cb_own_root": {
+          "type": "boolean",
+          "description": "(iii) I request to delete my name from electoral roll as I am no longer ordinary resident of the above address"
+        },
+        "cb_own_shifted": {
+          "type": "boolean",
+          "description": "Permanently shifted"
+        },
+        "cb_own_enrolled": {
+          "type": "boolean",
+          "description": "Already enrolled"
+        },
+        "cb_own_not_citizen": {
+          "type": "boolean",
+          "description": "Not Indian Citizen"
+        },
+        "cb_death_cert_yes": {
+          "type": "boolean",
+          "description": "Yes"
+        },
+        "cb_death_cert_no": {
+          "type": "boolean",
+          "description": "No"
+        }
+      },
+      "required": [
+        "cb_del_root",
+        "cb_del_death",
+        "cb_del_under_age",
+        "cb_del_absent",
+        "cb_del_enrolled",
+        "cb_del_not_citizen",
+        "cb_inc_root",
+        "cb_inc_death",
+        "cb_inc_under_age",
+        "cb_inc_absent",
+        "cb_inc_enrolled",
+        "cb_inc_not_citizen",
+        "cb_own_root",
+        "cb_own_shifted",
+        "cb_own_enrolled",
+        "cb_own_not_citizen",
+        "cb_death_cert_yes",
+        "cb_death_cert_no"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form7_en_p0"
+}

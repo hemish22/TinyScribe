@@ -1,0 +1,232 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_disability_pct": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Percentage of disability/இயலாமையின் சதவிகிதம்"
+        },
+        "f_dob": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(7) (a) Date of Birth / பிறந்த தேதி"
+        },
+        "f_dob_other": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ii) Any other Document for Proof of Date of Birth:- (If none of the above documents is available) (Pl.Specify) / பிறந்த தேதிக்கான வேறு ஏதேனும் ஆவணம்:- (மேலே உள்ள ஆவணங்கள் எதுவும் இல்லாத பட்சத்தில்) (தயவு செய்து குறிப்பிடவும்)"
+        },
+        "f_res_other": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(ii) Any other document for proof of residence / இருப்பிடச் சான்றுக்கான வேறு ஏதேனும் ஆவணம்:- (If none of the above documents is available) (Pl. Specify)#"
+        },
+        "f_disability_other": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "If any other (Give description) / வேறு ஏதேனும் இருந்தால் (விளக்கம் தரவும்)"
+        },
+        "f_family_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name of family member"
+        },
+        "f_family_relation": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Relationship with applicant"
+        },
+        "f_family_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "His/Her EPIC no."
+        },
+        "f_family_name_ta": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "குடும்ப உறுப்பினரின் பெயர்"
+        },
+        "f_family_relation_ta": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "விண்ணப்பதாரருடனான உறவு முறை"
+        },
+        "f_family_epic_ta": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "அவருடைய வாக்காளர் அடையாள அட்டை எண்"
+        },
+        "f_res_house": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "House/Building/ Appartment No. வீடு/கட்டடம்/அடுக்குமாடி குடியிருப்பு எண்."
+        },
+        "f_res_street": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Street/Area/Locality/Mohalla /Road தெரு/பகுதி/வட்டாரம்/மொஹல்லா/சாலை"
+        },
+        "f_res_town": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Town/Village/நகரம்/கிராமம்"
+        },
+        "f_res_pin": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Pin Code/ அஞ்சல் குறியீட்டு எண்"
+        },
+        "f_res_district": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "District/மாவட்டம்"
+        },
+        "f_res_postoffice": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Post Office/ அஞ்சல் அலுவலகம்"
+        },
+        "f_res_tehsil": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Tehsil / Taluqa /Mandal/ தாலுகா/மண்டலம்"
+        },
+        "f_res_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "State/UT/மாநிலம்/யூனியன் பிரதேசம்"
+        }
+      },
+      "required": [
+        "f_disability_pct",
+        "f_dob",
+        "f_dob_other",
+        "f_res_other",
+        "f_disability_other",
+        "f_family_name",
+        "f_family_relation",
+        "f_family_epic",
+        "f_family_name_ta",
+        "f_family_relation_ta",
+        "f_family_epic_ta",
+        "f_res_house",
+        "f_res_street",
+        "f_res_town",
+        "f_res_pin",
+        "f_res_district",
+        "f_res_postoffice",
+        "f_res_tehsil",
+        "f_res_state"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_dob_proof_1": {
+          "type": "boolean",
+          "description": "Birth certificate issued by Competent Local Body /Municipal Authority / Registrar of Births & Deaths/தகுதி வாய்ந்த உள்ளாட்சி அமைப்பு / நகராட்சி அதிகாரி / பிறப்பு மற்றும் இறப்பு பதிவாளர் வழங்கிய பிறப்பு சான்றிதழ்"
+        },
+        "cb_dob_proof_2": {
+          "type": "boolean",
+          "description": "Aadhaar Card / ஆதார் அட்டை"
+        },
+        "cb_dob_proof_3": {
+          "type": "boolean",
+          "description": "PAN Card / பான் அட்டை"
+        },
+        "cb_dob_proof_4": {
+          "type": "boolean",
+          "description": "Driving License/ ஓட்டுனர் உரிமம்"
+        },
+        "cb_dob_proof_5": {
+          "type": "boolean",
+          "description": "Certificates of Class X or Class XII issued by CBSE/ICSE/State Education Boards, if it contains Date of Birth/சிபிஎஸ்இ/ஐசிஎஸ்இ/ மாநில கல்வி வாரியங்களால் வழங்கப்பட்ட பத்தாம் வகுப்பு அல்லது பன்னிரெண்டாம் வகுப்பு சான்றிதழ்கள், அதில் பிறந்த தேதி இருந்தால்"
+        },
+        "cb_dob_proof_6": {
+          "type": "boolean",
+          "description": "Indian Passport/இந்திய கடவுச்சீட்டு"
+        },
+        "cb_res_proof_1": {
+          "type": "boolean",
+          "description": "Water/Electricity /Gas Connection Bill for that address (atleast 1 year) / முகவரிக்கான நீர்/மின்சாரம்/எரிவாயு இணைப்பு ரசீது (குறைந்தது 1 வருடத்திற்காவது)"
+        },
+        "cb_res_proof_2": {
+          "type": "boolean",
+          "description": "Aadhaar Card / ஆதார் அட்டை"
+        },
+        "cb_res_proof_3": {
+          "type": "boolean",
+          "description": "Current passbook of Nationalized / Scheduled Bank / Post Office / தேசியமயமாக்கப்பட்ட / அட்டவணைப்படுத்தப்பட்ட வங்கி/ அஞ்சல் அலுவலகத்தின் தற்போதைய கணக்கு புத்தகம்"
+        },
+        "cb_res_proof_4": {
+          "type": "boolean",
+          "description": "Indian Passport/ இந்திய கடவுச்சீட்டு"
+        },
+        "cb_res_proof_5": {
+          "type": "boolean",
+          "description": "Revenue Department's Land Owning Records incuding Kisan Bahi / விவசாயி புத்தகம் உட்பட வருவாய்த் துறைகளின் நில உரிமைப் பதிவுகள்"
+        },
+        "cb_res_proof_6": {
+          "type": "boolean",
+          "description": "Registered Rent Lease Deed (in case of tenant) / பதிவுசெய்யப்பட்ட வாடகை குத்தகை பத்திரம் (குத்தகைதாரராக இருந்தால்)"
+        },
+        "cb_res_proof_7": {
+          "type": "boolean",
+          "description": "Registered Sale Deed (In case of own house) / பதிவு செய்யப்பட்ட விற்பனைப் பத்திரம் (சொந்த வீடு எனில்)"
+        },
+        "cb_disability_locomotive": {
+          "type": "boolean",
+          "description": "Locomotive / உடலியக்க இயலாமை"
+        },
+        "cb_disability_visual": {
+          "type": "boolean",
+          "description": "Visual / கண் பார்வை"
+        },
+        "cb_disability_deafdumb": {
+          "type": "boolean",
+          "description": "Deaf & Dumb / காது கேளாமை & வாய் பேசாமை"
+        },
+        "cb_disability_cert_yes": {
+          "type": "boolean",
+          "description": "Yes / ஆம்"
+        },
+        "cb_disability_cert_no": {
+          "type": "boolean",
+          "description": "No / இல்லை"
+        }
+      },
+      "required": [
+        "cb_dob_proof_1",
+        "cb_dob_proof_2",
+        "cb_dob_proof_3",
+        "cb_dob_proof_4",
+        "cb_dob_proof_5",
+        "cb_dob_proof_6",
+        "cb_res_proof_1",
+        "cb_res_proof_2",
+        "cb_res_proof_3",
+        "cb_res_proof_4",
+        "cb_res_proof_5",
+        "cb_res_proof_6",
+        "cb_res_proof_7",
+        "cb_disability_locomotive",
+        "cb_disability_visual",
+        "cb_disability_deafdumb",
+        "cb_disability_cert_yes",
+        "cb_disability_cert_no"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6_ta_p1"
+}

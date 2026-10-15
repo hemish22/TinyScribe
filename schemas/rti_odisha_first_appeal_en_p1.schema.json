@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_decl_appellant_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Verification: Name of the appellant"
+        },
+        "f_decl_relative_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Verification: Relative Name"
+        },
+        "f_to_authority_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "To: Name of Appellate Authority"
+        },
+        "f_to_authority_address": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "To: Address of Appellate Authority"
+        },
+        "f_decl_place": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Place"
+        },
+        "f_decl_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date"
+        }
+      },
+      "required": [
+        "f_decl_appellant_name",
+        "f_decl_relative_name",
+        "f_to_authority_name",
+        "f_to_authority_address",
+        "f_decl_place",
+        "f_decl_date"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_rel_son": {
+          "type": "boolean",
+          "description": "son of"
+        },
+        "cb_rel_daughter": {
+          "type": "boolean",
+          "description": "daughter of"
+        },
+        "cb_rel_wife": {
+          "type": "boolean",
+          "description": "wife of"
+        }
+      },
+      "required": [
+        "cb_rel_son",
+        "cb_rel_daughter",
+        "cb_rel_wife"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "rti_odisha_first_appeal_en_p1"
+}

@@ -1,0 +1,173 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_corrected_value": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "The correct particulars in the entry to be corrected are as under"
+        },
+        "f_corr_doc": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Name of Document in support of above claim and correction"
+        },
+        "f_disability_pct": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Percentage of disability"
+        },
+        "f_decl_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date"
+        },
+        "f_decl_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Place"
+        },
+        "f_ack_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Acknowledgment Number"
+        },
+        "f_ack_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date"
+        },
+        "f_corr_doc_2": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name of Document in support of above claim and correction (2)"
+        },
+        "f_disability_other": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "If any other disability (Give description)"
+        },
+        "f_ack_received_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Received the application in Form 8 of Shri/Smt./Ms."
+        }
+      },
+      "required": [
+        "f_corrected_value",
+        "f_corr_doc",
+        "f_disability_pct",
+        "f_decl_date",
+        "f_decl_place",
+        "f_ack_no",
+        "f_ack_date",
+        "f_corr_doc_2",
+        "f_disability_other",
+        "f_ack_received_name"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_epic_lost": {
+          "type": "boolean",
+          "description": "Lost"
+        },
+        "cb_epic_destroyed": {
+          "type": "boolean",
+          "description": "Destroyed due to reason beyond control like flood/fire/riots"
+        },
+        "cb_epic_mutilated": {
+          "type": "boolean",
+          "description": "Mutilated"
+        },
+        "cb_corr_name": {
+          "type": "boolean",
+          "description": "1. Name"
+        },
+        "cb_corr_gender": {
+          "type": "boolean",
+          "description": "2. Gender"
+        },
+        "cb_corr_dob": {
+          "type": "boolean",
+          "description": "3. DoB/Age"
+        },
+        "cb_corr_relation_type": {
+          "type": "boolean",
+          "description": "4. Relation Type"
+        },
+        "cb_corr_relation_name": {
+          "type": "boolean",
+          "description": "5. Relation Name"
+        },
+        "cb_corr_address": {
+          "type": "boolean",
+          "description": "6. Address"
+        },
+        "cb_corr_mobile": {
+          "type": "boolean",
+          "description": "7. Mobile Number"
+        },
+        "cb_corr_photo": {
+          "type": "boolean",
+          "description": "8. Photo"
+        },
+        "cb_dis_locomotive": {
+          "type": "boolean",
+          "description": "Locomotive"
+        },
+        "cb_dis_visual": {
+          "type": "boolean",
+          "description": "Visual"
+        },
+        "cb_dis_deafdumb": {
+          "type": "boolean",
+          "description": "Deaf & Dumb"
+        },
+        "cb_dis_other": {
+          "type": "boolean",
+          "description": "If any other (Give description)"
+        },
+        "cb_dis_cert_yes": {
+          "type": "boolean",
+          "description": "Yes"
+        },
+        "cb_dis_cert_no": {
+          "type": "boolean",
+          "description": "No"
+        }
+      },
+      "required": [
+        "cb_epic_lost",
+        "cb_epic_destroyed",
+        "cb_epic_mutilated",
+        "cb_corr_name",
+        "cb_corr_gender",
+        "cb_corr_dob",
+        "cb_corr_relation_type",
+        "cb_corr_relation_name",
+        "cb_corr_address",
+        "cb_corr_mobile",
+        "cb_corr_photo",
+        "cb_dis_locomotive",
+        "cb_dis_visual",
+        "cb_dis_deafdumb",
+        "cb_dis_other",
+        "cb_dis_cert_yes",
+        "cb_dis_cert_no"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form8_en_p1"
+}

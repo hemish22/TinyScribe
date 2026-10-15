@@ -1,0 +1,112 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_ac_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No. / எண்."
+        },
+        "f_ac_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name/ பெயர்"
+        },
+        "f_name_applicant": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(I) Name of the applicant/ விண்ணப்பதாரரின் பெயர்"
+        },
+        "f_epic": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "EPIC No. / வாக்காளர் புகைப்பட அடையாள அட்டை எண்."
+        },
+        "f_aadhaar_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Aadhaar Number/ஆதார் எண்"
+        },
+        "f_mobile_self": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Mobile No. of Self / விண்ணப்பதாரரின் கைபேசி எண்"
+        },
+        "f_mobile_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Mobile No. of Father/Mother/Any other relative (if available) / தந்தை/தாய்/ வேறு ஏதாவது உறவினரின் கைபேசி எண் (இருப்பின்)"
+        },
+        "f_email_self": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Email Id of Self / விண்ணப்பதாரரின் மின்னஞ்சல் முகவரி"
+        },
+        "f_email_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Email Id of Father/Mother/Any other relative (if available) / தந்தை/தாய்/ வேறு ஏதாவது உறவினரின் மின்னஞ்சல் முகவரி (இருப்பின்)"
+        }
+      },
+      "required": [
+        "f_ac_number",
+        "f_ac_name",
+        "f_name_applicant",
+        "f_epic",
+        "f_aadhaar_number",
+        "f_mobile_self",
+        "f_mobile_relative",
+        "f_email_self",
+        "f_email_relative"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_aadhaar_a": {
+          "type": "boolean",
+          "description": "Aadhaar Number/ஆதார் எண்"
+        },
+        "cb_aadhaar_b": {
+          "type": "boolean",
+          "description": "I am not able to furnish my Aadhaar Number because I don't have Aadhaar Number. / என்னிடம் ஆதார் எண் இல்லாததால், என்னால் ஆதார் எண்ணை வழங்க இயலவில்லை."
+        },
+        "cb_app_shift": {
+          "type": "boolean",
+          "description": "Shifting of Residence (or) / குடியிருப்பு மாற்றத்திற்காக (அல்லது)"
+        },
+        "cb_app_correct": {
+          "type": "boolean",
+          "description": "Correction of Entries in Existing Electoral Roll (or) / நடப்பு பட்டியலில் சேர்க்கப்பட்டுள்ள பதிவுகளை திருத்தம் செய்வதற்காக (அல்லது)"
+        },
+        "cb_app_rep_epic": {
+          "type": "boolean",
+          "description": "Issue of Replacement EPIC without correction (or) / திருத்தம் இல்லாத மாற்று வாக்காளர் புகைப்பட அடையாள அட்டையை பெறுவதற்காக (அல்லது)"
+        },
+        "cb_app_pwd": {
+          "type": "boolean",
+          "description": "Request for marking as Person with Disability / மாற்றுத்திறனாளிகளை குறிப்பதற்காக"
+        }
+      },
+      "required": [
+        "cb_aadhaar_a",
+        "cb_aadhaar_b",
+        "cb_app_shift",
+        "cb_app_correct",
+        "cb_app_rep_epic",
+        "cb_app_pwd"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form8_ta_p0"
+}

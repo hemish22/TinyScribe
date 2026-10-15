@@ -1,0 +1,299 @@
+{
+  "schema_version": "0",
+  "template_id": "eci_form6b_bn",
+  "source_url": "https://ceowestbengal.wb.gov.in/Downloads/Forms/RollRevision/Form-6b_Bengali.pdf",
+  "licence": "GODL-India",
+  "language": "bengali",
+  "fillable": false,
+  "checkboxes": [
+    {
+      "id": "cb_aadhaar_yes",
+      "bbox": [
+        318,
+        652,
+        39,
+        50
+      ],
+      "label_text": "আধার নম্বর",
+      "label_script": "bengali",
+      "group": "aadhaar_choice",
+      "page": 0
+    },
+    {
+      "id": "cb_aadhaar_no",
+      "bbox": [
+        318,
+        787,
+        39,
+        51
+      ],
+      "label_text": "আমার আধার নম্বর না থাকার কারণে আমি আধার নম্বর পেশ করতে অপারগ।",
+      "label_script": "bengali",
+      "group": "aadhaar_choice",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_mgnrega",
+      "bbox": [
+        318,
+        973,
+        39,
+        51
+      ],
+      "label_text": "এম জি এন আর ই জি এ জব কার্ড",
+      "label_script": "bengali",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_passbook",
+      "bbox": [
+        318,
+        1046,
+        39,
+        51
+      ],
+      "label_text": "ব্যাঙ্ক বা ডাকঘর কর্তৃক প্রদত্ত সচিত্র পাশবুক",
+      "label_script": "bengali",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_health_insurance",
+      "bbox": [
+        318,
+        1113,
+        39,
+        51
+      ],
+      "label_text": "শ্রম মন্ত্রকের অধীনস্থ প্রকল্পে প্রদত্ত স্বাস্থ্য বীমার স্মার্ট কার্ড",
+      "label_script": "bengali",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_driving_license",
+      "bbox": [
+        318,
+        1188,
+        39,
+        51
+      ],
+      "label_text": "ড্রাইভিং লাইসেন্স",
+      "label_script": "bengali",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_pan",
+      "bbox": [
+        318,
+        1255,
+        39,
+        50
+      ],
+      "label_text": "প্যান কার্ড",
+      "label_script": "bengali",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_npr_smartcard",
+      "bbox": [
+        318,
+        1328,
+        39,
+        50
+      ],
+      "label_text": "এন পি আর এর অধীনস্থ আর জি আই কর্তৃক প্রদত্ত স্মার্ট কার্ড",
+      "label_script": "bengali",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_passport",
+      "bbox": [
+        318,
+        1400,
+        39,
+        50
+      ],
+      "label_text": "ভারতীয় পাসপোর্ট",
+      "label_script": "bengali",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_pension",
+      "bbox": [
+        318,
+        1471,
+        39,
+        51
+      ],
+      "label_text": "সচিত্র পেনসন নথি",
+      "label_script": "bengali",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_service_id",
+      "bbox": [
+        318,
+        1553,
+        39,
+        51
+      ],
+      "label_text": "কেন্দ্রীয়/রাজ্য সরকার/রাষ্ট্রায়ত্ত সংস্থা/পাবলিক লিমিটেড কোম্পানি কর্তৃক কর্মীদের প্রদত্ত চাকরি সংক্রান্ত সচিত্র পরিচয়পত্র",
+      "label_script": "bengali",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_official_id",
+      "bbox": [
+        318,
+        1642,
+        39,
+        51
+      ],
+      "label_text": "সাংসদ/বিধায়ক/ বিধানপরিষদের সদস্যগণকে প্রদত্ত সরকারি পরিচয় পত্র",
+      "label_script": "bengali",
+      "group": "id_proof_document",
+      "page": 0
+    },
+    {
+      "id": "cb_doc_udid",
+      "bbox": [
+        318,
+        1727,
+        39,
+        50
+      ],
+      "label_text": "সামাজিক ন্যায় ও সশক্তিকরণ মন্ত্রক কর্তৃক প্রদত্ত ইউনিক আইডেনটিটি আইডি (ইউডিআইডি) কার্ড",
+      "label_script": "bengali",
+      "group": "id_proof_document",
+      "page": 0
+    }
+  ],
+  "fields": [
+    {
+      "id": "f_elector_name",
+      "label_text": "(নির্বাচকের নাম)",
+      "label_script": "bengali",
+      "value_bbox": [
+        198,
+        305,
+        1002,
+        42
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_constituency_name",
+      "label_text": "বিধানসভা নির্বাচন ক্ষেত্রের ভোটার তালিকায় নথিভুক্ত ভোটার",
+      "label_script": "bengali",
+      "value_bbox": [
+        154,
+        361,
+        634,
+        42
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_signature_elector",
+      "label_text": "নির্বাচকের স্বাক্ষর",
+      "label_script": "bengali",
+      "value_bbox": [
+        1176,
+        1875,
+        283,
+        42
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_name_elector_bottom",
+      "label_text": "নির্বাচকের নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        1176,
+        1945,
+        283,
+        42
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_email_mobile",
+      "label_text": "ই-মেল আইডি/মোবাইল নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        1176,
+        2015,
+        283,
+        42
+      ],
+      "value_type": "email",
+      "page": 0
+    },
+    {
+      "id": "f_place",
+      "label_text": "স্থান",
+      "label_script": "bengali",
+      "value_bbox": [
+        237,
+        2116,
+        284,
+        42
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_date",
+      "label_text": "তারিখ",
+      "label_script": "bengali",
+      "value_bbox": [
+        237,
+        2184,
+        284,
+        42
+      ],
+      "value_type": "date",
+      "page": 0
+    },
+    {
+      "id": "f_epic_number",
+      "label_text": "যার ভোটার কার্ড/এপিক নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        481,
+        434,
+        808,
+        78
+      ],
+      "value_type": "epic",
+      "page": 0
+    },
+    {
+      "id": "f_aadhaar_number",
+      "label_text": "(১) আধার নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        539,
+        645,
+        709,
+        84
+      ],
+      "value_type": "id_number",
+      "page": 0
+    }
+  ],
+  "tables": []
+}

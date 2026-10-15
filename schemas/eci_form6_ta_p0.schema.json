@@ -1,0 +1,174 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_ac_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "No./எண்."
+        },
+        "f_form_no": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "FORM No./ படிவம் எண்."
+        },
+        "f_ac_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name/பெயர்"
+        },
+        "f_name_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "First Name followed by Middle Name /முதல் பெயரைத் தொடர்ந்து நடுப் பெயர்"
+        },
+        "f_name_state_2": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "First Name followed by Middle Name /முதல் பெயரைத் தொடர்ந்து நடுப் பெயர்"
+        },
+        "f_surname_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Surname (if any) / குடும்பப்பெயர் (ஏதேனும் இருந்தால்)"
+        },
+        "f_name_english": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "First Name followed by Middle Name / முதல் பெயரைத் தொடர்ந்து நடுப் பெயர்"
+        },
+        "f_name_english_2": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "First Name followed by Middle Name / முதல் பெயரைத் தொடர்ந்து நடுப் பெயர்"
+        },
+        "f_surname_english": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Surname (if any) / குடும்பப்பெயர் (ஏதேனும் இருந்தால்)"
+        },
+        "f_rel_name_state": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "*(2)(a) Name and Surname (in official language of State) of any one of the relatives / உறவினர்களில் யாரேனும் ஒருவருடைய பெயர் மற்றும் குடும்பப்பெயர் (மாநிலத்தின் அலுவலக மொழியில்):-"
+        },
+        "f_rel_name_english": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "*(2)(b) Name and Surname (In English in BLOCK LETTERS) of the relative mentioned above/மேலே குறிப்பிட்டுள்ள உறவினரின் பெயர் மற்றும் குடும்பப்பெயர் (ஆங்கிலத்தில் பெரிய எழுத்துக்களில்)"
+        },
+        "f_mobile": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(3) Mobile No. of Self (If available) (or) Of relative mentioned at Item No. 2"
+        },
+        "f_mobile_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "விண்ணப்பதாரரின் கைபேசி எண் (இருந்தால்) (அல்லது) இனம் 2 இல் குறிப்பிடப்பட்டுள்ள உறவினரின் கைபேசி எண்"
+        },
+        "f_email": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "(4) Email ID of Self (If available) (or) Of relative mentioned at Item No. 2"
+        },
+        "f_email_relative": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "விண்ணப்பதாரரின் மின்னஞ்சல் முகவரி (இருந்தால்) (அல்லது) இனம் 2 இல் குறிப்பிடப்பட்டுள்ள உறவினரின் மின்னஞ்சல் முகவரி"
+        },
+        "f_aadhaar_number": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Aadhaar Number / ஆதார் எண்"
+        }
+      },
+      "required": [
+        "f_ac_number",
+        "f_form_no",
+        "f_ac_name",
+        "f_name_state",
+        "f_name_state_2",
+        "f_surname_state",
+        "f_name_english",
+        "f_name_english_2",
+        "f_surname_english",
+        "f_rel_name_state",
+        "f_rel_name_english",
+        "f_mobile",
+        "f_mobile_relative",
+        "f_email",
+        "f_email_relative",
+        "f_aadhaar_number"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_rel_father": {
+          "type": "boolean",
+          "description": "Father/தந்தை"
+        },
+        "cb_rel_mother": {
+          "type": "boolean",
+          "description": "Mother/தாய்"
+        },
+        "cb_rel_husband": {
+          "type": "boolean",
+          "description": "Husband/கணவர்"
+        },
+        "cb_rel_wife": {
+          "type": "boolean",
+          "description": "Wife/மனைவி"
+        },
+        "cb_rel_guardian": {
+          "type": "boolean",
+          "description": "Legal Guardian in case of orphan / Guru in case of Third Gender / ஆதரவற்றவராக இருந்தால் சட்டப்பூர்வ பாதுகாவலர் / மூன்றாம் பாலினத்தவராக இருந்தால் குரு"
+        },
+        "cb_aadhaar_a": {
+          "type": "boolean",
+          "description": "Aadhaar Number / ஆதார் எண்"
+        },
+        "cb_aadhaar_b": {
+          "type": "boolean",
+          "description": "I am not able to furnish my Aadhaar Number because I don't have Aadhaar Number / என்னிடம் ஆதார் எண் இல்லாததால், என்னால் ஆதார் எண்ணை வழங்க இயலவில்லை."
+        },
+        "cb_gender_male": {
+          "type": "boolean",
+          "description": "Male / ஆண்"
+        },
+        "cb_gender_female": {
+          "type": "boolean",
+          "description": "Female / பெண்"
+        },
+        "cb_gender_third": {
+          "type": "boolean",
+          "description": "Third Gender / மூன்றாம் பாலினம்"
+        }
+      },
+      "required": [
+        "cb_rel_father",
+        "cb_rel_mother",
+        "cb_rel_husband",
+        "cb_rel_wife",
+        "cb_rel_guardian",
+        "cb_aadhaar_a",
+        "cb_aadhaar_b",
+        "cb_gender_male",
+        "cb_gender_female",
+        "cb_gender_third"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eci_form6_ta_p0"
+}

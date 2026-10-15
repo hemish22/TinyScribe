@@ -1,0 +1,155 @@
+{
+  "schema_version": "0",
+  "template_id": "wb_bsk_scheme_municipality_bn",
+  "source_url": "https://bsk.wb.gov.in/download/Application%20to%20Municipality%20%28Format%203%29.pdf",
+  "licence": "GODL-India",
+  "language": "bengali",
+  "fillable": false,
+  "checkboxes": [],
+  "fields": [
+    {
+      "id": "f_municipality",
+      "label_text": "মিউনিসিপ্যালিটি",
+      "label_script": "bengali",
+      "value_bbox": [
+        204,
+        274,
+        271,
+        33
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_district",
+      "label_text": "জেলা",
+      "label_script": "bengali",
+      "value_bbox": [
+        204,
+        313,
+        287,
+        40
+      ],
+      "value_type": "city",
+      "page": 0
+    },
+    {
+      "id": "f_scheme_name",
+      "label_text": "জন্য প্রয়োজনীয় সরকারি প্রকল্পটির নাম লিখুন)",
+      "label_script": "bengali",
+      "value_bbox": [
+        869,
+        891,
+        444,
+        65
+      ],
+      "value_type": "other",
+      "page": 0
+    },
+    {
+      "id": "f_previous_scheme",
+      "label_text": "আমি পূর্বে",
+      "label_script": "bengali",
+      "value_bbox": [
+        375,
+        1190,
+        378,
+        63
+      ],
+      "value_type": "other",
+      "page": 0
+    },
+    {
+      "id": "f_applicant_name",
+      "label_text": "নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        259,
+        1489,
+        494,
+        65
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_address",
+      "label_text": "ঠিকানা",
+      "label_script": "bengali",
+      "value_bbox": [
+        299,
+        1562,
+        449,
+        60
+      ],
+      "value_type": "address",
+      "page": 0
+    },
+    {
+      "id": "f_mobile",
+      "label_text": "মোবাইল নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        387,
+        1624,
+        363,
+        64
+      ],
+      "value_type": "phone",
+      "page": 0
+    },
+    {
+      "id": "f_aadhaar_number",
+      "label_text": "আধার কার্ডের নম্বর",
+      "label_script": "bengali",
+      "value_bbox": [
+        456,
+        1692,
+        365,
+        61
+      ],
+      "value_type": "id_number",
+      "page": 0
+    },
+    {
+      "id": "f_family_members",
+      "label_text": "পরিবারের অন্যান্য সদস্যদের নাম",
+      "label_script": "bengali",
+      "value_bbox": [
+        636,
+        1758,
+        364,
+        59
+      ],
+      "value_type": "name",
+      "page": 0
+    },
+    {
+      "id": "f_date",
+      "label_text": "তারিখ",
+      "label_script": "bengali",
+      "value_bbox": [
+        284,
+        1946,
+        363,
+        66
+      ],
+      "value_type": "date",
+      "page": 0
+    },
+    {
+      "id": "f_signature",
+      "label_text": "স্বাক্ষর",
+      "label_script": "bengali",
+      "value_bbox": [
+        967,
+        1957,
+        431,
+        65
+      ],
+      "value_type": "name",
+      "page": 0
+    }
+  ],
+  "tables": []
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "0",
+  "template_id": "rti_odisha_second_appeal_en",
+  "source_url": "https://rtiodisha.gov.in/files/download_forms/form_1839641548_1646377459.pdf",
+  "licence": "GODL-India",
+  "language": "english",
+  "fillable": false,
+  "checkboxes": [
+    {"id": "cb_rel_son", "bbox": [1123.5, 282.9, 28.6, 21.5], "label_text": "son of", "label_script": "latin", "group": "p1_verification_relation", "page": 1},
+    {"id": "cb_rel_daughter", "bbox": [1269.9, 282.9, 28.6, 21.5], "label_text": "daughter of", "label_script": "latin", "group": "p1_verification_relation", "page": 1},
+    {"id": "cb_rel_wife", "bbox": [195.7, 351, 28.6, 21.5], "label_text": "wife of", "label_script": "latin", "group": "p1_verification_relation", "page": 1}
+  ],
+  "fields": [
+    {"id": "f_from_applicant_name", "value_bbox": [200, 398.2, 612.2, 59.2], "label_text": "From: Applicant Name", "label_script": "latin", "value_type": "name", "page": 0},
+    {"id": "f_from_applicant_address", "value_bbox": [200, 466.4, 612.2, 151], "label_text": "From: Applicant Address", "label_script": "latin", "value_type": "address", "page": 0},
+    {"id": "f_appellant_name", "value_bbox": [899.2, 831.2, 610.4, 66.1], "label_text": "1. Full Name of the Appellant", "label_script": "latin", "value_type": "name", "page": 0},
+    {"id": "f_appellant_address", "value_bbox": [899.2, 909.9, 610.4, 184], "label_text": "2. Address", "label_script": "latin", "value_type": "address", "page": 0},
+    {"id": "f_faa_particulars", "value_bbox": [899.2, 1109.9, 610.4, 79.7], "label_text": "3. Particulars of the First Appellate Authority", "label_script": "latin", "value_type": "text", "page": 0},
+    {"id": "f_order_receipt_date", "value_bbox": [899.2, 1204, 299, 58.6], "label_text": "4. Date of receipt of the order appealed against", "label_script": "latin", "value_type": "date", "page": 0},
+    {"id": "f_appeal_last_date", "value_bbox": [899.2, 1273.1, 299, 57.5], "label_text": "5. Last date for filing the Appeal", "label_script": "latin", "value_type": "date", "page": 0},
+    {"id": "f_info_nature_subject", "value_bbox": [899.2, 1424.3, 610.4, 104.4], "label_text": "6. (a) Nature and subject matter of the information required", "label_script": "latin", "value_type": "text", "page": 0},
+    {"id": "f_info_office_dept", "value_bbox": [899.2, 1579.2, 610.4, 80], "label_text": "6. (b) Name of the office or Department to which the information relates", "label_script": "latin", "value_type": "name", "page": 0},
+    {"id": "f_appeal_grounds", "value_bbox": [899.2, 1713.1, 610.4, 107.8], "label_text": "7. The grounds for appeal", "label_script": "latin", "value_type": "text", "page": 0},
+    {"id": "f_decl_appellant_name", "value_bbox": [229.9, 272.5, 566.7, 50.4], "label_text": "Verification: Name of the appellant", "label_script": "latin", "value_type": "name", "page": 1},
+    {"id": "f_decl_relative_name", "value_bbox": [344.3, 337.1, 523.5, 46.7], "label_text": "Verification: Relative Name", "label_script": "latin", "value_type": "name", "page": 1},
+    {"id": "f_decl_place", "value_bbox": [1021.2, 707.8, 267.9, 60.8], "label_text": "Place", "label_script": "latin", "value_type": "address", "page": 1},
+    {"id": "f_decl_date", "value_bbox": [1021.2, 785.8, 267.9, 60.8], "label_text": "Date", "label_script": "latin", "value_type": "date", "page": 1}
+  ],
+  "tables": []
+}

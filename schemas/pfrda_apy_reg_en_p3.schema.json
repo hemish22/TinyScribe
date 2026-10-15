@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_doc_passport": {
+          "type": "boolean",
+          "description": "Passport"
+        },
+        "cb_doc_election_id": {
+          "type": "boolean",
+          "description": "Election Id Card"
+        },
+        "cb_doc_pan": {
+          "type": "boolean",
+          "description": "PAN Card"
+        },
+        "cb_doc_driving": {
+          "type": "boolean",
+          "description": "Driving License"
+        },
+        "cb_doc_uidai": {
+          "type": "boolean",
+          "description": "UIDAI Letter"
+        },
+        "cb_doc_nrega": {
+          "type": "boolean",
+          "description": "NREGA Job Card"
+        },
+        "cb_doc_govt_id": {
+          "type": "boolean",
+          "description": "Govt. Issued ID Card"
+        }
+      },
+      "required": [
+        "cb_doc_passport",
+        "cb_doc_election_id",
+        "cb_doc_pan",
+        "cb_doc_driving",
+        "cb_doc_uidai",
+        "cb_doc_nrega",
+        "cb_doc_govt_id"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "checkboxes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pfrda_apy_reg_en_p3"
+}

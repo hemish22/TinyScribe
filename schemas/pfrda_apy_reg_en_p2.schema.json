@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_decl2_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Name : (Part III Customer Declaration)"
+        },
+        "f_decl2_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Date (DD/MM/YYYY) : (Part III Customer Declaration)"
+        }
+      },
+      "required": [
+        "f_decl2_name",
+        "f_decl2_date"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pfrda_apy_reg_en_p2"
+}

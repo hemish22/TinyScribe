@@ -1,0 +1,197 @@
+{
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "f_head_name": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "परिवार के मुखिया का नाम"
+        },
+        "f_address": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "पता"
+        },
+        "f_mobile": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "मोबाइल नंबर"
+        },
+        "f_ration_card": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "राशन कार्ड संख्या"
+        },
+        "f_place": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "स्थान"
+        },
+        "f_date": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "दिनांक"
+        }
+      },
+      "required": [
+        "f_head_name",
+        "f_address",
+        "f_mobile",
+        "f_ration_card",
+        "f_place",
+        "f_date"
+      ],
+      "additionalProperties": false
+    },
+    "checkboxes": {
+      "type": "object",
+      "properties": {
+        "cb_category_general": {
+          "type": "boolean",
+          "description": "सामान्य"
+        },
+        "cb_category_obc": {
+          "type": "boolean",
+          "description": "अन्य पिछड़ा वर्ग"
+        },
+        "cb_category_sc": {
+          "type": "boolean",
+          "description": "अनुसूचित जाति"
+        },
+        "cb_category_st": {
+          "type": "boolean",
+          "description": "अनुसूचित जनजाति"
+        },
+        "cb_house_kutcha": {
+          "type": "boolean",
+          "description": "कच्चा"
+        },
+        "cb_house_semi_pucca": {
+          "type": "boolean",
+          "description": "अर्ध-पक्का"
+        },
+        "cb_house_pucca": {
+          "type": "boolean",
+          "description": "पक्का"
+        }
+      },
+      "required": [
+        "cb_category_general",
+        "cb_category_obc",
+        "cb_category_sc",
+        "cb_category_st",
+        "cb_house_kutcha",
+        "cb_house_semi_pucca",
+        "cb_house_pucca"
+      ],
+      "additionalProperties": false
+    },
+    "tables": {
+      "type": "object",
+      "properties": {
+        "tbl_family_members": {
+          "type": "object",
+          "properties": {
+            "r1": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r2": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r3": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r4": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r5": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r6": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r7": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "r8": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string",
+                "maxLength": 80
+              }
+            }
+          },
+          "required": [
+            "r1",
+            "r2",
+            "r3",
+            "r4",
+            "r5",
+            "r6",
+            "r7",
+            "r8"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "tbl_family_members"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fields",
+    "checkboxes",
+    "tables"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "synth_household_hi_p0"
+}
