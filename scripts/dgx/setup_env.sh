@@ -17,8 +17,8 @@ uv pip install --python .venv/bin/python -e ".[datagen,dev]"
 .venv/bin/python -c "from PIL import features; assert features.check('raqm'), 'Pillow without raqm: install libfribidi'; print('raqm ok')"
 
 echo "== CUDA toolchain for llama.cpp (micromamba, conda-forge)"
-MM="$(command -v micromamba || echo "$HOME/.local/bin/micromamba")"
-if [ ! -x "$MM" ]; then
+MM="$(command -v micromamba || ls "$IFB/tools/bin/micromamba" "$HOME/.local/bin/micromamba" 2>/dev/null | head -1 || true)"
+if [ -z "$MM" ] || [ ! -x "$MM" ]; then
   echo "micromamba not found; install: curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj -C ~/.local bin/micromamba"
   exit 1
 fi

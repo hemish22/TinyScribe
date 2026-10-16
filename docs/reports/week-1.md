@@ -19,7 +19,7 @@ Last updated: Oct 16, 2026 · Plan: [`docs/TinyScribe — 4-Week Resume Project_
 
 ## 2. In progress
 
-- Waiting on you for the DGX part (1.8, 1.10); see section 4.
+- **1.10 Zero-shot 2B** (bonus row): running on the DGX, GPUs 5–7, tmux window `zs2b`.
 
 ## 3. Done
 
@@ -52,6 +52,33 @@ Last updated: Oct 16, 2026 · Plan: [`docs/TinyScribe — 4-Week Resume Project_
 - **DGX scripts written:** `scripts/dgx/setup_env.sh`, `scripts/build_llamacpp.sh`, `scripts/dgx/download_models.sh`, `quant/convert.sh`, `scripts/serve_pool.sh`.
 - **Plan v5** written with the decisions above as notes (v4 kept word for word).
 
+**DGX (run by Claude over SSH, every job in tmux session `ts`, logs in `~/tinyscribe/runs/logs/`):**
+
+- **1.8 Setup.**
+  - Python venv, with Pillow's raqm shaping engine working.
+  - CUDA 12.6 `nvcc` from micromamba, at `~/indicformbench/tools/bin/micromamba`.
+  - Handwriting banks linked from IndicFormBench.
+  - Qwen3.5-9B (19 GB) and 2B (4.3 GB) downloaded.
+- **llama.cpp CUDA build.**
+  - The first build failed at link time: `libcudart.so.12` was not found, because it lives in the micromamba env.
+  - Fixed by building ggml statically and adding an rpath to `.cuda/lib`. The failed build is kept in `runs/llama_build_failed_1`.
+- **1.4 Full dataset:**
+  - 6,973 instances, 64 workers, 6.2 GB.
+  - Train: 10,010 pages (EN 2508, HI 2500, BN 2500, TA 2502). Test: 401 pages (100/100/100/101).
+  - 2,588 handwritten pages and 800 calibration pages.
+  - One instance had a truncated value (`eci_form6a_hi_s3010008`, free text); its ground truth holds only what was drawn.
+  - A handwritten Hindi test page checked by eye: real IIIT words and EMNIST digits.
+- **Job launcher bug.** `scripts/dgx/tjob.sh` first lost the quoting of arguments with spaces, so one job died silently. It now writes each job as a script with `printf %q`.
+- **GPU 4** was taken by another user during the run, so the baselines used GPUs 5–7.
+- **1.10 Zero-shot 9B baseline**, all 401 test pages through llama.cpp with grammar on:
+
+| Model | Size | Field F1 | English | Hindi | Tamil | Bengali | Valid JSON |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 9B zero-shot, BF16 (DGX) | 18.41 GB | 37.0 | 44.5 | 30.7 | 31.4 | 39.8 | 100.0 |
+
+- Checkbox accuracy 89.5%. Median 11.3 s and ~495 output tokens per page on one A100. No request errors.
+- About as many invented values (FP 5,442) as correct ones (TP 3,044). Values land in the wrong key, and letters in comb fields come out spaced. This is the gap fine-tuning has to close.
+
 **First numbers (smoke only, 4 test pages, not a result):** Qwen3.5-2B Q4_K_M zero-shot scored field F1 44.8 with 100% valid JSON. Two things already show up:
 
 - The model spaces out letters in box-per-letter fields ("P r i y a").
@@ -61,8 +88,8 @@ Fine-tuning on compact targets should fix both.
 
 ## 4. Needs your input
 
-1. **Commit and push**, so the DGX can clone the repo. Say yes and who to commit as. Your IndicFormBench notes say "Hemish Jain, no Co-Authored-By line"; confirm that applies here too.
-2. **On the DGX** (in tmux, from `~`), after the push:
+1. ~~Commit and push~~: done, as Hemish Jain, no co-author line.
+2. ~~On the DGX~~: Claude ran these over SSH instead, with the repo rsynced to `~/tinyscribe`. Kept for reference:
    ```bash
    git clone https://github.com/hemish22/TinyScribe.git tinyscribe && cd tinyscribe
    bash scripts/dgx/setup_env.sh          # venv, CUDA toolchain via micromamba, handwriting banks

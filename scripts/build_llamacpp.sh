@@ -25,10 +25,14 @@ if [ "$(uname)" = "Linux" ]; then
   export PATH="$CUDA_ENV/bin:$PATH" CUDACXX="$CUDA_ENV/bin/nvcc"
   export CC="$(ls "$CUDA_ENV"/bin/x86_64-conda-linux-gnu-gcc 2>/dev/null || command -v gcc)"
   export CXX="$(ls "$CUDA_ENV"/bin/x86_64-conda-linux-gnu-g++ 2>/dev/null || command -v g++)"
-  ARGS+=(-DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=80 -DCUDAToolkit_ROOT="$CUDA_ENV")
+  # the CUDA libs live in the micromamba env, not a system path: link ggml statically and bake the
+  # env's lib dir into the binaries (rpath) so they find libcudart/libcublas at link and run time
+  LINK="-Wl,-rpath-link,$CUDA_ENV/lib -Wl,-rpath,$CUDA_ENV/lib"
+  ARGS+=(-DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=80 -DCUDAToolkit_ROOT="$CUDA_ENV"
+         -DBUILD_SHARED_LIBS=OFF -DCMAKE_EXE_LINKER_FLAGS="$LINK" -DCMAKE_SHARED_LINKER_FLAGS="$LINK")
 fi
 cmake -S "$SRC" -B "$SRC/build" "${ARGS[@]}"
-cmake --build "$SRC/build" -j "$(getconf _NPROCESSORS_ONLN)" \
+cmake --build "$SRC/build" -j "${JOBS:-32}" \
   --target llama-server llama-mtmd-cli llama-imatrix llama-quantize llama-cli
 ls "$SRC/build/bin"
 
