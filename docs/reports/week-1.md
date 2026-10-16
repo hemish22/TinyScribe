@@ -1,6 +1,6 @@
 # Week 1 — data, schemas, scorer, zero-shot baseline
 
-Last updated: Oct 16, 2026 · Plan: [`docs/TinyScribe — 4-Week Resume Project_v5.md`](../TinyScribe%20—%204-Week%20Resume%20Project_v5.md)
+Last updated: Oct 16, 2026 (Week 1 complete) · Plan: [`docs/TinyScribe — 4-Week Resume Project_v5.md`](../TinyScribe%20—%204-Week%20Resume%20Project_v5.md)
 
 ## 1. Plan
 
@@ -19,7 +19,7 @@ Last updated: Oct 16, 2026 · Plan: [`docs/TinyScribe — 4-Week Resume Project_
 
 ## 2. In progress
 
-- **1.10 Zero-shot 2B** (bonus row): running on the DGX, GPUs 5–7, tmux window `zs2b`.
+- Nothing. **Week 1 is complete.** Next is Week 2: `train/sft.py` (LoRA fine-tune of the 9B and 2B).
 
 ## 3. Done
 
@@ -70,14 +70,22 @@ Last updated: Oct 16, 2026 · Plan: [`docs/TinyScribe — 4-Week Resume Project_
   - A handwritten Hindi test page checked by eye: real IIIT words and EMNIST digits.
 - **Job launcher bug.** `scripts/dgx/tjob.sh` first lost the quoting of arguments with spaces, so one job died silently. It now writes each job as a script with `printf %q`.
 - **GPU 4** was taken by another user during the run, so the baselines used GPUs 5–7.
-- **1.10 Zero-shot 9B baseline**, all 401 test pages through llama.cpp with grammar on:
+- **1.10 Zero-shot baselines**, all 401 test pages through llama.cpp with grammar on, prompt v2:
 
-| Model | Size | Field F1 | English | Hindi | Tamil | Bengali | Valid JSON |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 9B zero-shot, BF16 (DGX) | 18.41 GB | 37.0 | 44.5 | 30.7 | 31.4 | 39.8 | 100.0 |
+| Model | Size | Field F1 | English | Hindi | Tamil | Bengali | Valid JSON | Checkbox acc. |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 9B zero-shot, BF16 (DGX) | 18.41 GB | **84.9** | 90.6 | 72.8 | 85.4 | 91.4 | 100.0 | 89.4 |
+| 2B zero-shot, BF16 (DGX) | 3.90 GB | **69.0** | 82.2 | 55.4 | 69.4 | 69.4 | 100.0 | 77.4 |
 
-- Checkbox accuracy 89.5%. Median 11.3 s and ~495 output tokens per page on one A100. No request errors.
-- About as many invented values (FP 5,442) as correct ones (TP 3,044). Values land in the wrong key, and letters in comb fields come out spaced. This is the gap fine-tuning has to close.
+- **Prompt v1 → v2 (before any training).** With prompt v1 the 9B scored 37.0 and the 2B 54.8.
+  - The 9B read tables correctly but copied each table's printed first column ("10th (Secondary)", serial numbers) as a value. That shifted every cell one place: table TP was 94 against 3,951 FN.
+  - v1 said only "the filled-in cells left to right". v2 (`src/tinyscribe/prompt.py`, `PROMPT_VERSION = 2`) names each value column by its printed header, lists each row's printed label, and says labels are not values.
+  - With v2, 9B table cells went to TP 3,830 / FP 207 / FN 215.
+  - The v1 runs are kept in `runs/prompt-v1/` on the DGX. The prompt is now frozen.
+- **What the numbers say.**
+  - The 9B already reads these forms well zero-shot, so fine-tuning has less room than the v1 numbers suggested. The gap left is mostly Hindi (72.8; handwritten Hindi is the hardest set) and checkboxes (89.4%).
+  - The 2B is 16 points behind before quantization. That matters for the Week 3 comparison: 2B Q8 against the squeezed 9B in 4 GB.
+- **Speed.** Median 11.3 s/page for the 9B BF16 on one A100 (~495 output tokens, pretty-printed JSON). The 2B scored 401 pages in about 5 min on 3 GPUs. No request errors in either run.
 
 **First numbers (smoke only, 4 test pages, not a result):** Qwen3.5-2B Q4_K_M zero-shot scored field F1 44.8 with 100% valid JSON. Two things already show up:
 

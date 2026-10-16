@@ -32,6 +32,8 @@ class PageLayout:
     checkboxes: list[dict] = field(default_factory=list)
     # table_id -> {row: [value-cell dicts in column order]}
     tables: dict[str, dict[int, list[dict]]] = field(default_factory=dict)
+    # table_id -> every cell of the table (printed headers and row labels too), for the prompt
+    table_cells: dict[str, list[dict]] = field(default_factory=dict)
 
     @property
     def schema_name(self) -> str:
@@ -66,7 +68,9 @@ def page_layouts(tpl: dict) -> list[PageLayout]:
             if c.get("value_type") and c.get("bbox"):
                 rows.setdefault(c["row"], []).append(c)
         if rows:
-            get(int(tb.get("page", 0))).tables[tb["id"]] = rows
+            lay = get(int(tb.get("page", 0)))
+            lay.tables[tb["id"]] = rows
+            lay.table_cells[tb["id"]] = tb["cells"]
     return [pages[p] for p in sorted(pages) if not pages[p].is_empty()]
 
 
