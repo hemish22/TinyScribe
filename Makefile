@@ -10,7 +10,13 @@ WORKERS ?= 8
 SCALE ?= 1.0
 GPUS ?= 4,5,6,7
 SLOTS ?= 2
-SERVERS ?= http://127.0.0.1:8081,http://127.0.0.1:8082,http://127.0.0.1:8083,http://127.0.0.1:8084
+# serve_pool.sh ports: 8100 + GPU index on the DGX, 8081 on the Mac
+ifeq ($(shell uname),Darwin)
+SERVERS ?= http://127.0.0.1:8081
+else
+SERVERS ?= $(shell echo $(GPUS) | tr , '\n' | awk '{printf "%shttp://127.0.0.1:%d", (NR>1?",":""), 8100+$$1}')
+endif
+SIZE ?= 9b
 
 .PHONY: help setup test schemas data data-smoke qa llama serve stop eval table train quantize bench demo
 
@@ -50,8 +56,8 @@ eval: ## score running servers: make eval NAME=zero-shot-9b LABEL="9B zero-shot,
 table: ## print the results table from runs/
 	$(PY) eval/results_table.py
 
-train: ## Week 2: LoRA fine-tune (DGX)
-	@echo "Week 2: train/sft.py not written yet"; exit 1
+train: ## LoRA fine-tune on one GPU (DGX): make train SIZE=9b|2b [GPU=4]
+	CUDA_VISIBLE_DEVICES=$(or $(GPU),4) .venv-train/bin/python train/sft.py --config train/config_$(SIZE).yaml
 
 quantize: ## Week 3: imatrix + quant grid (DGX)
 	@echo "Week 3: quant/ grid not written yet"; exit 1

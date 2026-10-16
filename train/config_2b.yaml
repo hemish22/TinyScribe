@@ -1,0 +1,17 @@
+# LoRA fine-tune of Qwen3.5-2B: same data, prompt and recipe as the 9B, higher learning rate for the smaller model.
+base_model: models/hf/Qwen3.5-2B
+output_dir: runs/train-2b
+manifest: data/manifest.jsonl
+seed: 3407
+dev_pages: 200
+
+lora_r: 16
+lora_alpha: 16
+lr: 2.0e-4
+epochs: 1
+batch_size: 2
+grad_accum: 4
+warmup_steps: 40
+save_steps: 200
+max_len: 8192
+pad_multiple: 128     # length buckets so compiled kernels are reused (see sft.Collator)

@@ -1,0 +1,17 @@
+# LoRA fine-tune of Qwen3.5-9B. bf16 LoRA (~22 GB) fits one A100 40 GB; no QLoRA (Unsloth advises against it for Qwen3.5).
+base_model: models/hf/Qwen3.5-9B
+output_dir: runs/train-9b
+manifest: data/manifest.jsonl
+seed: 3407
+dev_pages: 200          # held out of the train split for eval loss (same form types as train)
+
+lora_r: 16
+lora_alpha: 16
+lr: 1.0e-4
+epochs: 1
+batch_size: 2
+grad_accum: 4           # effective batch 8 -> ~1,230 steps over ~9,810 pages
+warmup_steps: 40
+save_steps: 200
+max_len: 8192
+pad_multiple: 128     # length buckets so compiled kernels are reused (see sft.Collator)

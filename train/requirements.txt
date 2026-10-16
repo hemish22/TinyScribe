@@ -1,0 +1,6 @@
+# Training env (.venv-train on the DGX). Unsloth pins compatible torch/transformers/trl/peft.
+unsloth
+unsloth_zoo
+pyyaml
+# Triton kernels for the Gated DeltaNet layers; without them transformers uses a slow torch reference path
+flash-linear-attention
