@@ -1,5 +1,7 @@
 # Dataset recipe for datagen/build.py. Changing anything here changes the data: bump `version`.
-version: 1
+version: 2
+# v2 (Oct 21, 2026): Bengali and Tamil pages can be handwritten too (BanglaWriting / IIIT Tamil
+# words, else the script's handwriting font). v1 had handwriting for English and Hindi only.
 
 # Held out by FORM TYPE across all scripts (template id minus its _en/_hi/_bn/_ta suffix),
 # so no test layout is ever seen in training, not even in another language.
@@ -14,10 +16,10 @@ seed_base: {train: 1000000, test: 9000000}
 image_long_side: 1536  # every page is resized once here; train, DGX scoring and the Mac see these exact pixels
 jpeg_quality: 95
 
-# share of instances written by hand (EMNIST capitals for Latin, IIIT words for Devanagari).
-# Only scripts with a handwriting bank; others are always printed.
+# share of instances written by hand (EMNIST capitals for Latin, IIIT words for Devanagari,
+# BanglaWriting / IIIT Tamil words or a handwriting font for Bengali / Tamil).
 handwriting_fraction: 0.5
-handwriting_scripts: [english, hindi]
+handwriting_scripts: [english, hindi, bengali, tamil]
 
 degradation:
   train: {clean: 0.30, light: 0.40, medium: 0.25, heavy: 0.05}

@@ -19,6 +19,8 @@ else
   echo "pinned llama.cpp at $(cat "$PIN")"
 fi
 
+# no system cmake (e.g. on the Mac): use the one pip-installed into .venv (uv pip install cmake)
+command -v cmake >/dev/null || export PATH="$PWD/.venv/bin:$PATH"
 ARGS=(-DCMAKE_BUILD_TYPE=Release -DLLAMA_CURL=OFF)
 if [ "$(uname)" = "Linux" ]; then
   CUDA_ENV="$PWD/.cuda"
@@ -36,8 +38,9 @@ cmake --build "$SRC/build" -j "${JOBS:-32}" \
   --target llama-server llama-mtmd-cli llama-imatrix llama-quantize llama-cli
 ls "$SRC/build/bin"
 
-# converter deps (convert_hf_to_gguf.py) in their own venv, apart from training deps
-if [ ! -d .venv-convert ]; then
+# converter deps (convert_hf_to_gguf.py) in their own venv, apart from training deps; DGX only
+# (models are converted there; the Mac only runs them)
+if [ "$(uname)" = "Linux" ] && [ ! -d .venv-convert ]; then
   uv venv --python 3.11 .venv-convert
   uv pip install --python .venv-convert/bin/python -r "$SRC/requirements/requirements-convert_hf_to_gguf.txt"
 fi

@@ -17,6 +17,7 @@ Baselines to beat (zero-shot, prompt v2, field F1): **9B 84.9**, **2B 69.0**.
 ## 2. In progress
 
 - Nothing. Week 2 is complete; Week 3 (quantization) is next.
+- **Oct 21:** Bengali and Tamil handwriting were added (data v2), so both models are being retrained and every score re-run on the v2 test split. See the Week 3 report. The numbers below are the v1 results (handwriting in English and Hindi only) and stay here as a record.
 
 ## 3. Done
 

@@ -6,7 +6,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 SIZE="$1"; LABEL="$2"; ORDER="${3:-50}"
-GPUS="${GPUS:-4,5,6,7}"; SLOTS="${SLOTS:-2}"
+GPUS="${GPUS:-$(bash scripts/dgx/wait_gpus.sh 4 1)}"; SLOTS="${SLOTS:-2}"   # waits for free GPUs within the account's 4-GPU cap
 lower=$(echo "$SIZE" | tr A-Z a-z)
 OUT="models/gguf/base-$lower"
 

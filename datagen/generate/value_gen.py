@@ -393,6 +393,47 @@ HW_DEVANAGARI.update({
 })
 
 
+# TinyScribe: Bengali and Tamil handwriting. Words with real samples (train >= 2, test >= 1) in the
+# Tamil IIIT bank and in BanglaWriting (tools/hw_datasets/*/vocab.tsv). Coverage is thin (BanglaWriting
+# is free-text essays, IIIT Tamil is news vocabulary), so a handwritten Bengali/Tamil field uses these
+# lists HW_INDIC_P of the time; other values are drawn in the script's handwriting font (handwriting.py).
+HW_INDIC_P = 0.6
+FIRST_M_HW_TA = ["செந்தில்", "அருண்", "விஜய்", "அருள்", "சிவா", "சேகர்", "சுந்தர்", "விக்ரம்", "அர்ஜுன்"]
+FIRST_F_HW_TA = ["பிரியா", "அனிதா", "செல்வி", "ராதா", "சீதா", "வள்ளி", "ரேவதி", "சுமதி", "பத்மா", "விஜயா",
+                 "நிர்மலா", "திவ்யா"]
+LAST_HW_TA = ["வேலு", "சேகர்", "நாடார்"] + FIRST_M_HW_TA   # Tamil names often carry the father's name
+CITY_HW_TA = ["திருச்சி", "தஞ்சை", "கரூர்", "கடலூர்", "திருப்பூர்", "பழனி"]
+RELATION_HW_TA = ["கணவர்", "மனைவி", "தாத்தா"]
+COUNTRY_HW_TA = ["சிங்கப்பூர்", "பிரிட்டன்"]
+RELATION_HW_BN = ["বাবা", "মা", "ভাই", "নানা", "মামা"]
+OCCUPATION_HW_BN = ["দোকানদার", "শিক্ষক", "চাকরি", "ব্যবসা", "মজুর"]
+COUNTRY_HW_BN = ["ভারত", "বাংলাদেশ", "চীন", "জাপান"]
+HW_INDIC: dict = {
+    "tamil": {
+        "name": lambda r: f"{r.choice(FIRST_M_HW_TA + FIRST_F_HW_TA)} {r.choice(LAST_HW_TA)}",
+        "city": lambda r: r.choice(CITY_HW_TA),
+        "relation": lambda r: r.choice(RELATION_HW_TA),
+        "country": lambda r: r.choice(COUNTRY_HW_TA),
+    },
+    "bengali": {
+        "relation": lambda r: r.choice(RELATION_HW_BN),
+        "occupation": lambda r: r.choice(OCCUPATION_HW_BN),
+        "country": lambda r: r.choice(COUNTRY_HW_BN),
+    },
+}
+
+
+def hw_indic_words(script: str) -> set:
+    """Every native-script word a Bengali/Tamil value can contain: the HW_INDIC lists plus the
+    regular lists (their words get real handwriting whenever the bank has them)."""
+    lo, hi = {"bengali": ("\u0980", "\u09ff"), "tamil": ("\u0b80", "\u0bff")}[script]
+    sfx = {"bengali": "_BN", "tamil": "_TA"}[script]
+    lists = [v for k, v in globals().items() if isinstance(v, list) and k.endswith(sfx)]
+    lists += [d[script] for d in (GENDER, OCCUPATION, BOARD, EMPLOYER, DESIGNATION, COUNTRY, YES_NO)]
+    return {unicodedata.normalize("NFC", w) for lst in lists for x in lst for w in x.split()
+            if any(lo <= c <= hi for c in w)}
+
+
 def table_row_values(types: list, script: str, rng: random.Random, handwriting: bool = False,
                      prev: list | None = None) -> list:
     """Values for one table row (value_type per cell, None for printed cells), kept consistent
@@ -455,6 +496,9 @@ def generate_value(value_type: str, label_script: str, rng: random.Random, handw
     latin_fn, dev_fn = GENERATORS.get(value_type, GENERATORS["text"])
     if label_script in SCRIPT_GENERATORS:
         fn = SCRIPT_GENERATORS[label_script].get(value_type, latin_fn)
+        hw = HW_INDIC.get(label_script, {})
+        if handwriting and value_type in hw and rng.random() < HW_INDIC_P:  # TinyScribe
+            fn = hw[value_type]
         return unicodedata.normalize("NFC", fn(rng))
     if label_script in ("devanagari", "bilingual"):
         if handwriting and value_type in HW_DEVANAGARI:

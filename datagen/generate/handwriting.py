@@ -10,6 +10,11 @@ IIIT-INDIC-HW-WORDS, so each word keeps a real writer's shaping; value_gen's *_H
 lists only produce words that have samples. Punctuation is drawn as pen strokes.
 Banks are built by hw_bank.py.
 
+TinyScribe: Bengali and Tamil too. A field's words come from that script's real word bank
+(BanglaWriting / IIIT Tamil) when every word has samples; otherwise the whole field is written
+in a handwriting-style font (Atma / Kavivanar, OFL) in the writer's hand, the same way comb
+fields use Kalam. STATS counts drawn fields by source ("real" or "font") for the manifest.
+
 Exception: Devanagari in a comb (box-per-letter) field is written one akshara per box,
 as people fill these forms, in the Kalam handwriting-style font (OFL, assets/fonts),
 not real handwriting: IIIT is word-level (only 96 single-akshara words) and handwritten
@@ -25,11 +30,13 @@ on the page.
 import functools
 import math
 import random
+from collections import Counter
+from pathlib import Path
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-from generate.hw_bank import EMNIST_BANK, IIIT_BANK, ROOT
+from generate.hw_bank import EMNIST_BANK, IIIT_BANK, INDIC_BANKS, ROOT
 from generate.value_gen import aksharas
 
 REF = 160                 # line height (px) tokens are composed at, scaled down when drawn
@@ -38,16 +45,32 @@ CAP = 0.56                # Latin cap height / line height
 BODY = 0.52               # Devanagari body (headline to baseline) / line height
 UP_EXT, LOW_EXT = 0.40, 0.35   # matra extents above/below the body, / body
 L_MIN, L_MAX = 16, 64     # 64 px line ~ 4.5 mm capitals at 200 DPI
-UPPER = set("िीेैोौंँ")
-LOWER = set("ुूृ")
+UPPER = set("िीेैोौंँ" "িীেৈোৌংঁ" "ிீ")       # TinyScribe: + Bengali, Tamil signs above the body
+LOWER = set("ुूृ" "ুূৃ" "ுூ")
 PUNCT = set("-./,@:")
 PENS = [(25, 45, 140), (20, 30, 95), (30, 30, 35)]   # blue ballpoint, navy, black
 INK_THR = 0.3
 KALAM = ROOT / "assets" / "fonts" / "Kalam-Regular.ttf"
+# TinyScribe: handwriting-style font per script, and the letter whose body sets its size
+HAND_FONTS = {"devanagari": (KALAM, "क"),
+              "bengali": (ROOT / "assets" / "fonts" / "Atma-Regular.ttf", "ক"),
+              "tamil": (ROOT / "assets" / "fonts" / "Kavivanar-Regular.ttf", "க")}
+BLOCKS = {"devanagari": (0x0900, 0x097F), "bengali": (0x0980, 0x09FF), "tamil": (0x0B80, 0x0BFF)}
+STATS: Counter = Counter()
+
+
+def _script_of(s: str) -> str | None:
+    """TinyScribe: the Indic script of the first Indic character, or None for Latin/digits."""
+    for c in s:
+        for name, (lo, hi) in BLOCKS.items():
+            if lo <= ord(c) <= hi:
+                return name
+    return None
 
 
 def _deva(s: str) -> bool:
-    return any(0x0900 <= ord(c) <= 0x097F for c in s)
+    """True for any Indic-script text (TinyScribe: Devanagari, Bengali or Tamil)."""
+    return _script_of(s) is not None
 
 
 def _crop(a: np.ndarray, thr: float = INK_THR):
@@ -136,11 +159,19 @@ def _iiit(word: str) -> tuple:
     return _iiit_split(word, SPLIT)
 
 
+def _bank_words(word: str) -> tuple:
+    """TinyScribe: samples of an Indic word from its script's bank (IIIT Hindi, IIIT Tamil, BanglaWriting)."""
+    script = _script_of(word)
+    if script == "devanagari":
+        return _iiit_split(word, SPLIT)
+    return _iiit_split(word, SPLIT, str(INDIC_BANKS[script])) if script in INDIC_BANKS else ()
+
+
 @functools.lru_cache(maxsize=None)
-def _iiit_split(word: str, split: str) -> tuple:
+def _iiit_split(word: str, split: str, bank: str = str(IIIT_BANK)) -> tuple:
     """Ink-alpha crops of a word's samples; faint scans (low paper/ink contrast) dropped."""
     out = []
-    for p in sorted((IIIT_BANK / word).glob("*.png")):
+    for p in sorted((Path(bank) / word).glob("*.png")):
         if not _in_split(p, split):
             continue
         g = np.asarray(Image.open(p), dtype=np.float32)
@@ -153,18 +184,42 @@ def _iiit_split(word: str, split: str) -> tuple:
         # trim the outermost 0.4% of ink mass on each side
         by, bx = max(2, a.shape[0] // 40), max(2, a.shape[1] // 40)
         a[:by], a[-by:], a[:, :bx], a[:, -bx:] = 0, 0, 0, 0
+        if bank == str(INDIC_BANKS["tamil"]):
+            # TinyScribe: IIIT Tamil scans keep parts of their frame lines away from the edge;
+            # blank rows / columns that are mostly ink (a Tamil word never spans 60% of them;
+            # not for Bengali, whose headline can)
+            ink = a > 0.3
+            rows_ = np.where(ink.mean(1) > 0.6)[0]
+            cols_ = np.where(ink.mean(0) > 0.6)[0]
+            for r_ in rows_:
+                a[max(0, r_ - 2):r_ + 3] = 0
+            for c_ in cols_:
+                a[:, max(0, c_ - 2):c_ + 3] = 0
         r, c = np.cumsum(a.sum(1)), np.cumsum(a.sum(0))
         if not r[-1]:
             continue
         r0, r1 = np.searchsorted(r, r[-1] * 0.004), np.searchsorted(r, r[-1] * 0.996)
         c0, c1 = np.searchsorted(c, c[-1] * 0.004), np.searchsorted(c, c[-1] * 0.996)
         a = _crop(a[r0:r1 + 1, c0:c1 + 1])
+        if a is not None and bank == str(INDIC_BANKS["tamil"]) and _long_run(a) > 0.9 * a.shape[0]:
+            continue   # TinyScribe: leftover guide/underline stroke in the scan; no Tamil letter has one
         if a is not None:
             out.append(a)
     if out:  # drop samples whose shape is far off the word's typical aspect (fragments, mis-crops)
         med = float(np.median([a.shape[1] / a.shape[0] for a in out]))
         out = [a for a in out if 0.65 <= a.shape[1] / a.shape[0] / med <= 1.5]
     return tuple(out)
+
+
+def _long_run(a: np.ndarray) -> int:
+    """TinyScribe: longest horizontal run of ink pixels in any row."""
+    best = 0
+    for row in a > 0.5:
+        if not row.any():
+            continue
+        d = np.diff(np.concatenate(([0], row.astype(np.int8), [0])))
+        best = max(best, int((np.where(d == -1)[0] - np.where(d == 1)[0]).max()))
+    return best
 
 
 class Writer:
@@ -232,17 +287,19 @@ def _latin_glyph(ch: str, w: Writer, rng) -> tuple:
 
 
 @functools.lru_cache(maxsize=None)
-def _kalam() -> ImageFont.FreeTypeFont:
-    """Kalam sized so its Devanagari body (headline to baseline of क) is BODY of the line."""
-    probe = ImageFont.truetype(str(KALAM), 200, layout_engine=ImageFont.Layout.RAQM)
-    b = probe.getbbox("क", anchor="ls")
-    return ImageFont.truetype(str(KALAM), round(200 * REF * BODY / -b[1]), layout_engine=ImageFont.Layout.RAQM)
+def _kalam(script: str = "devanagari") -> ImageFont.FreeTypeFont:
+    """Kalam sized so its Devanagari body (headline to baseline of क) is BODY of the line.
+    TinyScribe: or the script's own handwriting font (HAND_FONTS), sized the same way."""
+    path, probe_ch = HAND_FONTS[script]
+    probe = ImageFont.truetype(str(path), 200, layout_engine=ImageFont.Layout.RAQM)
+    b = probe.getbbox(probe_ch, anchor="ls")
+    return ImageFont.truetype(str(path), round(200 * REF * BODY / -b[1]), layout_engine=ImageFont.Layout.RAQM)
 
 
 def _akshara_glyph(cl: str, w: Writer, rng) -> tuple:
     """(alpha, ink bottom below baseline) for one akshara drawn in Kalam in the writer's hand."""
-    font = _kalam()
-    im = Image.new("L", (REF * 2, REF * 2), 0)
+    font = _kalam(_script_of(cl) or "devanagari")
+    im = Image.new("L", (REF * len(cl) + REF, REF * 2), 0)  # TinyScribe: wide enough for a whole word
     ImageDraw.Draw(im).text((REF // 2, REF * 1.4), cl, font=font, fill=255, anchor="ls")
     a = _from_img(im)
     rows = np.where(a.max(1) > INK_THR)[0]
@@ -276,8 +333,26 @@ def _latin_token(text: str, w: Writer, rng) -> np.ndarray:
     return canvas
 
 
-def _deva_token(word: str, w: Writer, rng) -> np.ndarray:
-    samples = _iiit(word)
+def _font_token(word: str, w: Writer, rng) -> np.ndarray:
+    """TinyScribe: an Indic word in its script's handwriting font, on a REF-high line. Drawn one
+    akshara at a time, each with its own size, rotation and baseline jitter and uneven spacing
+    (as in comb fields), so the word looks placed by hand rather than typeset."""
+    glyphs = [_akshara_glyph(cl, w, rng) for cl in aksharas(word) if not cl.isspace()]
+    gap = REF * BODY * w.gap * 0.6
+    width = sum(g.shape[1] for g, _ in glyphs) + gap * 1.3 * len(glyphs) + 4
+    canvas = np.zeros((REF, int(width) + 2), np.float32)
+    x = 1.0
+    for g, off in glyphs:
+        y = REF * BASE + off - g.shape[0] + rng.uniform(-0.025, 0.025) * REF
+        _paste(canvas, g, int(x), int(round(y)))
+        x += g.shape[1] + gap * rng.uniform(0.6, 1.3)
+    return canvas[:, :int(x) + 2]
+
+
+def _deva_token(word: str, w: Writer, rng, font: bool = False) -> np.ndarray:
+    if font:
+        return _font_token(word, w, rng)
+    samples = _bank_words(word)
     if not samples:
         raise KeyError(word)
     a = rng.choice(samples)
@@ -291,15 +366,19 @@ def _deva_token(word: str, w: Writer, rng) -> np.ndarray:
     return canvas
 
 
-def _token(tok: str, w: Writer, rng) -> tuple:
+def _core(tok: str) -> str:
+    return tok.strip("".join(PUNCT))
+
+
+def _token(tok: str, w: Writer, rng, font: bool = False) -> tuple:
     """(alpha at REF line height, text as written). Latin is written in capitals;
     punctuation stuck to a Devanagari word is split off and stroke-drawn."""
     if not _deva(tok):
         up = tok.upper()
         return _latin_token(up, w, rng), up
-    core = tok.strip("".join(PUNCT))
+    core = _core(tok)
     lead, trail = tok[:tok.index(core)], tok[tok.index(core) + len(core):]
-    parts = ([_latin_token(lead, w, rng)] if lead else []) + [_deva_token(core, w, rng)] \
+    parts = ([_latin_token(lead, w, rng)] if lead else []) + [_deva_token(core, w, rng, font)] \
         + ([_latin_token(trail, w, rng)] if trail else [])
     return np.concatenate(parts, axis=1) if len(parts) > 1 else parts[0], tok
 
@@ -326,7 +405,8 @@ def plan_hw(value: str, bbox, comb, w: Writer, rng) -> dict:
             if cap < 6:
                 return {"kind": "none", "ok": False, "shown": ""}
             return {"kind": "comb", "comb": comb, "cells": cells, "s": cap / (REF * CAP),
-                    "ext": (-REF * CAP, 0.0), "shown": shown, "ok": len(shown) == len(text)}
+                    "ext": (-REF * CAP, 0.0), "shown": shown, "ok": len(shown) == len(text),
+                    "source": "real"}
         if comb:
             parts = aksharas(value)
             shown = parts[:comb["n"]]
@@ -345,8 +425,12 @@ def plan_hw(value: str, bbox, comb, w: Writer, rng) -> dict:
                 return {"kind": "none", "ok": False, "shown": ""}
             shown_txt = "".join(c if _deva(c) else c.upper() for c in shown)
             return {"kind": "comb", "comb": comb, "cells": cells, "s": s, "ext": (top, bot),
-                    "shown": shown_txt, "ok": len(shown) == len(parts)}
-        toks = [_token(t, w, rng) for t in value.split(" ") if t]
+                    "shown": shown_txt, "ok": len(shown) == len(parts), "source": "font"}
+        # TinyScribe: Bengali/Tamil fields not fully covered by the word bank use the script font
+        words = [t for t in value.split(" ") if t]
+        font = _script_of(value) in INDIC_BANKS and not all(
+            _bank_words(_core(t)) for t in words if _deva(t))
+        toks = [_token(t, w, rng, font) for t in words]
     except KeyError:
         return {"kind": "none", "ok": False, "shown": ""}
     space = REF * w.space
@@ -371,7 +455,7 @@ def plan_hw(value: str, bbox, comb, w: Writer, rng) -> dict:
         total = (len(lines) - 1) * lh + (bot - top) * s
         wide = max(sum(a.shape[1] for a, _ in ln) * s + space * s * (len(ln) - 1) for ln in lines)
         best = {"kind": "text", "L": L, "s": s, "lh": lh, "lines": lines, "top": top * s,
-                "ink": total, "space": space}
+                "ink": total, "space": space, "source": "font" if font else "real"}
         if total <= bh - 2 and wide <= bw - 4:
             best["ok"] = True
             break
@@ -390,6 +474,7 @@ def draw_hw(img: Image.Image, plan: dict, bbox, w: Writer, rng):
     """Composite a plan in the writer's pen strictly inside value_bbox."""
     if plan["kind"] == "none" or not plan["shown"]:
         return
+    STATS[plan.get("source", "real")] += 1
     x, y, bw, bh = [int(v) for v in bbox]
     layer = np.zeros((bh, bw), np.float32)
     s = plan["s"]

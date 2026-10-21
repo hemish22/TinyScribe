@@ -86,8 +86,11 @@ def run_job(job: dict, recipe: dict, out: Path, hw_ok: bool) -> list[dict]:
     handwriting = (hw_ok and job["language"] in recipe["handwriting_scripts"]
                    and rng.random() < recipe["handwriting_fraction"])
     hw.set_split(split)
+    hw.STATS.clear()
     pdf = TEMPLATES_DIR / f"{tid}.pdf"
     pages, gt, truncated = render_flat(TEMPLATES_DIR / f"{tid}.json", pdf, seed=seed, handwriting=handwriting)
+    # handwritten fields of this instance by source: real word/glyph images vs handwriting font
+    hw_fields = {k: hw.STATS[k] for k in ("real", "font")} if handwriting else None
     img_dir = out / split / "images"
     img_dir.mkdir(parents=True, exist_ok=True)
     rows = []
@@ -104,7 +107,7 @@ def run_job(job: dict, recipe: dict, out: Path, hw_ok: bool) -> list[dict]:
         rows.append({"id": sid, "image": rel, "split": split, "template_id": tid,
                      "form_type": form_type(tid), "script": job["language"], "page": lay.page,
                      "schema": lay.schema_name, "seed": seed, "degradation": level,
-                     "handwriting": handwriting, "truncated": bool(truncated),
+                     "handwriting": handwriting, "hw_fields": hw_fields, "truncated": bool(truncated),
                      "target": target(lay, gt)})
     rows_path.parent.mkdir(parents=True, exist_ok=True)
     rows_path.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
@@ -131,6 +134,13 @@ def check(rows: list[dict], recipe: dict) -> None:
         print(f"{split}: {sum(c.values())} pages  " + "  ".join(f"{s}={c[s]}" for s in SCRIPTS))
     c = Counter((r["split"], r["degradation"]) for r in rows)
     print("degradation:", dict(sorted(c.items())))
+    c = Counter(r["script"] for r in rows if r["handwriting"])
+    print("handwritten pages by script:", dict(c))
+    tot = Counter()
+    for r in rows:
+        if r.get("hw_fields"):
+            tot.update({f"{r['script']}/{k}": v for k, v in r["hw_fields"].items()})
+    print("handwritten fields by source (per instance, counted once per page):", dict(sorted(tot.items())))
     print("handwritten pages:", sum(r["handwriting"] for r in rows),
           " calib pages:", sum(r["calib"] for r in rows),
           " pages from truncated instances:", sum(r["truncated"] for r in rows))
