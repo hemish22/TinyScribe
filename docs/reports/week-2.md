@@ -1,6 +1,6 @@
 # Week 2 — fine-tune on the DGX
 
-Last updated: Oct 17, 2026 · 2B fine-tuned and scored; 9B training on the DGX
+Last updated: Oct 21, 2026 · **complete**
 
 ## 1. Plan
 
@@ -16,11 +16,45 @@ Baselines to beat (zero-shot, prompt v2, field F1): **9B 84.9**, **2B 69.0**.
 
 ## 2. In progress
 
-- **9B full run:** GPU 4, tmux `train9b`, about 7.4 s/step. Step 518 of 1,226 at the last check (Oct 16, 16:50); ETA about 18:15 the same day.
-- **Queued on the DGX** (tmux `after9b`, runs by itself): merge → convert → score the fine-tuned 9B, then repeat the Q8_0 projector test on it.
-- **The DGX is not reachable from the laptop right now** (ssh times out). The tmux jobs keep running there. The 9B results get collected once it's back.
+- Nothing. Week 2 is complete; Week 3 (quantization) is next.
 
 ## 3. Done
+
+### Results (test split, 401 pages, BF16 through llama.cpp, grammar on, prompt v2)
+
+| Model | Size | Field F1 | English | Hindi | Tamil | Bengali | Valid JSON | Checkbox acc. |
+|---|---|---|---|---|---|---|---|---|
+| 9B zero-shot | 18.41 GB | 84.9 | 90.6 | 72.8 | 85.4 | 91.4 | 100 | 89.4 |
+| 2B zero-shot | 3.90 GB | 69.0 | 82.2 | 55.4 | 69.4 | 69.4 | 100 | 77.4 |
+| **9B fine-tuned** | 18.41 GB | **91.9** | 95.5 | 83.3 | 91.5 | 97.4 | 100 | **99.5** |
+| **2B fine-tuned** | 3.90 GB | **87.4** | 93.5 | 77.6 | 85.1 | 93.0 | 100 | 96.5 |
+| 9B fine-tuned + Q8_0 projector | 18.41 GB + 624 MB | 91.9 | 95.5 | 83.4 | 91.5 | 97.4 | 100 | 99.4 |
+
+- Fine-tuning: **9B +7.0 points**, **2B +18.4 points**. The fine-tuned 2B beats the zero-shot 9B.
+- The test form types (ECI Form 7, synth job application) were never seen in training. On ECI Form 7, the 2B goes from 44.3 → 88.4 and the 9B from 71.8 → 90.7.
+- **9B training:** 9,806 pages, 1,226 steps, 2 h 44 min on one A100, peak 21.9 GB. Dev loss 0.0195 (step 200) → 0.0077 (end).
+- **Projector decision: Q8_0.** It scores the same on both the base 9B (85.2 vs 84.9) and the fine-tuned 9B (91.9 vs 91.9), and is 294 MB smaller (624 vs 918 MB). Week 3 quants use `mmproj-q8_0.gguf`.
+
+**Breakdown** (`eval/breakdown.py`, field F1 %):
+
+| Group | Pages | 2B zero-shot | 2B fine-tuned | 9B zero-shot | 9B fine-tuned |
+|---|---|---|---|---|---|
+| english · handwritten | 45 | 74.1 | 86.4 | 82.5 | 90.2 |
+| english · printed | 55 | 89.1 | 99.8 | 97.6 | 100.0 |
+| hindi · handwritten | 44 | 41.1 | 59.5 | 54.9 | **69.5** |
+| hindi · printed | 56 | 66.3 | 91.4 | 86.6 | 93.8 |
+| tamil · printed | 101 | 69.4 | 85.1 | 85.4 | 91.5 |
+| bengali · printed | 100 | 69.4 | 93.0 | 91.4 | 97.4 |
+| clean | 100 | 71.5 | 90.5 | 88.6 | 93.4 |
+| light | 99 | 71.5 | 88.2 | 87.0 | 93.6 |
+| medium | 112 | 70.7 | 88.1 | 85.5 | 92.8 |
+| heavy | 90 | 60.9 | 81.9 | 77.3 | 86.8 |
+
+- **Hindi's low score is handwriting.** Printed Hindi is 93.8; handwritten Hindi is 69.5. The IIIT Hindi word bank has a small vocabulary and test writers are held out, so this is the hardest slice. Goes into LIMITATIONS.md.
+- Printed English is essentially solved (100.0). Tamil printed (91.5) is the weakest printed script.
+- Heavy degradation costs about 6–7 points against clean.
+
+### Build and fixes
 
 - **`train/sft.py` written.** Each training sample is exactly what llama-server sees at inference:
   - The image plus the prompt in the model's own chat template, with `enable_thinking=False`, so the assistant turn opens `<think>\n\n</think>\n\n`.
@@ -31,17 +65,6 @@ Baselines to beat (zero-shot, prompt v2, field F1): **9B 84.9**, **2B 69.0**.
 - **Image preprocessing checked:** Qwen3.5's processor (patch 16, merge 2, up to 16.7M pixels) keeps the 1086×1536 pages at about 1,632 vision tokens, the same grid llama.cpp uses.
 - **`train/merge.py`** (LoRA → full 16-bit checkpoint, base chat template kept) and **`scripts/dgx/eval_model.sh`** (convert → serve → score) written.
 
-- **2B fine-tuned and scored: field F1 69.0 → 87.4.** It now beats the zero-shot 9B (84.9) at a fifth of the size.
-
-  | Model | Size | Field F1 | English | Hindi | Tamil | Bengali | Valid JSON | Checkbox acc. |
-  |---|---|---|---|---|---|---|---|---|
-  | 9B zero-shot | 18.41 GB | 84.9 | 90.6 | 72.8 | 85.4 | 91.4 | 100 | 89.4 |
-  | 2B zero-shot | 3.90 GB | 69.0 | 82.2 | 55.4 | 69.4 | 69.4 | 100 | 77.4 |
-  | **2B fine-tuned** | 3.90 GB | **87.4** | 93.5 | 77.6 | 85.1 | 93.0 | 100 | **96.5** |
-
-  - Training: 9,806 pages, 1 epoch, 1,226 steps, 61 min on one A100, peak 6.5 GB.
-  - Dev loss: 0.030 (step 200) → 0.019 (400) → 0.014 (600) → 0.012 (800) → 0.0105 (1000) → 0.0099 (end). Still falling slowly, with no sign of overfitting.
-  - Hindi is still the weakest script (77.6). Next step: `eval/breakdown.py` splits it into handwritten vs printed and by degradation (needs the DGX).
 - **`eval/breakdown.py`** (new, tested): field F1 per run split by script × handwritten/printed, by degradation and by form type, as markdown tables.
 - **Training env** `.venv-train`: torch 2.14.1+cu130, transformers 5.17.0, trl 1.15.0, peft 0.21.2, unsloth 2026.10.6, plus `flash-linear-attention` 0.5.2. Without fla, the Gated-DeltaNet layers ran a slow torch reference path.
 - **Smoke runs passed** (10 steps):
@@ -73,4 +96,6 @@ Baselines to beat (zero-shot, prompt v2, field F1): **9B 84.9**, **2B 69.0**.
 
 ## 4. Needs your input
 
-- Nothing blocking. When the DGX is reachable again I'll collect the 9B results (they run on their own). You OK'd stopping the old slow 2B run and using GPUs 4–7; that's done.
+- Nothing for Week 2.
+- Optional, still open from Week 1: Bengali/Tamil handwriting (IIIT-INDIC-HW-WORDS download). Today BN/TA test pages are printed only, so the model is untested on BN/TA handwriting.
+- Before Week 3's Mac benchmarks: free 10–15 GB of Mac disk (about 24 GB free now; each quant file is 2–5 GB).
