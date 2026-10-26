@@ -1,6 +1,6 @@
 # Week 3 — quantize on the DGX, time on the Mac
 
-Last updated: Oct 21, 2026 · data v2 built; retraining queued (waiting for GPU budget); quant and Mac tooling ready
+Last updated: Oct 26, 2026 · **done**: v2 models retrained, quant grid scored on the DGX, 4 models timed on the Mac
 
 ## 1. Plan
 
@@ -13,6 +13,19 @@ Last updated: Oct 21, 2026 · data v2 built; retraining queued (waiting for GPU 
 - **Added Oct 21 (your request): Bengali and Tamil handwriting.** Download the data, add it to the generator, rebuild the dataset (v2), retrain both models, and re-score everything on the new test split. The quant grid then runs on the v2 models.
 
 ## 2. In progress
+
+- Score breakdown (script × handwriting, degradation, form type) on the v2 runs. CPU only, on the DGX; waiting for the DGX to be reachable from the Mac again.
+- Optional: 8 GB Mac simulation. The memory numbers below already suggest every model ≤ 4 GB fits.
+
+History:
+
+- **Resumed Oct 22 (08:24), then yielded.** IndicFormBench's `run_v4_pipeline.sh` started 5 GPU jobs in the same seconds, one on the GPU my 9B had just picked. I stopped the 9B to keep the account at 4 GPUs. `wait_gpus.sh` now re-checks after 30 s before claiming. The jobs then waited about 31 h for GPUs and ran Oct 23 15:10 – Oct 24 02:42.
+- **Paused at your request (Oct 21, 10:48).**
+  - The 2B retrain was stopped at step 641 of 1,226. Checkpoints at steps 200, 400 and 600 are kept in `runs/train-2b`.
+  - The queued jobs (`pipe9b`, `zs9b`, `zs2b`) were stopped too. No TinyScribe process is on any GPU.
+  - Resume: `bash scripts/dgx/tjob.sh v2resume bash scripts/dgx/v2_all.sh`. It skips the finished dataset, the 2B continues from checkpoint 600, and everything else starts from where it stopped.
+
+Before the pause:
 
 All queued in tmux on the DGX. Each GPU step waits until the `srmist18` account is under its 4-GPU cap (`scripts/dgx/wait_gpus.sh`), then starts by itself:
 
@@ -28,6 +41,49 @@ All queued in tmux on the DGX. Each GPU step waits until the `srmist18` account 
 - **Blocked right now:** other work under the same login holds all 4 GPUs (GPUs 1, 3, 6, 7). No TinyScribe job is running on a GPU.
 
 ## 3. Done
+
+### Results (v2 test split: 401 pages, Bengali and Tamil handwriting included)
+
+Accuracy from the DGX (llama.cpp CUDA, same weights and engine as the Mac). Speed and memory from the MacBook Pro M4, 16 GB.
+
+| Model | Size | Field F1 | English | Hindi | Tamil | Bengali | Valid JSON | s / page (Metal) | s / page (CPU) | Peak memory |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 9B zero-shot, BF16 (DGX) | 18.41 GB | 69.0 | 90.6 | 52.2 | 21.9 | 81.9 | 80.3 | | | |
+| 2B zero-shot, BF16 (DGX) | 3.90 GB | 64.9 | 82.2 | 55.5 | 57.2 | 62.5 | 100.0 | | | |
+| 9B fine-tuned, BF16 (DGX) | 18.41 GB | 88.6 | 95.5 | 83.4 | 85.4 | 89.0 | 100.0 | | | |
+| 2B fine-tuned, BF16 (DGX) | 3.90 GB | 83.8 | 93.8 | 80.2 | 79.1 | 80.5 | 100.0 | | | |
+| 9B fine-tuned, Q4_K_M + form imatrix (anchor) | 5.71 GB | 88.5 | 95.6 | 83.3 | 84.8 | 89.2 | 100.0 | 36.5 | 99.3 | 7.99 GB |
+| 9B fine-tuned, Q4_K_M + generic imatrix | 5.71 GB | 88.4 | 95.3 | 83.2 | 84.9 | 89.0 | 100.0 | | | |
+| 9B fine-tuned, Q3_K_S + form imatrix | 4.34 GB | 84.9 | 95.5 | 81.4 | 75.7 | 84.1 | 100.0 | | | |
+| 9B fine-tuned, Q3_K_S + generic imatrix | 4.34 GB | 85.4 | 95.3 | 81.3 | 77.7 | 84.7 | 100.0 | | | |
+| **9B fine-tuned, IQ3_XXS (q4_K output) + form imatrix** | **3.89 GB** | **86.5** | 95.1 | 81.6 | 80.6 | 87.0 | 100.0 | **33.2** | 107.2 | **6.29 GB** |
+| 9B fine-tuned, IQ3_XXS (q4_K output) + generic imatrix | 3.89 GB | 86.4 | 95.3 | 80.6 | 81.6 | 86.5 | 100.0 | | | |
+| 9B fine-tuned, IQ2_M + form imatrix | 3.69 GB | 84.3 | 94.6 | 79.1 | 76.1 | 85.1 | 100.0 | 33.8 | 110.7 | 6.10 GB |
+| 9B fine-tuned, IQ2_M + generic imatrix | 3.69 GB | 83.9 | 94.7 | 77.5 | 76.8 | 84.2 | 100.0 | | | |
+| 9B fine-tuned, IQ2_XXS + form imatrix | 3.18 GB | 72.9 | 92.1 | 69.5 | 52.6 | 71.7 | 100.0 | | | |
+| 9B fine-tuned, IQ2_XXS + generic imatrix | 3.18 GB | 71.8 | 89.6 | 68.4 | 50.6 | 72.3 | 100.0 | | | |
+| **2B fine-tuned, Q8_0** | **2.03 GB** | **84.0** | 93.5 | 80.3 | 79.2 | 81.3 | 100.0 | **14.5** | 39.5 | **3.49 GB** |
+
+Findings:
+
+- **Best model ≤ 4 GB: 9B IQ3_XXS (q4_K output) + form imatrix**, 86.5 field F1, 2.1 below BF16. About 33 s per page with Metal, 6.3 GB peak memory.
+- **2B Q8_0** is the fast option: 2.3× faster (14.5 s/page), 3.5 GB, 2.5 points lower. Q8_0 loses nothing against the 2B BF16 (84.0 vs 83.8).
+- **Form vs generic imatrix:** no real difference. Form wins by 0.1–1.1 on most types, generic wins on Q3_K_S by 0.5. The text-only imatrix cannot see the image tokens; this is the reason for the Week 4 stretch item (image-aware imatrix).
+- **IQ2_M** is no faster than IQ3_XXS on Metal and 2.2 points worse. **IQ2_XXS** breaks Tamil (52.6).
+- **Q4_K_M** keeps BF16 accuracy (88.5) but is over the 4 GB budget.
+- **Fine-tuning** takes the 9B from 69.0 to 88.6. Zero-shot, the 9B writes valid JSON on only 80% of pages and gets 21.9 on Tamil.
+- On CPU only, Q4_K_M is faster than the IQ types (IQ dequantization is costlier on CPU); on Metal it is slower (more bytes to read).
+- The v2 test split is harder than v1 (Bengali and Tamil handwriting), so these numbers are not comparable with the Week 2 table.
+
+### Mac benchmark (Oct 26)
+
+- `bench/bench_mac.py` on each model: 21 test pages with Metal (`-ngl 99`) and 6 CPU-only, first page of each mode is a warm-up. Pages balanced over the four scripts, same pages for every model. Valid JSON on every timed page.
+- About 40% of a 9B page's time is reading the page (vision encoder + about 2,300 prompt tokens at ~135 tokens/s), the rest is writing about 300 tokens of JSON at ~10 tokens/s (2B: ~23 tokens/s).
+- **Peak memory, measured again with a better method.** The first numbers (`/usr/bin/time` max RSS) were wrong: the Q4_K_M showed 4.62 GB, less than its own 5.71 GB file.
+  - macOS drops clean pages of the memory-mapped weights when memory is short. The Mac had 5–7 GB of swap in use from other apps during the run.
+  - llama-server's host prompt cache (default up to 8 GB) kept every past page's prompt and inflated the footprint to 5.9 GB. It never helps here, since each page's image tokens differ, so the benchmark (and the Week 4 CLI and demo) run with `--cache-ram 0`.
+  - **Peak memory now = model file + projector file + the server's peak working memory** (macOS `footprint`, sampled every 5 s over 6 pages). Working memory: 1.1 GB for the 2B, 1.7–1.8 GB for the 9B.
+  - Timings were re-checked with the cache off: same per-page times.
 
 ### Bengali and Tamil handwriting (data v2)
 
@@ -96,6 +152,6 @@ All queued in tmux on the DGX. Each GPU step waits until the `srmist18` account 
 
 ## 4. Needs your input
 
-- **GPUs:** other work under `srmist18` currently holds all 4 GPUs of the account's cap, so TinyScribe is queued. If that work can make room, the 9B retrain takes about 3 h on one GPU and the 2B about 1 h.
-- **Mac disk:** 16 GB free. Copying a few quants (3–4 GB each) for timing will need most of it. Freeing 10 GB more would help.
+- **IndicFormBench GPU count:** its `run_v4_pipeline.sh` (MAX_GPUS=4) held 5 GPUs at once on Oct 22 and does not count TinyScribe's processes. If both projects share the 4-GPU cap, it should count every `srmist18` process, as `scripts/dgx/pick_gpus.sh` does.
+- **Mac disk:** solved (you freed space). The Mac models take 16.3 GB in `models/mac/`.
 - **Licence note:** BanglaWriting is CC BY-NC 3.0, and IIIT-INDIC-HW-WORDS is for research use. The released model and data must say non-commercial. Fine for a portfolio project; the model card will state it.

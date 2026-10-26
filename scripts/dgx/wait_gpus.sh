@@ -12,6 +12,12 @@ last=""
 while true; do
   flock 9
   g=$(bash scripts/dgx/pick_gpus.sh "$WANT" 2>/tmp/ts_pick_$$ || true)
+  if [ -n "$g" ]; then
+    # another scheduler may have just started a job that has not allocated memory yet: look again
+    sleep "${SETTLE:-30}"
+    g2=$(bash scripts/dgx/pick_gpus.sh "$WANT" 2>/tmp/ts_pick_$$ || true)
+    g=$(comm -12 <(echo "$g" | tr ',' '\n' | sort) <(echo "$g2" | tr ',' '\n' | sort) | sort -n | paste -sd, -)
+  fi
   n=$(echo "$g" | tr ',' '\n' | grep -c . || true)
   if [ "$n" -ge "$MIN" ]; then
     for i in ${g//,/ }; do touch "runs/gpu_claims/$i"; done
