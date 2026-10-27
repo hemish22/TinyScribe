@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TinyScribe</title>
+<style>
+  :root {
+    --bg: #f6f5f1; --panel: #ffffff; --ink: #1d1d1b; --muted: #6b6a64; --line: #e3e1da;
+    --accent: #1f5f4a; --accent-ink: #ffffff; --ok: #1f7a4d; --bad: #b3261e; --chip: #efeee8;
+    --mark: #fff3c4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161615; --panel: #1f1f1d; --ink: #ecebe6; --muted: #a09f98; --line: #34342f;
+            --accent: #5fb495; --accent-ink: #10201a; --ok: #6cc596; --bad: #ef8a80; --chip: #2a2a27;
+            --mark: #4a3f14; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Kohinoor Devanagari",
+               "Bangla Sangam MN", "Tamil Sangam MN", sans-serif; }
+  header { display: flex; align-items: baseline; gap: 14px; padding: 18px 24px 10px; flex-wrap: wrap; }
+  header h1 { margin: 0; font-size: 22px; letter-spacing: -0.01em; }
+  header .tag { color: var(--muted); }
+  header .model { margin-left: auto; font-size: 13px; color: var(--muted); background: var(--chip);
+                  padding: 4px 10px; border-radius: 99px; }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 18px; padding: 8px 24px 24px; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; padding: 8px 16px 16px; } header { padding: 16px; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; min-width: 0; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px; }
+  .samples { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .samples button { font: inherit; font-size: 13px; border: 1px solid var(--line); background: var(--chip); color: var(--ink);
+                    padding: 4px 10px; border-radius: 99px; cursor: pointer; }
+  .samples button.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  #drop { border: 2px dashed var(--line); border-radius: 10px; min-height: 360px; display: grid; place-items: center;
+          text-align: center; color: var(--muted); cursor: pointer; overflow: hidden; position: relative; }
+  #drop.over { border-color: var(--accent); }
+  #drop img { width: 100%; height: auto; display: block; }
+  #drop .hint { padding: 24px; }
+  .controls { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  select { flex: 1 1 260px; min-width: 0; font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line);
+           background: var(--panel); color: var(--ink); }
+  #go { font: inherit; font-weight: 600; padding: 8px 18px; border-radius: 8px; border: 0; background: var(--accent);
+        color: var(--accent-ink); cursor: pointer; }
+  #go:disabled { opacity: .5; cursor: default; }
+  #status { min-height: 22px; color: var(--muted); margin-bottom: 8px; font-variant-numeric: tabular-nums; }
+  #status b { color: var(--ink); }
+  .tabs { display: flex; gap: 4px; margin-bottom: 8px; }
+  .tabs button { font: inherit; font-size: 13px; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--line);
+                 background: transparent; color: var(--muted); cursor: pointer; }
+  .tabs button.on { color: var(--ink); background: var(--chip); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; table-layout: fixed; }
+  td { padding: 6px 6px; border-top: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
+  td.label { width: 42%; color: var(--muted); font-size: 13px; }
+  td.mark { width: 26px; text-align: center; font-weight: 700; }
+  td.ok { color: var(--ok); } td.bad { color: var(--bad); }
+  .truth { display: block; font-size: 12px; color: var(--bad); }
+  .empty { color: var(--muted); font-style: italic; }
+  tr.new td.val { animation: flash 1.2s ease-out; }
+  @keyframes flash { from { background: var(--mark); } to { background: transparent; } }
+  pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12.5px; max-height: 70vh; overflow: auto; }
+  #results { max-height: 72vh; overflow: auto; }
+  .err { color: var(--bad); }
+  footer { color: var(--muted); font-size: 12.5px; padding: 0 24px 20px; }
+  @media (max-width: 900px) { footer { padding: 0 16px 16px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>TinyScribe</h1>
+  <span class="tag">Indian forms → JSON, offline on this machine</span>
+  <span class="model" id="model">loading…</span>
+</header>
+<main>
+  <section class="panel">
+    <h2>Page</h2>
+    <div class="samples" id="samples"></div>
+    <div id="drop"><div class="hint">Drop a form page here, or click to choose a file.<br>
+      <small>English, Hindi, Bengali or Tamil · photo or scan</small></div></div>
+    <input type="file" id="file" accept="image/*" hidden>
+  </section>
+  <section class="panel">
+    <h2>Form</h2>
+    <div class="controls">
+      <select id="schema"></select>
+      <button id="go" disabled>Read form</button>
+    </div>
+    <div id="status"></div>
+    <div class="tabs" id="tabs" hidden>
+      <button data-view="table" class="on">Fields</button>
+      <button data-view="json">JSON</button>
+    </div>
+    <div id="results"></div>
+  </section>
+</main>
+<footer>Fine-tuned Qwen3.5 · llama.cpp · output constrained by the page's JSON Schema. Samples are held-out synthetic test pages; ✓/✗ compare with their ground truth.</footer>
+<script>
+const $ = s => document.querySelector(s);
+const LANG = {english: "EN", hindi: "HI", bengali: "BN", tamil: "TA"};
+let state = { image: null, sample: null, result: null, view: "table" };
+
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c])); }
+
+async function init() {
+  const info = await (await fetch("/api/info")).json();
+  $("#model").textContent = info.model;
+  const sel = $("#schema");
+  sel.innerHTML = '<option value="">Choose the form and page…</option>';
+  for (const lang of ["english", "hindi", "bengali", "tamil"]) {
+    const g = document.createElement("optgroup");
+    g.label = lang[0].toUpperCase() + lang.slice(1);
+    for (const s of info.schemas.filter(s => s.language === lang)) {
+      const o = document.createElement("option");
+      o.value = s.name;
+      o.textContent = `${s.form}` + (s.pages > 1 ? ` — page ${s.page} of ${s.pages}` : "");
+      g.appendChild(o);
+    }
+    sel.appendChild(g);
+  }
+  sel.onchange = ready;
+  const box = $("#samples");
+  for (const s of info.samples) {
+    const b = document.createElement("button");
+    b.textContent = `${LANG[s.script]} · ${s.handwriting ? "handwritten" : "printed"}`;
+    b.title = s.form;
+    b.onclick = () => pickSample(s, b);
+    box.appendChild(b);
+  }
+  if (!info.samples.length) box.remove();
+}
+
+function show(src) {
+  $("#drop").innerHTML = `<img alt="form page" src="${src}">`;
+}
+
+function pickSample(s, btn) {
+  document.querySelectorAll(".samples button").forEach(x => x.classList.toggle("on", x === btn));
+  state.sample = s.id; state.image = null;
+  show(`/sample/${encodeURIComponent(s.id)}`);
+  $("#schema").value = s.schema;
+  clear(); ready();
+}
+
+function pickFile(f) {
+  if (!f || !f.type.startsWith("image/")) return;
+  const r = new FileReader();
+  r.onload = () => {
+    state.image = r.result; state.sample = null;
+    document.querySelectorAll(".samples button").forEach(x => x.classList.remove("on"));
+    show(r.result); clear(); ready();
+  };
+  r.readAsDataURL(f);
+}
+
+function ready() { $("#go").disabled = !((state.image || state.sample) && $("#schema").value); }
+function clear() { state.result = null; $("#results").innerHTML = ""; $("#status").textContent = ""; $("#tabs").hidden = true; }
+
+async function go() {
+  const btn = $("#go"); btn.disabled = true; clear();
+  const t0 = performance.now();
+  const tick = setInterval(() => {
+    $("#status").innerHTML = `Reading the page… <b>${((performance.now() - t0) / 1000).toFixed(0)} s</b>`;
+  }, 250);
+  try {
+    const r = await fetch("/api/parse", {method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({schema: $("#schema").value, sample: state.sample, image: state.image})});
+    const res = await r.json();
+    if (res.error) throw new Error(res.error);
+    state.result = res;
+    const score = res.correct !== undefined ? ` · <b>${res.correct}/${res.rows.length}</b> match the ground truth` : "";
+    $("#status").innerHTML = `Done in <b>${res.seconds} s</b> · ${res.tokens} tokens${score}`;
+    $("#tabs").hidden = false;
+    render(true);
+  } catch (e) {
+    $("#status").innerHTML = `<span class="err">${esc(e.message)}</span>`;
+  } finally { clearInterval(tick); ready(); }
+}
+
+function render(fresh) {
+  const res = state.result; if (!res) return;
+  document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.view === state.view));
+  if (state.view === "json") {
+    $("#results").innerHTML = `<pre>${esc(JSON.stringify(res.data, null, 2))}</pre>`;
+    return;
+  }
+  const rows = res.rows.map(r => {
+    let v = r.kind === "checkbox" ? (r.value ? "☑ yes" : "☐ no") : (r.value === "" ? '<span class="empty">blank</span>' : esc(r.value));
+    let mark = "";
+    if ("ok" in r) {
+      mark = r.ok ? '<td class="mark ok">✓</td>' : '<td class="mark bad">✗</td>';
+      if (!r.ok) {
+        const t = r.kind === "checkbox" ? (r.truth ? "yes" : "no") : (r.truth === "" ? "blank" : r.truth);
+        v += `<span class="truth">truth: ${esc(t)}</span>`;
+      }
+    }
+    return `<tr class="${fresh ? "new" : ""}"><td class="label">${esc(r.label)}</td><td class="val">${v}</td>${mark}</tr>`;
+  });
+  $("#results").innerHTML = `<table>${rows.join("")}</table>`;
+}
+
+$("#go").onclick = go;
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => { state.view = b.dataset.view; render(false); });
+const drop = $("#drop");
+drop.onclick = () => $("#file").click();
+$("#file").onchange = e => pickFile(e.target.files[0]);
+drop.ondragover = e => { e.preventDefault(); drop.classList.add("over"); };
+drop.ondragleave = () => drop.classList.remove("over");
+drop.ondrop = e => { e.preventDefault(); drop.classList.remove("over"); pickFile(e.dataTransfer.files[0]); };
+init();
+</script>
+</body>
+</html>
