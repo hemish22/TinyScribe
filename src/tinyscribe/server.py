@@ -3,8 +3,8 @@
     with LlamaServer("9b") as srv:
         extract(srv.url, image, layout)
 
-Model presets point at the files the Mac benchmark timed (models/mac/); a path works too. The
-server runs with the benchmark's settings, so speed and memory match the README table.
+Presets (9b, 2b) use the Hugging Face files in models/TinyScribe-GGUF/, or the identical files the
+Mac benchmark timed in models/mac/; a GGUF path works too. The server runs with the benchmark's settings, so speed and memory match the README table.
 """
 from __future__ import annotations
 
@@ -17,14 +17,18 @@ from pathlib import Path
 from tinyscribe.client import wait_ready
 
 REPO = Path(__file__).resolve().parents[2]
-MODELS = REPO / "models" / "mac"
+HF_REPO = "hemish22/TinyScribe-GGUF"
+HF_DIR = REPO / "models" / "TinyScribe-GGUF"   # hf download hemish22/TinyScribe-GGUF --local-dir models/TinyScribe-GGUF
+MODELS = REPO / "models" / "mac"               # the files the Mac benchmark timed (same weights)
 
-# name -> (model, vision projector, label)
+# name -> label, then (model, vision projector) candidates in order
 PRESETS = {
-    "9b": (MODELS / "ft-9b" / "IQ3_XXS_oq4_K-form.gguf", MODELS / "ft-9b" / "mmproj-q8_0.gguf",
-           "TinyScribe 9B, IQ3_XXS (3.9 GB)"),
-    "2b": (MODELS / "ft-2b" / "Q8_0-none.gguf", MODELS / "ft-2b" / "mmproj-q8_0.gguf",
-           "TinyScribe 2B, Q8_0 (2.0 GB)"),
+    "9b": ("TinyScribe 9B, IQ3_XXS (3.9 GB)",
+           [(HF_DIR / "TinyScribe-9B-IQ3_XXS.gguf", HF_DIR / "mmproj-TinyScribe-9B-Q8_0.gguf"),
+            (MODELS / "ft-9b" / "IQ3_XXS_oq4_K-form.gguf", MODELS / "ft-9b" / "mmproj-q8_0.gguf")]),
+    "2b": ("TinyScribe 2B, Q8_0 (2.0 GB)",
+           [(HF_DIR / "TinyScribe-2B-Q8_0.gguf", HF_DIR / "mmproj-TinyScribe-2B-Q8_0.gguf"),
+            (MODELS / "ft-2b" / "Q8_0-none.gguf", MODELS / "ft-2b" / "mmproj-q8_0.gguf")]),
 }
 DEFAULT = os.environ.get("TINYSCRIBE_MODEL", "9b")
 
@@ -33,7 +37,11 @@ def resolve(model: str, mmproj: str | None = None) -> tuple[Path, Path, str]:
     """Preset name or GGUF path -> (model, projector, label). A path needs --mmproj, or a
     mmproj*.gguf next to it."""
     if model in PRESETS:
-        m, p, label = PRESETS[model]
+        label, cands = PRESETS[model]
+        m, p = next(((m, p) for m, p in cands if m.exists()), cands[0])
+        if not m.exists():
+            raise FileNotFoundError(f"{m} not found; download the models with\n"
+                                    f"  hf download {HF_REPO} --local-dir {HF_DIR.relative_to(REPO)}")
         p = Path(mmproj) if mmproj else p
     else:
         m = Path(model)
@@ -47,7 +55,7 @@ def resolve(model: str, mmproj: str | None = None) -> tuple[Path, Path, str]:
         label = m.name
     for f in (m, p):
         if not f.exists():
-            raise FileNotFoundError(f"{f} not found (presets expect the files in {MODELS})")
+            raise FileNotFoundError(f"{f} not found")
     return m, p, label
 
 

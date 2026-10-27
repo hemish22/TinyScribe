@@ -1,6 +1,6 @@
 # Week 4 — ship
 
-Last updated: Oct 27, 2026 · CLI, web demo, README GIF, README, LIMITATIONS.md done; Hugging Face upload on hold (your call)
+Last updated: Oct 27, 2026 · **done**: CLI, web demo, README GIF, README, LIMITATIONS.md, LICENSE, Hugging Face upload
 
 ## 1. Plan
 
@@ -10,12 +10,24 @@ Last updated: Oct 27, 2026 · CLI, web demo, README GIF, README, LIMITATIONS.md 
 - Upload the best quant ≤ 4 GB and its projector to Hugging Face with a model card.
 - Optional: print and photograph ~50 test pages; fill ~15 forms by hand.
 - Stretch: image-aware importance matrix (Transformers forward hooks → GGUF imatrix).
+- **Oct 27, your call:** optional items (photographed pages, image-aware imatrix) left out of this project.
 
 ## 2. In progress
 
-- Nothing running. Waiting for your call on the items below.
+- Nothing. The project is complete.
 
 ## 3. Done
+
+### Hugging Face upload and licence (Oct 27)
+
+- **[hemish22/TinyScribe-GGUF](https://huggingface.co/hemish22/TinyScribe-GGUF)**, public, 6.9 GB:
+  - `TinyScribe-9B-IQ3_XXS.gguf` (3.89 GB) + `mmproj-TinyScribe-9B-Q8_0.gguf` (0.62 GB): recommended.
+  - `TinyScribe-2B-Q8_0.gguf` (2.03 GB) + `mmproj-TinyScribe-2B-Q8_0.gguf` (0.36 GB): faster.
+  - Byte-identical to the files scored on the DGX and timed on the Mac.
+- Model card (`docs/model_card.md`, also the repo README): results, usage via the CLI and plain llama-server, training and quantization details, limitations. Licence set to **non-commercial research use** (BanglaWriting CC BY-NC 3.0, IIIT-INDIC-HW-WORDS research only).
+- Uploaded from the Mac (its Hugging Face token can write; the DGX token is read-only).
+- `tinyscribe` presets (`9b`, `2b`) now look in `models/TinyScribe-GGUF/` first (`hf download hemish22/TinyScribe-GGUF --local-dir models/TinyScribe-GGUF`), then `models/mac/`; a missing model prints the download command.
+- `LICENSE`: standard Apache-2.0 text for the code (as `pyproject.toml` declares).
 
 ### Zero-shot baseline corrected (Oct 27)
 
@@ -58,6 +70,4 @@ tinyscribe schemas [--language tamil]
 
 ## 4. Needs your input
 
-- **Hugging Face upload:** on hold, as you asked.
-- **Licence file:** `pyproject.toml` declares Apache-2.0 for the code but the repo has no `LICENSE` file. Add the standard Apache-2.0 text?
-- **Optional items:** photographing ~50 printed test pages (needs you, a printer and a phone) and the image-aware imatrix stretch (needs DGX GPUs for a few hours). Say if you want either.
+- Nothing.

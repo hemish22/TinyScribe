@@ -39,11 +39,10 @@ uv venv --python 3.11 && uv pip install -e . && source .venv/bin/activate
 make llama                       # llama.cpp at the pinned commit (Metal on macOS, CUDA on Linux)
 ```
 
-Put the model files in `models/mac/` (Hugging Face upload coming; until then build them with the pipeline below):
+Download the models from Hugging Face, [hemish22/TinyScribe-GGUF](https://huggingface.co/hemish22/TinyScribe-GGUF) (6.9 GB: 9B IQ3_XXS, 2B Q8_0 and their Q8_0 vision projectors; non-commercial research use):
 
-```
-models/mac/ft-9b/IQ3_XXS_oq4_K-form.gguf   models/mac/ft-9b/mmproj-q8_0.gguf
-models/mac/ft-2b/Q8_0-none.gguf            models/mac/ft-2b/mmproj-q8_0.gguf
+```bash
+hf download hemish22/TinyScribe-GGUF --local-dir models/TinyScribe-GGUF
 ```
 
 **Command line.** Pick the form page with `--schema` (`tinyscribe schemas` lists all 53):
