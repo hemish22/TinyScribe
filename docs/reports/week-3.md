@@ -14,7 +14,6 @@ Last updated: Oct 26, 2026 · **done**: v2 models retrained, quant grid scored o
 
 ## 2. In progress
 
-- Score breakdown (script × handwriting, degradation, form type) on the v2 runs. CPU only, on the DGX; waiting for the DGX to be reachable from the Mac again.
 - Optional: 8 GB Mac simulation. The memory numbers below already suggest every model ≤ 4 GB fits.
 
 History:
@@ -74,6 +73,41 @@ Findings:
 - **Fine-tuning** takes the 9B from 69.0 to 88.6. Zero-shot, the 9B writes valid JSON on only 80% of pages and gets 21.9 on Tamil.
 - On CPU only, Q4_K_M is faster than the IQ types (IQ dequantization is costlier on CPU); on Metal it is slower (more bytes to read).
 - The v2 test split is harder than v1 (Bengali and Tamil handwriting), so these numbers are not comparable with the Week 2 table.
+
+### Breakdown (Oct 27, `eval/breakdown.py`, field F1)
+
+| Script · handwriting | Pages | 9B zero-shot | 2B zero-shot | 9B FT BF16 | 2B FT BF16 | 9B IQ3_XXS form | 9B IQ2_M form | 2B Q8_0 |
+|---|---|---|---|---|---|---|---|---|
+| English · handwritten | 45 | 82.5 | 74.2 | 90.3 | 87.0 | 89.5 | 88.4 | 86.6 |
+| English · printed | 55 | 97.6 | 89.1 | 100.0 | 99.5 | 99.9 | 99.9 | 99.5 |
+| Hindi · handwritten | 44 | 41.7 | 41.0 | 69.0 | 63.5 | 67.3 | 64.1 | 63.6 |
+| Hindi · printed | 56 | 61.0 | 66.6 | 94.4 | 92.9 | 92.5 | 90.6 | 93.0 |
+| Tamil · handwritten | 41 | 6.1 | 52.3 | 80.1 | 73.3 | 75.0 | 71.3 | 73.4 |
+| Tamil · printed | 60 | 36.8 | 62.8 | 91.3 | 85.8 | 87.0 | 81.6 | 85.8 |
+| Bengali · handwritten | 52 | 73.8 | 53.5 | 85.2 | 75.4 | 82.4 | 81.5 | 76.5 |
+| Bengali · printed | 48 | 90.8 | 72.5 | 93.3 | 86.0 | 92.0 | 89.0 | 86.7 |
+
+| Degradation | Pages | 9B zero-shot | 2B zero-shot | 9B FT BF16 | 2B FT BF16 | 9B IQ3_XXS form | 9B IQ2_M form | 2B Q8_0 |
+|---|---|---|---|---|---|---|---|---|
+| clean | 104 | 74.4 | 68.4 | 89.6 | 86.8 | 88.4 | 87.2 | 87.0 |
+| light | 91 | 66.7 | 63.3 | 90.0 | 85.1 | 87.9 | 84.5 | 85.3 |
+| medium | 113 | 70.3 | 66.7 | 89.1 | 85.4 | 87.4 | 86.0 | 85.8 |
+| heavy | 93 | 63.7 | 60.5 | 85.5 | 77.5 | 82.1 | 79.1 | 77.6 |
+
+| Form type (held out) | Pages | 9B zero-shot | 2B zero-shot | 9B FT BF16 | 2B FT BF16 | 9B IQ3_XXS form | 9B IQ2_M form | 2B Q8_0 |
+|---|---|---|---|---|---|---|---|---|
+| eci_form7 | 201 | 68.1 | 43.1 | 88.8 | 87.4 | 86.9 | 84.0 | 87.6 |
+| synth_job_application | 200 | 69.6 | 78.2 | 88.4 | 81.8 | 86.3 | 84.5 | 82.0 |
+
+Findings:
+
+- **Hindi handwriting is the hardest group** (69.0 for the 9B BF16, 67.3 for IQ3_XXS). It is also the group with the most real handwriting (98% of fields from IIIT-HW-Hindi crops).
+- Tamil and Bengali handwritten pages score higher than Hindi handwritten, but 31–41% of their fields use the handwriting font, which is close to print for Tamil. These numbers flatter real Tamil/Bengali handwriting; goes into LIMITATIONS.md.
+- **Where quantization costs accuracy:** English almost nothing (≤ 0.8). Tamil the most (IQ3_XXS: −5.1 handwritten, −4.3 printed), then Hindi handwritten (−1.7), Bengali (−1.3 to −2.8).
+- **Heavy degradation** costs the 9B BF16 4 points against clean, and quantization adds to it: IQ3_XXS loses 1.2 on clean pages but 3.4 on heavy ones. The 2B drops 9 points on heavy pages.
+- **9B zero-shot** nearly fails on Tamil handwriting (6.1) and is weak on all Hindi. Fine-tuning gives the largest gains there (+74 and +27–33).
+- The 2B is weaker on the synthetic job application (81.8) than on ECI Form 7 (87.4); the 9B is even across both held-out types.
+- Raw tables: `runs/breakdown_v2.md` (Mac) / regenerate with `python eval/breakdown.py <runs>` on the DGX.
 
 ### Mac benchmark (Oct 26)
 
