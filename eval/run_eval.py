@@ -59,7 +59,13 @@ def main(argv=None) -> int:
 
     rows = load_rows(manifest, a.split, a.limit)
     preds_path = run / "preds.jsonl"
-    done = {json.loads(x)["id"] for x in preds_path.read_text().splitlines()} if preds_path.exists() else set()
+    # a page counts as done only with a model answer; failed requests (server down, timeout) are retried.
+    # The last line for a page wins below, so a retry replaces the failed record.
+    done: set[str] = set()
+    if preds_path.exists():
+        for x in preds_path.read_text().splitlines():
+            p = json.loads(x)
+            (done.discard if "error" in p else done.add)(p["id"])
     todo = [r for r in rows if r["id"] not in done]
     print(f"{a.name}: {len(rows)} pages, {len(done)} done, {len(todo)} to run on {len(servers)} server(s)")
 
@@ -76,7 +82,7 @@ def main(argv=None) -> int:
             ex = extract(server, data_root / r["image"], lay)
             rec = {"id": r["id"], "pred": ex.data, "raw": ex.raw, "seconds": round(ex.seconds, 3),
                    "prompt_tokens": ex.prompt_tokens, "completion_tokens": ex.completion_tokens}
-        except Exception as e:  # a failed request scores as an empty page, and is visible in preds
+        except Exception as e:  # recorded and retried on the next run; the run exits non-zero meanwhile
             rec = {"id": r["id"], "pred": None, "raw": "", "error": repr(e)}
         with lock:
             with preds_path.open("a") as fh:
@@ -104,6 +110,12 @@ def main(argv=None) -> int:
             "prompt_version": PROMPT_VERSION, "manifest": str(manifest), **json.loads(a.meta)}
     (run / "meta.json").write_text(json.dumps(meta, indent=2) + "\n")
     print(json.dumps(report["overall"]), f"errors={errors}")
+    if errors:
+        # a failed request is not a model answer: these scores count it as an empty page. Re-run the
+        # same command to retry only the failed pages.
+        print(f"ERROR: {errors} page(s) failed to get an answer; scores are not final. Re-run to retry them.",
+              file=sys.stderr)
+        return 1
     return 0
 
 

@@ -27,7 +27,10 @@ def row(run: Path) -> tuple[float, list[str]] | None:
     bench = json.loads((run / "bench.json").read_text()) if (run / "bench.json").exists() else {}
     by = sc.get("by_script", {})
     get = lambda s: pct(by.get(s, {}).get("field_f1"))
-    cells = [meta.get("label", run.name), meta.get("size", ""), pct(sc["overall"]["field_f1"]),
+    label = meta.get("label", run.name)
+    if sc.get("errors"):   # pages with no model answer (server failure): the row is not final
+        label += f" ⚠ {sc['errors']} pages failed"
+    cells = [label, meta.get("size", ""), pct(sc["overall"]["field_f1"]),
              get("english"), get("hindi"), get("tamil"), get("bengali"), pct(sc["overall"]["valid_json"]),
              bench.get("s_per_page_metal", ""), bench.get("s_per_page_cpu", ""), bench.get("peak_memory", "")]
     return meta.get("order", 999), [str(c) for c in cells]

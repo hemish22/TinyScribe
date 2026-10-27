@@ -52,7 +52,13 @@ def group_counts(preds: list[dict], manifest: dict[str, dict]) -> dict[str, dict
 
 
 def load_preds(run: Path) -> list[dict]:
-    return [json.loads(x) for x in (run / "preds.jsonl").read_text().splitlines() if x.strip()]
+    """One record per page: the last line wins, as in eval/run_eval.py (a retried page appears twice)."""
+    by_id = {}
+    for x in (run / "preds.jsonl").read_text().splitlines():
+        if x.strip():
+            p = json.loads(x)
+            by_id[p["id"]] = p
+    return list(by_id.values())
 
 
 def table(title: str, names: list[str], counts: dict[str, dict[str, dict[str, Counts]]]) -> str:
