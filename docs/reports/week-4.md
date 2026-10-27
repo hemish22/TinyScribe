@@ -1,6 +1,6 @@
 # Week 4 — ship
 
-Last updated: Oct 27, 2026 · CLI, web demo, README, LIMITATIONS.md done; README GIF in progress; Hugging Face upload on hold (your call)
+Last updated: Oct 27, 2026 · CLI, web demo, README GIF, README, LIMITATIONS.md done; Hugging Face upload on hold (your call)
 
 ## 1. Plan
 
@@ -13,7 +13,7 @@ Last updated: Oct 27, 2026 · CLI, web demo, README, LIMITATIONS.md done; README
 
 ## 2. In progress
 
-- README GIF: `scripts/record_demo.py` drives the demo in headless Chromium (Playwright) and turns the recording into `docs/demo.gif` with ffmpeg. Waiting on the Playwright download (slow network).
+- Nothing running. Waiting for your call on the items below.
 
 ## 3. Done
 
@@ -41,6 +41,13 @@ tinyscribe schemas [--language tamil]
 - Drop or choose an image, pick the form and page (grouped by language), "Read form". Shows a live timer, then each printed label with its value; JSON tab.
 - 8 sample buttons (one per script × printed/handwritten, held-out test pages): ✓/✗ against the ground truth, with the true value under each miss. A Bengali handwritten Form 7 sample: 33 of 37 items correct, 31 s.
 - Stops its llama-server on Ctrl+C or `kill`.
+
+### README GIF (`docs/demo.gif`, 0.4 MB, 19 s)
+
+- `scripts/record_demo.py` clicks through the demo in headless Chrome (Playwright), takes timed screenshots and joins them with ffmpeg. Bengali handwritten ECI Form 7 sample, 9B IQ3_XXS: **32.9 s, 33/37 items match the ground truth**, scroll through the fields, JSON tab.
+- The model's wait is sped up 8× in the GIF; the page's timer shows real seconds.
+- Recorded on a freshly started demo: a page read a second time came back in 14.4 s from llama.cpp's slot cache, which would have overstated the speed.
+- Fixed on the way: the Fields/JSON tabs showed while a page was still being read (CSS overrode `hidden`).
 
 ### README, LIMITATIONS.md, Makefile
 
