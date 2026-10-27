@@ -1,5 +1,7 @@
 # TinyScribe
 
+Models - https://huggingface.co/hemish22/TinyScribe-GGUF
+
 Read filled Indian forms (English, Hindi, Bengali, Tamil; printed or handwritten) into JSON, offline on a laptop.
 
 TinyScribe fine-tunes Qwen3.5-9B on synthetic filled government forms, quantizes it to a 3.9 GB GGUF (4.5 GB with its vision projector) and runs it with llama.cpp on a 16 GB MacBook Pro M4. The output always matches the page's JSON Schema.
